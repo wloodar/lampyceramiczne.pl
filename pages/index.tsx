@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
+import SEO from "../components/seo"
 
 const Home: NextPage = () => {
     return (
         <div className="w-full h-screen flex items-center justify-center">
-            <span className="text-2xl">Hello, from ELCO</span>
+            <SEO/>
         </div>
     )
 }
