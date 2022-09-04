@@ -9,9 +9,13 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "contentlayer": "^0.2.7",
+        "immer": "^9.0.15",
         "next": "12.2.5",
+        "next-contentlayer": "^0.2.7",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "zustand": "^4.1.1"
     },
     "devDependencies": {
         "@types/node": "18.7.14",
