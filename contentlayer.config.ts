@@ -6,6 +6,7 @@ export const LampPage = defineDocumentType(() => ({
     fields: {
         title: { type: 'string', required: true },
         date: { type: 'string', required: true },
+        cover: { type: 'string', required: true },
     },
     computedFields: {
         slug: {
