@@ -7,7 +7,7 @@ import { Lamp } from 'contentlayer/generated'
 const LampCard = ({ lamp }: { lamp: Lamp }) => {
     return (
         <div>
-            <Link href={`/lampa/${lamp.slug}`} passHref>
+            <Link href={`/lampa/${lamp.slug}`} scroll={false} passHref>
                 <a>
                     <div className="block relative aspect-h-5 aspect-w-3">
                         <ExporteImage
@@ -19,7 +19,9 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                         />
                     </div>
                     <div className="mt-6">
-                        <H2 tag="h3">{lamp.title}</H2>
+                        <H2 tag="h3" className=" font-thin">
+                            {lamp.title}
+                        </H2>
                     </div>
                 </a>
             </Link>

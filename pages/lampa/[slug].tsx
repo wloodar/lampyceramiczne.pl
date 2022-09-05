@@ -1,4 +1,5 @@
 import { allLamps, Lamp } from 'contentlayer/generated'
+import { useWishlistStore } from 'common/hooks/useWishlistStore'
 
 type PathParams = {
     params: {
@@ -33,9 +34,21 @@ export const getStaticProps = async ({ params }: Props) => {
 }
 
 const LampPage = ({ lamp }: { lamp: Lamp }) => {
+    const { slugs, addProduct, removeProduct } = useWishlistStore()
+
     return (
         <div>
             <div>title: {lamp.title}</div>
+
+            {slugs.includes(lamp.slug) ? (
+                <button onClick={() => removeProduct(lamp.slug)}>
+                    Usuń z Twojej listy
+                </button>
+            ) : (
+                <button onClick={() => addProduct(lamp.slug)}>
+                    Dodaj do Twojej listy
+                </button>
+            )}
         </div>
     )
 }

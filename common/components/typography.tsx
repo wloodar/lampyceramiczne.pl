@@ -73,7 +73,12 @@ function Paragraph({
     colorClassName = 'text-secondary',
     ...rest
 }: ParagraphProps) {
-    return <p className={clsx(size, colorClassName, className)} {...rest}></p>
+    return (
+        <p
+            className={clsx('font-light', size, colorClassName, className)}
+            {...rest}
+        ></p>
+    )
 }
 
 export { H2, H3, H4, H5, Paragraph }
