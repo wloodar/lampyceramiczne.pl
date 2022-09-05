@@ -18,3 +18,9 @@ a {
 * {
     box-sizing: border-box;
 }
+
+@layer components {
+    .wl-container {
+        @apply max-w-[1450px] m-auto px-[25px] md:px-[50px];
+    }
+}
