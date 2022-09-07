@@ -1,27 +1,40 @@
 import Link from 'next/link'
 import ExporteImage from 'next-image-export-optimizer'
 
-import { H2 } from './typography'
+import { H2, H3, H4 } from './typography'
 import { Lamp } from 'contentlayer/generated'
+import { Button } from './button'
 
 const LampCard = ({ lamp }: { lamp: Lamp }) => {
     return (
         <div>
             <Link href={`/lampa/${lamp.slug}`} scroll={false} passHref>
-                <a>
-                    <div className="block relative aspect-h-5 aspect-w-3">
-                        <ExporteImage
-                            src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
-                            alt={`Okładka lampy ${lamp.title}`}
-                            layout={'fill'}
-                            objectFit="cover"
-                            objectPosition="center"
-                        />
+                <a className="group">
+                    <div className="peer border-2 border-transparent hover:border-black transition-[border] duration-500 ease-in-out">
+                        <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.95] scale-y-[0.97] group-hover:scale-100 transition-transform duration-500 ease-in-out">
+                            <ExporteImage
+                                src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
+                                alt={`Okładka lampy ${lamp.title}`}
+                                layout={'fill'}
+                                objectFit="cover"
+                                objectPosition="center"
+                            />
+                        </div>
                     </div>
-                    <div className="mt-6">
-                        <H2>
-                            {lamp.title}
-                        </H2>
+                    <div className="mt-6 py-5 px-8 box-border bg-neutral-100">
+                        <div className="flex items-center">
+                            <H4 tag={'h2'}>{lamp.title}</H4>
+                            <div className="flex-nowrap block">
+                                <Button className="whitespace-nowrap ml-8">
+                                    Zobacz teraz
+                                </Button>
+                            </div>
+                        </div>
+                        <div>
+                            <span className="text-xs text-neutral-600">
+                                {/* TODO: Technical Height Width */}
+                            </span>
+                        </div>
                     </div>
                 </a>
             </Link>

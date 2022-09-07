@@ -1,11 +1,15 @@
-import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+import {
+    defineDocumentType,
+    defineNestedType,
+    makeSource,
+} from 'contentlayer/source-files'
 
 const Technical = defineNestedType(() => ({
     name: 'technical',
     fields: {
-        height: { type: 'string', required: false },    
+        height: { type: 'string', required: false },
         widthShade: { type: 'string', required: false },
-    }
+    },
 }))
 
 export const LampPage = defineDocumentType(() => ({
@@ -17,9 +21,9 @@ export const LampPage = defineDocumentType(() => ({
         date: { type: 'string', required: true },
         cover: { type: 'string', required: true },
         technical: {
-            type: 'list',
-            of: Technical
-        }
+            type: 'nested',
+            of: Technical,
+        },
     },
     computedFields: {
         slug: {
