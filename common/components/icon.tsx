@@ -4,16 +4,21 @@ import Send from './icons/send'
 
 interface Icon {
     name: string
+    className?: string
 }
 
-const Icon = ({ name, ...rest }: Icon & JSX.IntrinsicElements['svg']) => {
+const Icon = ({
+    name,
+    className,
+    ...rest
+}: Icon & JSX.IntrinsicElements['svg']) => {
     switch (name) {
         case 'x':
-            return <X />
+            return <X className={className} />
         case 'plus':
-            return <Plus />
+            return <Plus className={className} />
         case 'send':
-            return <Send />
+            return <Send className={className} />
         default:
             return <></>
     }

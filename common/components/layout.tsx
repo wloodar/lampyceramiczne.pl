@@ -34,7 +34,9 @@ const Layout = ({ children }: LayoutProps) => {
                             <div className="flex flex-col">
                                 <Nav />
                                 <div className="mt-14 max-w-[250px]">
-                                    <H5 className="mb-4">Twoja lista</H5>
+                                    <div className="mb-4 uppercase tracking-[3px] font-medium">
+                                        Twoja lista
+                                    </div>
                                     <WishlistProductsList />
                                 </div>
                             </div>

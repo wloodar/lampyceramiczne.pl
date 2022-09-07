@@ -3,6 +3,7 @@ import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { H5, Paragraph } from './typography'
 import ExportedImage from 'next-image-export-optimizer'
+import Icon from './icon'
 
 const WishlistItem = ({
     slug,
@@ -14,26 +15,33 @@ const WishlistItem = ({
 }) => {
     return (
         <div className="flex items-center">
-            <div className="peer cursor-pointer">
+            <div className="cursor-pointer">
                 <Link href={`/lampa/${slug}`} scroll={false} passHref>
                     <ExportedImage
                         src={`/img/lamps/${slug}/${cover}`}
-                        width={45}
-                        height={45}
+                        width={50}
+                        height={50}
                         objectFit="cover"
                         objectPosition="center"
                         className="rounded-lg"
                     />
                 </Link>
             </div>
-            <div className="flex-1 pl-4 peer-hover:underline">
+            <div className="flex-1 pl-4">
                 <h5 className="text-xs cursor-pointer hover:underline">
                     <Link href={`/lampa/${slug}`} scroll={false}>
                         {title}
                     </Link>
                 </h5>
-                <button onClick={() => removeProduct(slug)} className="text-xs">
-                    Usuń
+                <button
+                    onClick={() => removeProduct(slug)}
+                    className="mt-1 text-[0.65rem] flex items-center"
+                >
+                    <Icon
+                        name="x"
+                        className="w-[14px] h-auto stroke-slate-500"
+                    />
+                    <span className="!no-underline text-slate-500">Usuń</span>
                 </button>
             </div>
         </div>

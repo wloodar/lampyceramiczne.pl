@@ -1,4 +1,6 @@
-export default function X() {
+import clsx from 'clsx'
+
+export default function X({ className }: { className?: string }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +12,7 @@ export default function X() {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="feather feather-x"
+            className={clsx('feather feather-x', className)}
         >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
