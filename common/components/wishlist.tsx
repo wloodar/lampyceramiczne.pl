@@ -14,7 +14,7 @@ const WishlistItem = ({
     removeProduct: (slug: string) => void
 }) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center mb-4">
             <div className="cursor-pointer">
                 <Link href={`/lampa/${slug}`} scroll={false} passHref>
                     <ExportedImage
@@ -35,13 +35,13 @@ const WishlistItem = ({
                 </h5>
                 <button
                     onClick={() => removeProduct(slug)}
-                    className="mt-1 text-[0.65rem] flex items-center"
+                    className="mt-1 text-[0.65rem] flex items-center group"
                 >
                     <Icon
                         name="x"
-                        className="w-[14px] h-auto stroke-slate-500"
+                        className="w-[14px] h-auto stroke-slate-500 group-hover:stroke-red-600"
                     />
-                    <span className="!no-underline text-slate-500">Usuń</span>
+                    <span className="!no-underline text-slate-500 group-hover:text-red-600">Usuń</span>
                 </button>
             </div>
         </div>

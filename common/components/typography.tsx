@@ -15,10 +15,10 @@ type HeadingProps = {
 )
 
 const fontSizes = {
-    h2: 'leading-none text-4xl font-medium',
-    h3: 'leading-none text-3xl font-medium',
-    h4: 'leading-none text-2xl font-medium',
-    h5: 'leading-none text-xl font-medium',
+    h2: 'text-4xl font-medium',
+    h3: 'text-3xl font-medium',
+    h4: 'text-2xl font-medium',
+    h5: 'text-xl font-medium',
 }
 
 const headingColors = {

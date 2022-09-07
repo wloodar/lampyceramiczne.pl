@@ -19,7 +19,7 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                         />
                     </div>
                     <div className="mt-6">
-                        <H2 tag="h3" className=" font-thin">
+                        <H2>
                             {lamp.title}
                         </H2>
                     </div>

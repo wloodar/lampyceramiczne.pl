@@ -11,7 +11,7 @@ const Offer: NextPage = () => {
             <SEO title="Oferta Lamp Ceramicznych ELCO | Ceramiczne Lampy Z Abażurem" />
             <Grid>
                 {allLamps.map(lamp => (
-                    <div key={lamp.slug} className="col-span-6 mb-10">
+                    <div key={lamp.slug} className="col-span-6 mb-20">
                         <LampCard lamp={lamp} />
                     </div>
                 ))}
