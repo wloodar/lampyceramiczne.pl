@@ -9,6 +9,7 @@ type WishlistStore = {
     slugs: Array<ProductSlug>
     addProduct: (slug: ProductSlug) => void
     removeProduct: (slug: ProductSlug) => void
+    toggleProduct: (slug: ProductSlug) => void
 }
 
 const useWishlistStore = create<WishlistStore>()(
@@ -27,6 +28,16 @@ const useWishlistStore = create<WishlistStore>()(
                 set(state => ({
                     slugs: state.slugs.filter(prodSlug => prodSlug !== slug),
                 })),
+            toggleProduct: slug =>
+                set(
+                    produce((draft: Draft<Pick<WishlistStore, 'slugs'>>) => {
+                        if (!draft.slugs.includes(slug)) {
+                            draft.slugs.push(slug)
+                        } else {
+                            draft.slugs.splice(draft.slugs.indexOf(slug), 1)
+                        }
+                    }),
+                ),
         }),
         {
             name: 'wishlist-storage',

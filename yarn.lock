@@ -3730,7 +3730,12 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
-"tailwindcss@^3.1.8", "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1":
+"tailwindcss-scoped-groups@^2.0.0":
+  "integrity" "sha512-uE9PJzfjqzsKlZ0dUjG5yPwBmkEZ/qmrXMLjykRs0otolUHAIclbtV49JQGyeYLo8YA7WPMgzKOg2e4snVyHqw=="
+  "resolved" "https://registry.npmjs.org/tailwindcss-scoped-groups/-/tailwindcss-scoped-groups-2.0.0.tgz"
+  "version" "2.0.0"
+
+"tailwindcss@^3.1.8", "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1", "tailwindcss@>=3":
   "integrity" "sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.8.tgz"
   "version" "3.1.8"

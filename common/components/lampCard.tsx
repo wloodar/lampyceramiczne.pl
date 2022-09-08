@@ -1,11 +1,16 @@
 import Link from 'next/link'
 import ExporteImage from 'next-image-export-optimizer'
+import { useWishlistStore } from 'common/hooks/useWishlistStore'
+import Icon from './icon'
 
 import { H2, H3, H4 } from './typography'
 import { Lamp } from 'contentlayer/generated'
 import { Button } from './button'
+import clsx from 'clsx'
 
 const LampCard = ({ lamp }: { lamp: Lamp }) => {
+    const { slugs: wishlistSlugs, toggleProduct } = useWishlistStore()
+
     const TechnicalInfo = () => {
         const { technical } = lamp
 
@@ -31,9 +36,9 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
     }
 
     return (
-        <div>
+        <div className="group relative">
             <Link href={`/lampa/${lamp.slug}`} scroll={false} passHref>
-                <a className="group">
+                <a className="">
                     <div className="peer border-2 border-transparent hover:border-black transition-[border] duration-500 ease-in-out">
                         <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.97] scale-y-[0.98] group-hover:scale-100 transition-transform duration-500 ease-in-out">
                             <ExporteImage
@@ -64,6 +69,16 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                     </div>
                 </a>
             </Link>
+            <div className="absolute right-8 top-8">
+                <button onClick={() => toggleProduct(lamp.slug)}>
+                    <Icon
+                        name="heart"
+                        className={clsx('stroke-white hover:fill-red-500', {
+                            'fill-red-500': wishlistSlugs.includes(lamp.slug),
+                        })}
+                    />
+                </button>
+            </div>
         </div>
     )
 }

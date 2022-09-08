@@ -52,6 +52,7 @@ const Offer: NextPage = () => {
                                 <ButtonLink
                                     href={`/na-temat-elco`}
                                     type="outline"
+                                    className="!border-white"
                                 >
                                     Dowiedz się więcej
                                 </ButtonLink>
