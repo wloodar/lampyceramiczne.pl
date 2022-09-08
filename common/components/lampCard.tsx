@@ -62,8 +62,6 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                         <div>
                             <span className="text-xs text-neutral-600">
                                 <TechnicalInfo />
-                                {/* TODO: Technical Height Width */}
-                                {/* Height: 50 Width: 40 */}
                             </span>
                         </div>
                     </div>
