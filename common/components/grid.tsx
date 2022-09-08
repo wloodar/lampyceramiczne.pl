@@ -13,7 +13,7 @@ const Grid = React.forwardRef<HTMLElement, GridProps>(function Grid(
     return (
         <div
             className={clsx(
-                'grid grid-cols-6 gap-x-5 lg:grid-cols-12 lg:gap-x-14',
+                'grid grid-cols-6 gap-x-5 lg:grid-cols-12 lg:gap-x-10',
                 className,
             )}
         >

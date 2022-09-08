@@ -25,7 +25,13 @@ const AnchorOrLink = React.forwardRef<
 
     if (useRegularAnchor) {
         return (
-            <Link href={href ?? destinationUrl} {...rest} ref={ref} passHref>
+            <Link
+                href={href ?? destinationUrl}
+                {...rest}
+                ref={ref}
+                scroll={false}
+                passHref
+            >
                 <a className={className}>{children}</a>
             </Link>
         )

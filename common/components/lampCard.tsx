@@ -51,10 +51,10 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                         </div>
                     </div>
                     <div className="mt-6 py-5 px-8 box-border bg-neutral-100">
-                        <div className="flex items-center">
+                        <div className="2xl:flex 2xl:items-center">
                             <H4 tag={'h2'}>{lamp.title}</H4>
                             <div className="flex-nowrap block">
-                                <Button className="whitespace-nowrap ml-8">
+                                <Button className="whitespace-nowrap mt-4 mb-2 w-full 2xl:mt-0 2xl:mb-0 2xl:w-auto 2xl:ml-8">
                                     Zobacz teraz
                                 </Button>
                             </div>

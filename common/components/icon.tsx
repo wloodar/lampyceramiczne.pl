@@ -2,6 +2,8 @@ import X from './icons/x'
 import Plus from './icons/plus'
 import Send from './icons/send'
 import Heart from './icons/heart'
+import Facebook from './icons/facebook'
+import Instagram from './icons/instagram'
 
 interface Icon {
     name: string
@@ -22,6 +24,10 @@ const Icon = ({
             return <Send className={className} />
         case 'heart':
             return <Heart className={className} />
+        case 'facebook':
+            return <Facebook className={className} />
+        case 'instagram':
+            return <Instagram className={className} />
         default:
             return <></>
     }

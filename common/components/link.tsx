@@ -1,7 +1,6 @@
 import { NextRouter, withRouter } from 'next/router'
 import Link from 'next/link'
 import React, { Children } from 'react'
-import { WithRouterProps } from 'next/dist/client/with-router'
 
 type ActiveLinkProps = {
     router: NextRouter
@@ -47,7 +46,7 @@ export default withRouter(
         const className = `${childClassName} ${activityClassName}`.trim()
 
         return (
-            <Link href={href} as={as} {...rest} passHref>
+            <Link href={href} as={as} {...rest} scroll={false} passHref>
                 {React.cloneElement(child, {
                     className: className || null,
                 })}

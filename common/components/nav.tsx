@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ActiveLink from '../utils/link'
+import ActiveLink from './link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
