@@ -16,7 +16,7 @@ const WishlistItem = ({
     return (
         <div className="flex items-center mb-4">
             <div className="cursor-pointer">
-                <Link href={`/lampa/${slug}`} scroll={false} passHref>
+                <Link href={`/oferta/${slug}`} scroll={false} passHref>
                     <ExportedImage
                         src={`/img/lamps/${slug}/${cover}`}
                         width={50}
@@ -29,7 +29,7 @@ const WishlistItem = ({
             </div>
             <div className="flex-1 pl-4">
                 <h5 className="text-xs cursor-pointer hover:underline">
-                    <Link href={`/lampa/${slug}`} scroll={false}>
+                    <Link href={`/oferta/${slug}`} scroll={false}>
                         {title}
                     </Link>
                 </h5>
@@ -41,7 +41,9 @@ const WishlistItem = ({
                         name="x"
                         className="w-[14px] h-auto stroke-slate-500 group-hover:stroke-red-600"
                     />
-                    <span className="!no-underline text-slate-500 group-hover:text-red-600">Usuń</span>
+                    <span className="!no-underline text-slate-500 group-hover:text-red-600">
+                        Usuń
+                    </span>
                 </button>
             </div>
         </div>

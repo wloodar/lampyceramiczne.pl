@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import ActiveLink from '../utils/link'
+import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
 const MENU_LINKS = [
     {
@@ -55,15 +58,26 @@ const NavLink = ({
     href: string
     label: React.ReactNode
 }) => {
-    // const location = useLocation()
+    const router = useRouter()
 
     return (
         <li className="mb-5 text-black">
-            <Link href={href} passHref>
-                <a className="text-base font-normal text-black transition-[color] duration-300 ease-in-out border-hover">
+            <ActiveLink
+                href={href}
+                activeClassName="before:w-full"
+                activeSubClassName="before:w-full"
+            >
+                <a
+                    className={clsx(
+                        'text-base font-normal text-black transition-[color] duration-300 ease-in-out border-hover before:bg-neutral-800',
+                        {
+                            'before:w-full': router.pathname === href,
+                        },
+                    )}
+                >
                     {label}
                 </a>
-            </Link>
+            </ActiveLink>
         </li>
     )
 }

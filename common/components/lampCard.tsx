@@ -37,7 +37,7 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
 
     return (
         <div className="group relative">
-            <Link href={`/lampa/${lamp.slug}`} scroll={false} passHref>
+            <Link href={`/oferta/${lamp.slug}`} scroll={false} passHref>
                 <a className="">
                     <div className="peer border-2 border-transparent hover:border-black transition-[border] duration-500 ease-in-out">
                         <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.97] scale-y-[0.98] group-hover:scale-100 transition-transform duration-500 ease-in-out">
