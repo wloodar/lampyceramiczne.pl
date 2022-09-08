@@ -112,7 +112,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
             </div>
             <div className="flex mt-12">
                 <div className="max-w-[700px] flex-1">
-                    <Zoom zoomMargin={50} IconUnzoom={undefined}>
+                    <Zoom zoomMargin={100}>
                         <div className="aspect-h-5 aspect-w-3 relative">
                             <ExportedImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
@@ -153,7 +153,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 <Paragraph>
                                     Zainteresowała Ciebie prezentowana lampa
                                     ceramiczna? Skontaktuj się z nami już teraz
-                                    w celu poznania szczegółów i złożenia
+                                    w celu poznania szczegółów lub złożenia
                                     zamówienia.
                                 </Paragraph>
                             </div>
