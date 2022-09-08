@@ -22,6 +22,7 @@ export default withRouter(
         ...rest
     }: ActiveLinkProps) => {
         const child = Children.only(children)
+        // @ts-ignore
         const childClassName = child!.props.className || ''
 
         const sanitizedPath = router.asPath.split('#')[0].split('?')[0]
@@ -47,6 +48,7 @@ export default withRouter(
 
         return (
             <Link href={href} as={as} {...rest} scroll={false} passHref>
+                {/* @ts-ignore */}
                 {React.cloneElement(child, {
                     className: className || null,
                 })}

@@ -5,7 +5,7 @@ import {
 } from 'contentlayer/source-files'
 
 const Technical = defineNestedType(() => ({
-    name: 'technical',
+    name: 'Technical',
     fields: {
         height: { type: 'string', required: false },
         widthShade: { type: 'string', required: false },

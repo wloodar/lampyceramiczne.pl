@@ -7,6 +7,7 @@ const nextConfig = {
     images: {
         loader: 'custom',
     },
+    trailingSlash: true,
     env: {
         nextImageExportOptimizer_imageFolderPath: 'public/img',
         nextImageExportOptimizer_exportFolderPath: 'out',

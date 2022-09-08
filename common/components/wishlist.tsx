@@ -57,17 +57,6 @@ const WishlistProductsList = () => {
     const { slugs, removeProduct } = useWishlistStore()
     const lamps = allLamps.filter(lamp => slugs.includes(lamp.slug))
 
-    // if (lamps.length === 0) {
-    //     return (
-    //         <div>
-    //             <Paragraph>
-    //                 Na ten moment nie posiadasz na swojej liście jakiejkolwiek
-    //                 lampy.
-    //             </Paragraph>
-    //         </div>
-    //     )
-    // }
-
     return (
         <>
             <div>

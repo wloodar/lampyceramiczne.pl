@@ -15,6 +15,7 @@ type HeadingProps = {
 )
 
 const fontSizes = {
+    h1: 'text-4xl font-normal',
     h2: 'text-4xl font-normal',
     h3: 'text-3xl font-normal',
     h4: 'text-2xl font-normal',
@@ -40,6 +41,10 @@ function Heading({
             {...rest}
         />
     )
+}
+
+function H1(props: HeadingProps) {
+    return <Heading {...props} size="h1" />
 }
 
 function H2(props: HeadingProps) {
@@ -86,4 +91,4 @@ function Paragraph({
     )
 }
 
-export { H2, H3, H4, H5, Paragraph }
+export { H1, H2, H3, H4, H5, Paragraph }

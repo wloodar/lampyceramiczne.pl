@@ -6,7 +6,7 @@ const variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1,
+            duration: 1.5,
             ease: 'easeInOut',
         },
     },
@@ -33,7 +33,7 @@ const Transition = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="effect-2">
-            <AnimatePresence initial={false} exitBeforeEnter>
+            <AnimatePresence mode="wait">
                 <motion.div
                     key={asPath}
                     variants={variants}

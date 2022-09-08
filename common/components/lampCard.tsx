@@ -44,6 +44,7 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                             <ExporteImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                 alt={`Okładka lampy ${lamp.title}`}
+                                placeholder="blur"
                                 layout={'fill'}
                                 objectFit="cover"
                                 objectPosition="center"
