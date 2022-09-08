@@ -9,9 +9,6 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
     const TechnicalInfo = () => {
         const { technical } = lamp
 
-        console.log(technical)
-        console.log(lamp)
-
         if (technical === undefined) {
             return <></>
         }

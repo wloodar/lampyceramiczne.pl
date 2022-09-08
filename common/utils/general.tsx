@@ -14,19 +14,19 @@ const AnchorOrLink = React.forwardRef<
         href?: LinkProps['href']
     }
 >(function AnchorOrLink(props, ref) {
-    const { href, reload = false, children, ...rest } = props
+    const { href, reload = false, children, className, ...rest } = props
 
     let destinationUrl = ''
     let useRegularAnchor = reload
 
     if (!useRegularAnchor && typeof href === 'string') {
-        useRegularAnchor = href.includes(':') || href.startsWith('#')
+        useRegularAnchor = true
     }
 
     if (useRegularAnchor) {
         return (
             <Link href={href ?? destinationUrl} {...rest} ref={ref} passHref>
-                <a>{children}</a>
+                <a className={className}>{children}</a>
             </Link>
         )
     }
