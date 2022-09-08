@@ -17,6 +17,7 @@ export const LampPage = defineDocumentType(() => ({
     filePathPattern: 'lamps/*.mdx',
     fields: {
         title: { type: 'string', required: true },
+        code: { type: 'string', required: true },
         shortDescription: { type: 'string', required: false },
         date: { type: 'string', required: true },
         cover: { type: 'string', required: true },
