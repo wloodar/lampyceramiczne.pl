@@ -6,12 +6,39 @@ import { Lamp } from 'contentlayer/generated'
 import { Button } from './button'
 
 const LampCard = ({ lamp }: { lamp: Lamp }) => {
+    const TechnicalInfo = () => {
+        const { technical } = lamp
+
+        console.log(technical)
+        console.log(lamp)
+
+        if (technical === undefined) {
+            return <></>
+        }
+
+        if (
+            technical.height === undefined &&
+            technical.widthShade === undefined
+        ) {
+            return <></>
+        }
+
+        let techString = []
+
+        if (technical.height !== undefined)
+            techString.push(`Height: ${technical.height} cm`)
+        if (technical.widthShade !== undefined)
+            techString.push(`Width: ${technical.widthShade} cm`)
+
+        return <span>{techString.join(' / ')}</span>
+    }
+
     return (
         <div>
             <Link href={`/lampa/${lamp.slug}`} scroll={false} passHref>
                 <a className="group">
                     <div className="peer border-2 border-transparent hover:border-black transition-[border] duration-500 ease-in-out">
-                        <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.95] scale-y-[0.97] group-hover:scale-100 transition-transform duration-500 ease-in-out">
+                        <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.97] scale-y-[0.98] group-hover:scale-100 transition-transform duration-500 ease-in-out">
                             <ExporteImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                 alt={`Okładka lampy ${lamp.title}`}
@@ -32,7 +59,9 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                         </div>
                         <div>
                             <span className="text-xs text-neutral-600">
+                                <TechnicalInfo />
                                 {/* TODO: Technical Height Width */}
+                                {/* Height: 50 Width: 40 */}
                             </span>
                         </div>
                     </div>

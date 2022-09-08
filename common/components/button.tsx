@@ -18,7 +18,7 @@ const Button = ({
         <button
             className={clsx(
                 className,
-                'py-4 px-10 bg-black text-white rounded-sm text-sm font-medium uppercase tracking-[2px] hover:bg-neutral-800 cursor-pointer',
+                'py-4 px-12 bg-black text-white rounded-sm text-xs font-medium uppercase tracking-[1px] hover:bg-neutral-800 cursor-pointer',
                 // 'relative font-semibold outline-none',
                 // 'rounded-full disabled:opacity-30',
                 // {

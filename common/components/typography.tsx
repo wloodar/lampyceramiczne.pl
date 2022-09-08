@@ -70,12 +70,17 @@ type ParagraphProps = {
 function Paragraph({
     size = 'text-base',
     className,
-    colorClassName = 'text-secondary',
+    colorClassName = 'text-slate-700',
     ...rest
 }: ParagraphProps) {
     return (
         <p
-            className={clsx('font-light', size, colorClassName, className)}
+            className={clsx(
+                'font-light leading-7',
+                size,
+                colorClassName,
+                className,
+            )}
             {...rest}
         ></p>
     )
