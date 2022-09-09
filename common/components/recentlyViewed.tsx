@@ -67,6 +67,7 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                     <Link
                         href={`/oferta/${lamp.slug}`}
                         key={lamp.slug}
+                        scroll={false}
                         passHref
                     >
                         <div className="border-l border-stone-200 relative pt-10 cursor-pointer group">

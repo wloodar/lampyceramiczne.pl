@@ -33,7 +33,10 @@ const Transition = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="effect-2">
-            <AnimatePresence mode="wait">
+            <AnimatePresence
+                mode="wait"
+                onExitComplete={() => window.scrollTo(0, 0)}
+            >
                 <motion.div
                     key={asPath}
                     variants={variants}
