@@ -1,6 +1,8 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import * as React from 'react'
+import { motion } from 'framer-motion'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { useWishlistStore } from 'common/hooks/useWishlistStore'
+import { useRecentStore } from 'common/hooks/useRecentStore'
 import { Button, ButtonLink } from 'common/components/button'
 import { H1, Paragraph } from 'common/components/typography'
 import ExportedImage from 'next-image-export-optimizer'
@@ -9,6 +11,8 @@ import 'react-medium-image-zoom/dist/styles.css'
 import Link from 'next/link'
 import SEO from 'common/components/seo'
 import Icon from 'common/components/icon'
+
+import { RecentlyViewed } from 'common/components/recentlyViewed'
 
 type PathParams = {
     params: {
@@ -44,6 +48,12 @@ export const getStaticProps = async ({ params }: Props) => {
 
 const LampPage = ({ lamp }: { lamp: Lamp }) => {
     const { slugs, addProduct, removeProduct } = useWishlistStore()
+    const { toggleRecentProduct } = useRecentStore()
+
+    React.useLayoutEffect(() => {
+        toggleRecentProduct(lamp.slug)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const TechnicalDetails = () => {
         const { technical } = lamp
@@ -195,17 +205,8 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     </div>
                 </div>
             </div>
-            {/* <div>title: {lamp.title}</div>
 
-            {slugs.includes(lamp.slug) ? (
-                <button onClick={() => removeProduct(lamp.slug)}>
-                    Usuń z Twojej listy
-                </button>
-            ) : (
-                <button onClick={() => addProduct(lamp.slug)}>
-                    Dodaj do Twojej listy
-                </button>
-            )} */}
+            <RecentlyViewed className="mt-14" />
         </div>
     )
 }

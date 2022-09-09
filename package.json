@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build && npm run export && next-image-export-optimizer",
+        "production": "NODE_ENV=production && npm run build",
         "start": "next start",
         "lint": "next lint",
         "export": "next export"
@@ -20,6 +21,8 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-medium-image-zoom": "^5.0.2",
+        "react-slick": "^0.29.0",
+        "slick-carousel": "^1.8.1",
         "tailwindcss-scoped-groups": "^2.0.0",
         "zustand": "^4.1.1"
     },
@@ -27,6 +30,7 @@
         "@types/node": "18.7.14",
         "@types/react": "18.0.18",
         "@types/react-dom": "18.0.6",
+        "@types/react-slick": "^0.23.10",
         "autoprefixer": "^10.4.8",
         "eslint": "8.23.0",
         "eslint-config-next": "12.2.5",
