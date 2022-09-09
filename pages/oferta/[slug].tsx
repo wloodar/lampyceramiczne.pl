@@ -4,7 +4,7 @@ import { allLamps, Lamp } from 'contentlayer/generated'
 import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import { useRecentStore } from 'common/hooks/useRecentStore'
 import { Button, ButtonLink } from 'common/components/button'
-import { H1, Paragraph } from 'common/components/typography'
+import { H1, H3, H5, Paragraph } from 'common/components/typography'
 import ExportedImage from 'next-image-export-optimizer'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -207,8 +207,67 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
             </div>
 
             <div className="grid grid-cols-2 gap-x-10 mt-10">
-                <div className="w-full h-[600px] bg-stone-900 col-span-1"></div>
-                <div className="w-full h-[600px] bg-stone-100 col-span-1"></div>
+                <div className="w-full h-[600px] bg-stone-900 col-span-1 relative group">
+                    <ExportedImage
+                        src="/img/instagram-creators/bohodom-personalized.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="top"
+                        className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div className="bg-black/70 absolute inset-0"></div>
+                    <div className="absolute left-12 bottom-10 right-12">
+                        <H3 className="!text-white">
+                            Indywidualne
+                            <span className="block">realizacje w ELCO</span>
+                        </H3>
+                        <p className="!text-white text-sm font-light max-w-[390px] mt-4 leading-7">
+                            Firma ELCO oferuje wykonanie lampy ceramicznej na
+                            indywidualne zamówienie. Lampa do salonu w Twojej
+                            wymarzonej kolorystyce, albo lampa ceramiczna z
+                            abażurem pod kolor Twojej sypialni? Stworzyć swoją
+                            własną ceramiczną lampę, np. połączenie szyszki z
+                            kolumną?
+                        </p>
+                        <ButtonLink
+                            href={`/na-temat-elco`}
+                            type="bs-outline"
+                            className="mt-6 inline-block !text-white hover:!text-stone-200"
+                        >
+                            Więcej o personalizacji
+                        </ButtonLink>
+                    </div>
+                </div>
+                <div className="w-full h-[600px] bg-stone-100 col-span-1 relative group">
+                    <ExportedImage
+                        src="/img/instagram-creators/homewithbluedoor-corridor.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="bottom"
+                        className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div className="bg-black/70 absolute inset-0"></div>
+                    <div className="absolute left-12 bottom-10 right-12">
+                        <H3 className="!text-white">
+                            Poznaj ELCO{' '}
+                            <span className="block">Lampy Ceramiczne</span>
+                        </H3>
+                        <p className="!text-white text-sm font-light max-w-[350px] mt-4 leading-7">
+                            Od ponad 20 lat tworzymy lampy ceramiczne z
+                            abażurem. Cały proces produkcyjny od początku do
+                            końca odbywa się na terenie Polski. Lampy ceramiczne
+                            naszego wykonania, oferują zarówno solidną jakość
+                            wykonania jak i elegancki design.
+                        </p>
+                        <ButtonLink
+                            href={`/na-temat-elco`}
+                            type="bs-outline"
+                            className="mt-6 inline-block !text-white hover:!text-stone-200"
+                        >
+                            Dowiedz się więcej
+                        </ButtonLink>
+                    </div>
+                </div>
             </div>
 
             <RecentlyViewed className="mt-10" />

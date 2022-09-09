@@ -46,7 +46,7 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                         Ostatnio widzane
                     </span>
                     <span className="w-14 h-[1px] bg-stone-300 my-2"></span>
-                    <span className="text-xs font-light text-neutral-400">
+                    <span className="text-xs font-light text-neutral-400 max-w-[200px]">
                         Lampy, które niedawno były przez Ciebie oglądane
                     </span>
                 </div>
