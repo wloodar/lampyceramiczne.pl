@@ -120,8 +120,8 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     </Link>
                 </div>
             </div>
-            <div className="flex mt-12">
-                <div className="max-w-[700px] flex-1">
+            <div className="grid grid-cols-2 gap-x-10 mt-12">
+                <div className="w-full col-span-1">
                     <Zoom zoomMargin={100}>
                         <div className="aspect-h-5 aspect-w-3 relative">
                             <ExportedImage
@@ -134,7 +134,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         </div>
                     </Zoom>
                 </div>
-                <div className="flex-1 pl-10 box-border">
+                <div className="col-span-1 box-border">
                     <div className="bg-stone-100 px-20 py-16 box-border sticky top-10">
                         <motion.div
                             initial={{ opacity: 0, y: -70 }}
@@ -206,7 +206,12 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                 </div>
             </div>
 
-            <RecentlyViewed className="mt-14" />
+            <div className="grid grid-cols-2 gap-x-10 mt-10">
+                <div className="w-full h-[600px] bg-stone-900 col-span-1"></div>
+                <div className="w-full h-[600px] bg-stone-100 col-span-1"></div>
+            </div>
+
+            <RecentlyViewed className="mt-10" />
         </div>
     )
 }

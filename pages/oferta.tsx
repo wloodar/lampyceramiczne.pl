@@ -14,7 +14,7 @@ const Offer: NextPage = () => {
             <SEO title="Oferta Lamp Ceramicznych ELCO | Ceramiczne Lampy Z Abażurem" />
             <Grid>
                 <div className="col-span-12 xl:col-span-6 mb-20 flex flex-col">
-                    <div className="bg-neutral-50 p-12 2xl:p-16 box-border">
+                    <div className="bg-stone-100 p-12 2xl:p-16 box-border">
                         <H2 className="uppercase mb-8 !font-medium tracking-[3px] !text-2xl 2xl:!text-4xl">
                             Oferta Lamp Ceramicznych ELCO
                         </H2>
