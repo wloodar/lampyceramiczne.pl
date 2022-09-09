@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { H5 } from './typography'
 import { Nav } from './nav'
 import NoSSRWrapper from './noSSRWrapper'
+import ExportedImage from 'next-image-export-optimizer'
 import Icon from './icon'
 
 const WishlistProductsList = dynamic(
@@ -68,7 +69,39 @@ const Layout = ({ children }: LayoutProps) => {
                             </div>
                         </div>
                     </div>
-                    <main className="max-w-full w-[82%] pl-12">{children}</main>
+                    <div className="w-[80%] flex-1">
+                        {/* <main className="max-w-full w-[82%] pl-12"> */}
+                        <main className="w-full pl-12">{children}</main>
+                        <footer className="ml-12 -mr-[64px] -mb-[54px] h-[400px] relative pt-16 mt-24">
+                            <div className="bg-[#101010] h-full flex justify-between pt-16">
+                                <div className="max-w-[550px] w-full">
+                                    <div className="absolute top-0 left-12 max-w-sm">
+                                        <ExportedImage
+                                            src="/img/instagram-creators/w_moim_malutkim_domu-bedroom.jpg"
+                                            width={1080}
+                                            height={892}
+                                            layout="intrinsic"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="max-w-[450px] w-full">
+                                    <div className="flex items-center">
+                                        <Link href={`/`} title="Wstęp ELCO">
+                                            <a className="text-5xl font-medium tracking-[5px] text-white">
+                                                ELCO
+                                            </a>
+                                        </Link>
+                                        <span className="text-stone-300 font-light leading-5 text-sm ml-5">
+                                            <span className="block">
+                                                Klasyczne
+                                            </span>
+                                            <span>Lampy Ceramiczne</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
                 </div>
             </div>
         </NoSSRWrapper>
