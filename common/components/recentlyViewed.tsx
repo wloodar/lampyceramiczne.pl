@@ -86,8 +86,8 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                                     className="transition-[transform] duration-500 group-hover:scale-110"
                                 />
                             </div>
-                            <div className="relative py-4 px-5 font-light text-sm flex items-center bg-stone-50">
-                                <span className="text-black text-lg leading-6 group-hover:underline font-normal">
+                            <div className="relative py-4 px-5 font-light text-sm flex justify-between items-center bg-white">
+                                <span className="text-black text-sm leading-6 group-hover:underline font-normal">
                                     {lamp.title}
                                 </span>
                                 <Button className="block m-auto text-xs ml-5 mr-0">

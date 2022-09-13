@@ -61,7 +61,7 @@ const NavLink = ({
     const router = useRouter()
 
     return (
-        <li className="mb-5 text-black">
+        <li className="mb-4 text-black">
             <ActiveLink
                 href={href}
                 activeClassName="before:w-full"
@@ -69,7 +69,7 @@ const NavLink = ({
             >
                 <a
                     className={clsx(
-                        'text-base font-normal text-black transition-[color] duration-300 ease-in-out border-hover before:bg-neutral-800',
+                        'text-[.95rem] base font-normal text-black transition-[color] duration-300 ease-in-out border-hover before:bg-neutral-800',
                         {
                             'before:w-full': router.pathname === href,
                         },
@@ -84,7 +84,7 @@ const NavLink = ({
 
 const Nav = () => {
     return (
-        <ul>
+        <ul className="mb-5">
             {MENU_LINKS.map(link => (
                 <NavLink key={link.href} href={link.href} label={link.label} />
             ))}
@@ -92,4 +92,4 @@ const Nav = () => {
     )
 }
 
-export { Nav }
+export { Nav, MENU_LINKS }
