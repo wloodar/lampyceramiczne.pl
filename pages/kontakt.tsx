@@ -9,6 +9,7 @@ import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import WishlistProductsList from 'common/components/wishlist'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { AnimatePresence, motion } from 'framer-motion'
+import { RecentlyViewed } from 'common/components/recentlyViewed'
 
 const inputClassName =
     'bg-neutral-100 py-4 px-6 outline-none mb-6 text-black text-sm border-2 border-transparent transition-[border] duration-300 ease-in-out focus:border-black active:border-black'

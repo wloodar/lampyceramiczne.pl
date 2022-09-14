@@ -62,7 +62,21 @@ const Layout = ({ children }: LayoutProps) => {
                                         />
                                     </a>
                                 </div>
-                                <div className="mt-14 max-w-[250px]">
+                                <div className="mt-2">
+                                    <a
+                                        href="tel:+48 572 906 548"
+                                        className="block text-xs font-light text-neutral-600 hover:text-black"
+                                    >
+                                        +48 572 906 548
+                                    </a>
+                                    <a
+                                        href="mailto:elco.kontakt@gmail.com"
+                                        className="mt-2 block text-xs font-light text-neutral-600 hover:text-black"
+                                    >
+                                        elco.kontakt@gmail.com
+                                    </a>
+                                </div>
+                                <div className="mt-10 max-w-[250px]">
                                     <div className="mb-4 text-sm font-semibold uppercase tracking-[2px]">
                                         Twoja lista
                                     </div>

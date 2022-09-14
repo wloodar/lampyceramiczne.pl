@@ -197,7 +197,7 @@ const NaTematElco = () => {
                 <div className="ml-auto w-[250px]">
                     <div className="sticky top-20">
                         <div className="pb-6 text-xs font-medium uppercase">
-                            About navigation
+                            Navigation
                         </div>
                         <SectionsMenu
                             sections={aboutSections}
