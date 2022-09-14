@@ -1,5 +1,4 @@
-import React, { Ref } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import React from 'react'
 import { H1, Paragraph } from 'common/components/typography'
 import { AboutSectionItem } from 'common/types'
 import clsx from 'clsx'

@@ -49,7 +49,7 @@ const ButtonLink = React.forwardRef<
                 'cursor-pointer rounded-sm bg-black py-4 px-12 text-xs font-medium uppercase tracking-[1px] text-white hover:bg-neutral-800',
                 {
                     'border-2 border-black bg-transparent': type === 'outline',
-                    'border border-stone-200 bg-transparent text-black hover:border-stone-400 hover:bg-transparent':
+                    'border border-stone-200 bg-transparent !text-black hover:border-stone-400 hover:bg-transparent':
                         type === 'bs-outline',
                 },
             )}

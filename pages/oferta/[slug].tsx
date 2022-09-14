@@ -196,7 +196,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 <ButtonLink
                                     href={`/kontakt`}
                                     type="bs-outline"
-                                    className="mt-4 block w-full !text-black"
+                                    className="mt-4 block w-full"
                                 >
                                     Skontaktuj się
                                 </ButtonLink>
