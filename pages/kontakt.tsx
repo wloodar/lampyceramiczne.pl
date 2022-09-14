@@ -31,7 +31,7 @@ const Kontakt = () => {
                 <div className="sticky top-16">
                     <div className="max-w-sm">
                         <H3 className="uppercase" tag={'h2'}>
-                            Służymy pomocą :)
+                            Służymy pomocą
                         </H3>
                         <div className="mb-10 text-stone-500 pt-2">
                             Skontaktuj się z nami
@@ -113,7 +113,7 @@ const Kontakt = () => {
                     ></textarea>
                     {wishlistSlugs.length > 0 ? (
                         <div className="mb-6 text-neutral-400 text-sm font-light">
-                            Twoje lampy, które wcześniej zostały przez Ciebie
+                            * Twoje lampy, które wcześniej zostały przez Ciebie
                             wybrane, zostaną dołączone do wiadomości
                         </div>
                     ) : null}
