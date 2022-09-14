@@ -7,7 +7,7 @@ const MENU_LINKS = [
     {
         label: (
             <>
-                <span className="text-[10px] text-[#717171] mr-2">I</span> Wstęp
+                <span className="mr-2 text-[10px] text-[#717171]">I</span> Wstęp
             </>
         ),
         href: '/',
@@ -15,7 +15,7 @@ const MENU_LINKS = [
     {
         label: (
             <>
-                <span className="text-[10px] text-[#717171] mr-2">II</span> Na
+                <span className="mr-2 text-[10px] text-[#717171]">II</span> Na
                 temat ELCO
             </>
         ),
@@ -24,7 +24,7 @@ const MENU_LINKS = [
     {
         label: (
             <>
-                <span className="text-[10px] text-[#717171] mr-2">III</span>{' '}
+                <span className="mr-2 text-[10px] text-[#717171]">III</span>{' '}
                 Oferta
             </>
         ),
@@ -33,7 +33,7 @@ const MENU_LINKS = [
     {
         label: (
             <>
-                <span className="text-[10px] text-[#717171] mr-2">IV</span>{' '}
+                <span className="mr-2 text-[10px] text-[#717171]">IV</span>{' '}
                 Współpraca
             </>
         ),
@@ -42,7 +42,7 @@ const MENU_LINKS = [
     {
         label: (
             <>
-                <span className="text-[10px] text-[#717171] mr-2">V</span>{' '}
+                <span className="mr-2 text-[10px] text-[#717171]">V</span>{' '}
                 Kontakt
             </>
         ),
@@ -69,7 +69,7 @@ const NavLink = ({
             >
                 <a
                     className={clsx(
-                        'text-[.95rem] base font-normal text-black transition-[color] duration-300 ease-in-out border-hover before:bg-neutral-800',
+                        'base border-hover text-[.95rem] font-normal text-black transition-[color] duration-300 ease-in-out before:bg-neutral-800',
                         {
                             'before:w-full': router.pathname === href,
                         },

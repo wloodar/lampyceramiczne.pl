@@ -120,8 +120,8 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     </Link>
                 </div>
             </div>
-            <div className="grid grid-cols-2 gap-x-10 mt-12">
-                <div className="w-full col-span-1">
+            <div className="mt-12 grid grid-cols-2 gap-x-10">
+                <div className="col-span-1 w-full">
                     <Zoom zoomMargin={100}>
                         <div className="aspect-h-5 aspect-w-3 relative">
                             <ExportedImage
@@ -135,7 +135,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     </Zoom>
                 </div>
                 <div className="col-span-1 box-border">
-                    <div className="bg-stone-100 px-20 py-16 box-border sticky top-10">
+                    <div className="sticky top-10 box-border bg-stone-100 px-20 py-16">
                         <motion.div
                             initial={{ opacity: 0, y: -70 }}
                             animate={{
@@ -148,7 +148,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                             }}
                         >
                             <span className="flex items-center">
-                                <div className="bg-stone-300 w-12 h-[2px] mr-3"></div>
+                                <div className="mr-3 h-[2px] w-12 bg-stone-300"></div>
                                 <span className="text-sm text-stone-400">
                                     {lamp.code}
                                 </span>
@@ -159,7 +159,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 <TechnicalDetails />
                             </div>
 
-                            <div className="mt-10 py-8 border-y border-stone-400">
+                            <div className="mt-10 border-y border-stone-400 py-8">
                                 <Paragraph>
                                     Zainteresowała Ciebie prezentowana lampa
                                     ceramiczna? Skontaktuj się z nami już teraz
@@ -173,7 +173,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 {slugs.includes(lamp.slug) ? (
                                     <Button
                                         onClick={() => removeProduct(lamp.slug)}
-                                        className="w-full flex items-center justify-center"
+                                        className="flex w-full items-center justify-center"
                                     >
                                         Usuń z Twojej listy
                                         <Icon
@@ -184,7 +184,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 ) : (
                                     <Button
                                         onClick={() => addProduct(lamp.slug)}
-                                        className="w-full flex items-center justify-center"
+                                        className="flex w-full items-center justify-center"
                                     >
                                         Dodaj do Twojej listy{' '}
                                         <Icon
@@ -196,7 +196,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 <ButtonLink
                                     href={`/kontakt`}
                                     type="bs-outline"
-                                    className="block w-full mt-4 !text-black"
+                                    className="mt-4 block w-full !text-black"
                                 >
                                     Skontaktuj się
                                 </ButtonLink>
@@ -206,8 +206,8 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-10 mt-10">
-                <div className="w-full h-[600px] bg-stone-900 col-span-1 relative group">
+            <div className="mt-10 grid grid-cols-2 gap-x-10">
+                <div className="group relative col-span-1 h-[600px] w-full bg-stone-900">
                     <ExportedImage
                         src="/img/instagram-creators/bohodom-personalized.jpg"
                         layout="fill"
@@ -215,13 +215,13 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         objectPosition="top"
                         className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
                     />
-                    <div className="bg-black/70 absolute inset-0"></div>
+                    <div className="absolute inset-0 bg-black/70"></div>
                     <div className="absolute left-12 bottom-10 right-12">
                         <H3 className="!text-white">
                             Indywidualne
                             <span className="block">realizacje w ELCO</span>
                         </H3>
-                        <p className="!text-white text-sm font-light max-w-[390px] mt-4 leading-7">
+                        <p className="mt-4 max-w-[390px] text-sm font-light leading-7 !text-white">
                             Firma ELCO oferuje wykonanie lampy ceramicznej na
                             indywidualne zamówienie. Lampa do salonu w Twojej
                             wymarzonej kolorystyce, albo lampa ceramiczna z
@@ -238,7 +238,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         </ButtonLink>
                     </div>
                 </div>
-                <div className="w-full h-[600px] bg-stone-100 col-span-1 relative group">
+                <div className="group relative col-span-1 h-[600px] w-full bg-stone-100">
                     <ExportedImage
                         src="/img/instagram-creators/homewithbluedoor-corridor.jpg"
                         layout="fill"
@@ -246,13 +246,13 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         objectPosition="bottom"
                         className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
                     />
-                    <div className="bg-black/70 absolute inset-0"></div>
+                    <div className="absolute inset-0 bg-black/70"></div>
                     <div className="absolute left-12 bottom-10 right-12">
                         <H3 className="!text-white">
                             Poznaj ELCO{' '}
                             <span className="block">Lampy Ceramiczne</span>
                         </H3>
-                        <p className="!text-white text-sm font-light max-w-[350px] mt-4 leading-7">
+                        <p className="mt-4 max-w-[350px] text-sm font-light leading-7 !text-white">
                             Od ponad 20 lat tworzymy lampy ceramiczne z
                             abażurem. Cały proces produkcyjny od początku do
                             końca odbywa się na terenie Polski. Lampy ceramiczne

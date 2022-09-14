@@ -102,7 +102,7 @@ const ProductionContent = () => {
                 />
             </BasicImage>
             <div className="flex">
-                <div className="w-50% flex-1 mr-5">
+                <div className="w-50% mr-5 flex-1">
                     <BasicImage aspectW={2} aspectH={3}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-formy-zblizenie.jpg"
@@ -113,7 +113,7 @@ const ProductionContent = () => {
                         />
                     </BasicImage>
                 </div>
-                <div className="w-50% flex-1 ml-5">
+                <div className="w-50% ml-5 flex-1">
                     <BasicImage aspectW={2} aspectH={3}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-formy-poziomo-pionowa.jpg"
@@ -166,7 +166,7 @@ const ProductionContent = () => {
                 />
             </BasicImage>
             <div className="flex items-center">
-                <div className="flex-1 mr-20">
+                <div className="mr-20 flex-1">
                     <BasicParagraph>
                         Gotowe szkliwo zostaje następnie nanoszone na model
                         lampy ceramicznej. W przypadku większych elementów,
@@ -236,9 +236,9 @@ const RealizationsContent = () => {
 const ProductionTime = () => {
     return (
         <div className="mt-28">
-            <H2 className="uppercase">Czas realizacji</H2>
+            <H2 className="uppercase">Czas produkcji</H2>
             <div className="flex items-center">
-                <div className="flex-1 mr-20">
+                <div className="mr-20 flex-1">
                     <BasicParagraph>
                         Lampy ceramiczne ELCO produkowane są z największa
                         precyzją i dbałością o szczegóły tak, aby dostarczyć

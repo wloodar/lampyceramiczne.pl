@@ -22,7 +22,7 @@ const Kontakt = () => {
     }
 
     return (
-        <div className="max-w-5xl m-auto flex justify-between">
+        <div className="m-auto flex max-w-5xl justify-between">
             <SEO
                 title="Kontakt ELCO | Polski Producent Lamp Ceramicznych Z Abażurem"
                 description="Kontakt z ELCO - lampyceramiczne.pl | Polski producent lamp ceramicznych z abażurem - ponad 20 lat doświadczenia | Ceramiczne lampy z abażurem. Podłogowe lampy & stołowe lampy ceramiczne."
@@ -33,7 +33,7 @@ const Kontakt = () => {
                         <H3 className="uppercase" tag={'h2'}>
                             Służymy pomocą
                         </H3>
-                        <div className="mb-10 text-stone-500 pt-2">
+                        <div className="mb-10 pt-2 text-stone-500">
                             Skontaktuj się z nami
                         </div>
                         <a
@@ -62,7 +62,7 @@ const Kontakt = () => {
                         </a>
                     </div>
                     <div className="max-w-xs">
-                        <H3 className="uppercase mt-10 mb-8">Twoje lampy</H3>
+                        <H3 className="mt-10 mb-8 uppercase">Twoje lampy</H3>
                         <WishlistProductsList showButton={false} />
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Kontakt = () => {
                     onSubmit={submitContactForm}
                     className="flex flex-col border border-stone-100 p-10"
                 >
-                    <label htmlFor="name" className="text-xs pb-2 font-light">
+                    <label htmlFor="name" className="pb-2 text-xs font-light">
                         Twoje imię
                     </label>
                     <input
@@ -85,7 +85,7 @@ const Kontakt = () => {
                         className={inputClassName}
                     />
 
-                    <label htmlFor="email" className="text-xs pb-2 font-light">
+                    <label htmlFor="email" className="pb-2 text-xs font-light">
                         Adres Email
                     </label>
                     <input
@@ -99,7 +99,7 @@ const Kontakt = () => {
 
                     <label
                         htmlFor="message"
-                        className="text-xs pb-2 font-light"
+                        className="pb-2 text-xs font-light"
                     >
                         Wiadomość
                     </label>
@@ -108,11 +108,11 @@ const Kontakt = () => {
                         name="message"
                         className={clsx(
                             inputClassName,
-                            'resize-none min-h-[200px]',
+                            'min-h-[200px] resize-none',
                         )}
                     ></textarea>
                     {wishlistSlugs.length > 0 ? (
-                        <div className="mb-6 text-neutral-400 text-sm font-light">
+                        <div className="mb-6 text-sm font-light text-neutral-400">
                             * Twoje lampy, które wcześniej zostały przez Ciebie
                             wybrane, zostaną dołączone do wiadomości
                         </div>

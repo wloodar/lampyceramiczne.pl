@@ -39,8 +39,8 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
         <div className="group relative">
             <Link href={`/oferta/${lamp.slug}`} scroll={false} passHref>
                 <a className="">
-                    <div className="peer border-2 border-transparent hover:border-black transition-[border] duration-500 ease-in-out">
-                        <div className="block relative aspect-h-5 aspect-w-3 scale-x-[0.97] scale-y-[0.98] group-hover:scale-100 transition-transform duration-500 ease-in-out">
+                    <div className="peer border-2 border-transparent transition-[border] duration-500 ease-in-out hover:border-black">
+                        <div className="aspect-h-5 aspect-w-3 relative block scale-x-[0.97] scale-y-[0.98] transition-transform duration-500 ease-in-out group-hover:scale-100">
                             <ExporteImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                 alt={`Okładka lampy ${lamp.title}`}
@@ -51,11 +51,11 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                             />
                         </div>
                     </div>
-                    <div className="mt-6 py-5 px-8 box-border bg-neutral-100">
+                    <div className="mt-6 box-border bg-neutral-100 py-5 px-8">
                         <div className="2xl:flex 2xl:items-center">
                             <H4 tag={'h2'}>{lamp.title}</H4>
-                            <div className="flex-nowrap block">
-                                <Button className="whitespace-nowrap mt-4 mb-2 w-full 2xl:mt-0 2xl:mb-0 2xl:w-auto 2xl:ml-8">
+                            <div className="block flex-nowrap">
+                                <Button className="mt-4 mb-2 w-full whitespace-nowrap 2xl:mt-0 2xl:mb-0 2xl:ml-8 2xl:w-auto">
                                     Zobacz teraz
                                 </Button>
                             </div>

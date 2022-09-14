@@ -13,9 +13,9 @@ const Offer: NextPage = () => {
         <div>
             <SEO title="Oferta Lamp Ceramicznych ELCO | Ceramiczne Lampy Z Abażurem" />
             <Grid>
-                <div className="col-span-12 xl:col-span-6 mb-20 flex flex-col">
-                    <div className="bg-stone-100 p-12 2xl:p-16 box-border">
-                        <H2 className="uppercase mb-8 !font-medium tracking-[3px] !text-xl 2xl:!text-2xl">
+                <div className="col-span-12 mb-20 flex flex-col xl:col-span-6">
+                    <div className="box-border bg-stone-100 p-12 2xl:p-16">
+                        <H2 className="mb-8 !text-xl !font-medium uppercase tracking-[3px] 2xl:!text-2xl">
                             Oferta Lamp Ceramicznych ELCO
                         </H2>
                         <Paragraph>
@@ -27,7 +27,7 @@ const Offer: NextPage = () => {
                             eleganckiego elementu wystroju.
                         </Paragraph>
                     </div>
-                    <div className="hidden xl:block h-full bg-neutral-100 mt-8">
+                    <div className="mt-8 hidden h-full bg-neutral-100 xl:block">
                         <div className="relative h-full">
                             <ExportedImage
                                 src={`/img/content/elco-hala-produkcyjna-formy-zblizenie.jpg`}
@@ -36,15 +36,15 @@ const Offer: NextPage = () => {
                                 objectFit="cover"
                                 objectPosition="center"
                             />
-                            <div className="absolute inset-0 bg-[rgba(0,0,0,0.85)] flex items-center justify-center">
+                            <div className="absolute inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.85)]">
                                 <div className="text-center">
-                                    <div className="text-white pb-6 text-2xl">
+                                    <div className="pb-6 text-2xl text-white">
                                         O ELCO
                                     </div>
                                     <ButtonLink
                                         href={`/na-temat-elco`}
                                         type="outline"
-                                        className="!border-white inline-block"
+                                        className="inline-block !border-white"
                                     >
                                         Dowiedz się więcej
                                     </ButtonLink>
@@ -56,7 +56,7 @@ const Offer: NextPage = () => {
                 {allLamps.map(lamp => (
                     <div
                         key={lamp.slug}
-                        className="col-span-12 xl:col-span-6 mb-20"
+                        className="col-span-12 mb-20 xl:col-span-6"
                     >
                         <LampCard lamp={lamp} />
                     </div>

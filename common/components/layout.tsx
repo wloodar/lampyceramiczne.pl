@@ -32,8 +32,8 @@ const Layout = ({ children }: LayoutProps) => {
                         </Link>
                     </div>
                 </header>
-                <div className="w-full flex justify-start content-start items-start flex-[1_1_100%]">
-                    <div className="max-w-[300px] min-w-[230px] flex-[0_0_20%] min-h-[calc(100vh-250px)]">
+                <div className="flex w-full flex-[1_1_100%] content-start items-start justify-start">
+                    <div className="min-h-[calc(100vh-250px)] min-w-[230px] max-w-[300px] flex-[0_0_20%]">
                         <div className="fixed">
                             <div className="flex flex-col">
                                 <Nav />
@@ -63,7 +63,7 @@ const Layout = ({ children }: LayoutProps) => {
                                     </a>
                                 </div>
                                 <div className="mt-14 max-w-[250px]">
-                                    <div className="mb-4 uppercase tracking-[2px] text-sm font-semibold">
+                                    <div className="mb-4 text-sm font-semibold uppercase tracking-[2px]">
                                         Twoja lista
                                     </div>
                                     <WishlistProductsList />
@@ -74,15 +74,17 @@ const Layout = ({ children }: LayoutProps) => {
                     <div className="w-[80%] flex-1">
                         {/* <main className="max-w-full w-[82%] pl-12"> */}
                         <main className="w-full pl-12">{children}</main>
-                        <footer className="ml-12 -mr-[64px] -mb-[54px] h-[400px] relative pt-10 mt-24">
-                            <div className="bg-[#101010] h-full flex justify-between items-center pt-16">
-                                <div className="max-w-[550px] w-full">
-                                    <div className="absolute top-0 left-16 max-w-xl w-full flex items-end">
+                        <footer className="relative ml-12 -mr-[64px] -mb-[54px] mt-24 h-[400px] pt-10">
+                            <div className="flex h-full items-center justify-between bg-[#101010] pt-16">
+                                <div className="w-full max-w-[550px]">
+                                    <div className="absolute top-0 left-16 flex w-full max-w-xl items-end">
                                         <ExportedImage
                                             src="/img/instagram-creators/w_moim_malutkim_domu-bedroom.jpg"
                                             width={1080}
                                             height={892}
                                             layout="intrinsic"
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
                                         />
                                         <div className="ml-14">
                                             {MENU_LINKS.map(linkItem => (
@@ -91,7 +93,7 @@ const Layout = ({ children }: LayoutProps) => {
                                                     href={linkItem.href}
                                                     scroll={false}
                                                 >
-                                                    <a className="text-white text-sm font-light flex items-center whitespace-nowrap mt-6 hover:text-stone-200">
+                                                    <a className="mt-6 flex items-center whitespace-nowrap text-sm font-light text-white hover:text-stone-200">
                                                         {linkItem.label}
                                                     </a>
                                                 </Link>
@@ -99,33 +101,33 @@ const Layout = ({ children }: LayoutProps) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="max-w-[450px] w-full">
+                                <div className="w-full max-w-[450px]">
                                     <div className="flex items-center">
                                         <Link href={`/`} title="Wstęp ELCO">
                                             <a className="text-5xl font-medium tracking-[5px] text-white">
                                                 ELCO
                                             </a>
                                         </Link>
-                                        <span className="text-stone-300 font-light leading-5 text-sm ml-5">
+                                        <span className="ml-5 text-sm font-light leading-5 text-stone-300">
                                             <span className="block">
                                                 Klasyczne
                                             </span>
                                             <span>Lampy Ceramiczne</span>
                                         </span>
                                     </div>
-                                    <div className="flex items-center mt-6">
+                                    <div className="mt-6 flex items-center">
                                         <a
                                             href="https://www.instagram.com/elco_lampy_ceramiczne/"
                                             title="Instagram ELCO Lampy Ceramiczne"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mr-8 flex items-center group"
+                                            className="group mr-8 flex items-center"
                                         >
                                             <Icon
                                                 name="instagram"
                                                 className="w-[28px] fill-white group-hover:fill-stone-300"
                                             />
-                                            <span className="text-white pl-2 text-xs group-hover:text-stone-300">
+                                            <span className="pl-2 text-xs text-white group-hover:text-stone-300">
                                                 Instagram
                                             </span>
                                         </a>
@@ -140,15 +142,15 @@ const Layout = ({ children }: LayoutProps) => {
                                                 name="facebook"
                                                 className="fill-white group-hover:fill-stone-300"
                                             />
-                                            <span className="text-white pl-2 text-xs group-hover:text-stone-300">
+                                            <span className="pl-2 text-xs text-white group-hover:text-stone-300">
                                                 Facebook
                                             </span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-[#101010] flex justify-between pl-16 pt-4 pb-14">
-                                <div className="text-stone-200 text-sm">
+                            <div className="flex justify-between bg-[#101010] pl-16 pt-4 pb-14">
+                                <div className="text-sm text-stone-200">
                                     <span>
                                         tel:{' '}
                                         <a
@@ -170,7 +172,7 @@ const Layout = ({ children }: LayoutProps) => {
                                         </a>
                                     </span>
                                 </div>
-                                <div className="text-stone-200 text-xs max-w-[450px] w-full text-left">
+                                <div className="w-full max-w-[450px] text-left text-xs text-stone-200">
                                     <span>
                                         Copyright © 2022 ELCO. All Rights
                                         Reserved.

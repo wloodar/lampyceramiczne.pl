@@ -41,12 +41,12 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
             )}
         >
             <div className="w-[30%] border-l border-stone-200">
-                <div className="h-full flex items-center justify-center flex-col px-14 box-border text-center">
-                    <span className="font-normal text-lg">
+                <div className="box-border flex h-full flex-col items-center justify-center px-14 text-center">
+                    <span className="text-lg font-normal">
                         Ostatnio widzane
                     </span>
-                    <span className="w-14 h-[1px] bg-stone-300 my-2"></span>
-                    <span className="text-xs font-light text-neutral-400 max-w-[200px]">
+                    <span className="my-2 h-[1px] w-14 bg-stone-300"></span>
+                    <span className="max-w-[200px] text-xs font-light text-neutral-400">
                         Lampy, które niedawno były przez Ciebie oglądane
                     </span>
                 </div>
@@ -70,7 +70,7 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                         scroll={false}
                         passHref
                     >
-                        <div className="border-l border-stone-200 relative pt-10 cursor-pointer group">
+                        <div className="group relative cursor-pointer border-l border-stone-200 pt-10">
                             <ExportedImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                 layout="fill"
@@ -78,7 +78,7 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                                 className="transition-[transform] duration-500 group-hover:scale-125"
                             />
                             <div className="absolute inset-0 bg-black/70 backdrop-blur-lg transition-[background] duration-500 group-hover:bg-black/90"></div>
-                            <div className="h-[300px] block relative mb-10">
+                            <div className="relative mb-10 block h-[300px]">
                                 <ExportedImage
                                     src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                     layout="fill"
@@ -86,11 +86,11 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                                     className="transition-[transform] duration-500 group-hover:scale-110"
                                 />
                             </div>
-                            <div className="relative py-4 px-5 font-light text-sm flex justify-between items-center bg-white">
-                                <span className="text-black text-sm leading-6 group-hover:underline font-normal">
+                            <div className="relative flex items-center justify-between bg-white py-4 px-5 text-sm font-light">
+                                <span className="text-sm font-normal leading-6 text-black group-hover:underline">
                                     {lamp.title}
                                 </span>
-                                <Button className="block m-auto text-xs ml-5 mr-0">
+                                <Button className="m-auto ml-5 mr-0 block text-xs">
                                     Zobacz
                                 </Button>
                             </div>

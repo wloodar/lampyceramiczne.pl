@@ -10,6 +10,7 @@ import {
     RealizationsContent,
     ProductionTime,
 } from 'common/components/sections/aboutSections'
+import { RecentlyViewed } from 'common/components/recentlyViewed'
 
 const aboutSections: Array<AboutSectionItem> = [
     { title: 'Wstęp', href: 'intro', content: <IntroContent /> },
@@ -108,8 +109,11 @@ const SectionsMenu = ({
                 >
                     <button
                         className={clsx(
-                            'block w-full text-left text-sm pl-3 pt-12 pb-6 hover:bg-neutral-50',
-                            { 'text-black': activeCharacter === section.href },
+                            'block w-full pl-3 pt-12 pb-6 text-left text-sm hover:bg-neutral-50',
+                            {
+                                'bg-neutral-50 text-black':
+                                    activeCharacter === section.href,
+                            },
                         )}
                         onClick={() => handleMenuClick(section.href)}
                     >
@@ -163,14 +167,14 @@ const NaTematElco = () => {
     }
 
     return (
-        <div className="max-w-[1500px] m-auto pb-14">
+        <div className="m-auto max-w-[1500px]">
             <H1 className="uppercase">Na temat ELCO</H1>
-            <Paragraph className="max-w-[500px] mt-6">
+            <Paragraph className="mt-6 max-w-[500px]">
                 Poznaj naszą wizję i dowiedz się więcej na temat tego czym się
                 zajmujemy i naszej pracy przy produkcji lamp ceramicznych ELCO.
             </Paragraph>
             <div className="flex">
-                <div className="flex-1 max-w-[1000px]">
+                <div className="max-w-[1000px] flex-1">
                     {pageHeight > 0
                         ? aboutSections.map(section => (
                               <AboutSection
@@ -192,6 +196,9 @@ const NaTematElco = () => {
                         handleMenuClick={handleMenuClick}
                     />
                 </div>
+            </div>
+            <div className="mt-24">
+                <RecentlyViewed />
             </div>
         </div>
     )

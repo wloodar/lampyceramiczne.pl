@@ -17,7 +17,7 @@ const WishlistItem = ({
     removeProduct: (slug: string) => void
 }) => {
     return (
-        <div className="flex items-center mb-4">
+        <div className="mb-4 flex items-center">
             <div className="cursor-pointer">
                 <Link href={`/oferta/${slug}`} scroll={false} passHref>
                     <ExportedImage
@@ -31,20 +31,20 @@ const WishlistItem = ({
                 </Link>
             </div>
             <div className="flex-1 pl-4">
-                <h5 className="text-xs cursor-pointer hover:underline">
+                <h5 className="cursor-pointer text-xs hover:underline">
                     <Link href={`/oferta/${slug}`} scroll={false}>
                         {title}
                     </Link>
                 </h5>
                 <button
                     onClick={() => removeProduct(slug)}
-                    className="mt-1 text-[0.65rem] flex items-center group"
+                    className="group mt-1 flex items-center text-[0.65rem]"
                 >
                     <Icon
                         name="x"
-                        className="w-[14px] h-auto stroke-slate-500 group-hover:stroke-red-600"
+                        className="h-auto w-[14px] stroke-slate-500 group-hover:stroke-red-600"
                     />
-                    <span className="!no-underline text-slate-500 group-hover:text-red-600">
+                    <span className="text-slate-500 !no-underline group-hover:text-red-600">
                         Usuń
                     </span>
                 </button>
@@ -122,7 +122,7 @@ const WishlistProductsList = ({
             </div>
             {showButton ? (
                 <div
-                    className={clsx('hidden mt-8 w-full', {
+                    className={clsx('mt-8 hidden w-full', {
                         '!block': slugs.length > 0,
                     })}
                 >
