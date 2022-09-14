@@ -53,7 +53,11 @@ const WishlistItem = ({
     )
 }
 
-const WishlistProductsList = () => {
+const WishlistProductsList = ({
+    showButton = true,
+}: {
+    showButton?: boolean
+}) => {
     const { slugs, removeProduct } = useWishlistStore()
     const lamps = allLamps.filter(lamp => slugs.includes(lamp.slug))
 
@@ -116,13 +120,15 @@ const WishlistProductsList = () => {
                     )}
                 </AnimatePresence>
             </div>
-            <div
-                className={clsx('hidden mt-8 w-full', {
-                    '!block': slugs.length > 0,
-                })}
-            >
-                <ButtonLink href={`/kontakt`}>Zapytaj o lampy</ButtonLink>
-            </div>
+            {showButton ? (
+                <div
+                    className={clsx('hidden mt-8 w-full', {
+                        '!block': slugs.length > 0,
+                    })}
+                >
+                    <ButtonLink href={`/kontakt`}>Zapytaj o lampy</ButtonLink>
+                </div>
+            ) : null}
         </>
     )
 }

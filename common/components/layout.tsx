@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="flex flex-col justify-start p-[54px_64px]">
                 <header className="mb-14 flex-[0_0_80px]">
                     <div className="fixed w-full">
-                        <Link href="/" passHref>
+                        <Link href="/" scroll={false}>
                             <a className="text-5xl font-semibold tracking-[10px]">
                                 ELCO
                             </a>
@@ -47,7 +47,7 @@ const Layout = ({ children }: LayoutProps) => {
                                     >
                                         <Icon
                                             name="instagram"
-                                            className="w-[28px] hover:fill-slate-700"
+                                            className="w-[25px] hover:fill-slate-700"
                                         />
                                     </a>
                                     <a
@@ -58,12 +58,12 @@ const Layout = ({ children }: LayoutProps) => {
                                     >
                                         <Icon
                                             name="facebook"
-                                            className="hover:fill-slate-700"
+                                            className="w-[20px] hover:fill-slate-700"
                                         />
                                     </a>
                                 </div>
                                 <div className="mt-14 max-w-[250px]">
-                                    <div className="mb-4 uppercase tracking-[3px] text-sm font-semibold">
+                                    <div className="mb-4 uppercase tracking-[2px] text-sm font-semibold">
                                         Twoja lista
                                     </div>
                                     <WishlistProductsList />
@@ -89,6 +89,7 @@ const Layout = ({ children }: LayoutProps) => {
                                                 <Link
                                                     key={linkItem.href}
                                                     href={linkItem.href}
+                                                    scroll={false}
                                                 >
                                                     <a className="text-white text-sm font-light flex items-center whitespace-nowrap mt-6 hover:text-stone-200">
                                                         {linkItem.label}
@@ -154,7 +155,9 @@ const Layout = ({ children }: LayoutProps) => {
                                             href="tel:+48 572 906 548"
                                             className="hover:text-stone-300"
                                         >
-                                            +48 572 906 548
+                                            <span className="text-[.8rem]">
+                                                +48 572 906 548
+                                            </span>
                                         </a>
                                     </span>
                                     <span className="pl-10">

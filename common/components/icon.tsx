@@ -4,6 +4,9 @@ import Send from './icons/send'
 import Heart from './icons/heart'
 import Facebook from './icons/facebook'
 import Instagram from './icons/instagram'
+import ArrowUpRight from './icons/arrowUpRight'
+import Mail from './icons/mail'
+import Smartphone from './icons/smartphone'
 
 interface Icon {
     name: string
@@ -28,6 +31,12 @@ const Icon = ({
             return <Facebook className={className} />
         case 'instagram':
             return <Instagram className={className} />
+        case 'arrowUpRight':
+            return <ArrowUpRight className={className} />
+        case 'mail':
+            return <Mail className={className} />
+        case 'smartphone':
+            return <Smartphone className={className} />
         default:
             return <></>
     }
