@@ -98,7 +98,7 @@ const SectionsMenu = ({
     handleMenuClick: (sectionHref: string) => void
 }) => {
     return (
-        <ul className="sticky top-20">
+        <ul>
             {sections.map(section => (
                 <li
                     id={section.href}
@@ -196,11 +196,16 @@ const NaTematElco = () => {
                         : null}
                 </div>
                 <div className="ml-auto w-[250px]">
-                    <SectionsMenu
-                        sections={aboutSections}
-                        activeCharacter={activeCharacter}
-                        handleMenuClick={handleMenuClick}
-                    />
+                    <div className="sticky top-20">
+                        <div className="pb-6 text-xs font-medium uppercase">
+                            About navigation
+                        </div>
+                        <SectionsMenu
+                            sections={aboutSections}
+                            activeCharacter={activeCharacter}
+                            handleMenuClick={handleMenuClick}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="mt-24">
