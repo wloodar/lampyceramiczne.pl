@@ -3,6 +3,25 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import { Paragraph } from '../typography'
 import { H2 } from 'common/components/typography'
+import clsx from 'clsx'
+
+const aspectRatioWidth = {
+    1: 'aspect-w-1',
+    2: 'aspect-w-2',
+    3: 'aspect-w-3',
+    4: 'aspect-w-4',
+    5: 'aspect-w-5',
+    6: 'aspect-w-6',
+}
+
+const aspectRatioHeight = {
+    1: 'aspect-h-1',
+    2: 'aspect-h-2',
+    3: 'aspect-h-3',
+    4: 'aspect-h-4',
+    5: 'aspect-h-5',
+    6: 'aspect-h-6',
+}
 
 const BasicParagraph = ({ children }: { children: React.ReactNode }) => (
     <Paragraph className="mt-10">{children}</Paragraph>
@@ -13,18 +32,20 @@ const BasicImage = ({
     aspectH = 2,
     children,
 }: {
-    aspectW?: number | string
-    aspectH?: number | string
+    aspectW?: 1 | 2 | 3 | 4 | 5 | 6
+    aspectH?: 1 | 2 | 3 | 4 | 5 | 6
     children: React.ReactNode
-}) => (
-    <Zoom zoomMargin={100}>
-        <div
-            className={`aspect-w-${aspectW} aspect-h-${aspectH} relative mt-10`}
-        >
-            {children}
-        </div>
-    </Zoom>
-)
+}) => {
+    const imageContainerClassName = `${aspectRatioWidth[aspectW]} ${aspectRatioHeight[aspectH]} relative mt-10`
+
+    console.log(imageContainerClassName)
+
+    return (
+        <Zoom zoomMargin={100}>
+            <div className={imageContainerClassName}>{children}</div>
+        </Zoom>
+    )
+}
 
 const IntroContent = () => {
     return (

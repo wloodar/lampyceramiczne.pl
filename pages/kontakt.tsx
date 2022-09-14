@@ -73,7 +73,7 @@ const Kontakt = () => {
                     onSubmit={submitContactForm}
                     className="flex flex-col border border-stone-100 p-10"
                 >
-                    <label htmlFor="name" className="pb-2 text-xs font-light">
+                    <label htmlFor="name" className="pb-2 text-xs font-medium">
                         Twoje imię
                     </label>
                     <input
@@ -85,7 +85,7 @@ const Kontakt = () => {
                         className={inputClassName}
                     />
 
-                    <label htmlFor="email" className="pb-2 text-xs font-light">
+                    <label htmlFor="email" className="pb-2 text-xs font-medium">
                         Adres Email
                     </label>
                     <input
@@ -99,7 +99,7 @@ const Kontakt = () => {
 
                     <label
                         htmlFor="message"
-                        className="pb-2 text-xs font-light"
+                        className="pb-2 text-xs font-medium"
                     >
                         Wiadomość
                     </label>

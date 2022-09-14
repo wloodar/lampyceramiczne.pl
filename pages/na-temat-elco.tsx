@@ -11,6 +11,7 @@ import {
     ProductionTime,
 } from 'common/components/sections/aboutSections'
 import { RecentlyViewed } from 'common/components/recentlyViewed'
+import SEO from 'common/components/seo'
 
 const aboutSections: Array<AboutSectionItem> = [
     { title: 'Wstęp', href: 'intro', content: <IntroContent /> },
@@ -160,6 +161,7 @@ const NaTematElco = () => {
         }
 
         window.scrollTo({
+            // @ts-ignore
             top: refs[sectionHref]!.current.offsetTop - pageHeight / 5,
             behavior: 'smooth',
         })
@@ -168,6 +170,10 @@ const NaTematElco = () => {
 
     return (
         <div className="m-auto max-w-[1500px]">
+            <SEO
+                title="Na Temat ELCO | Polski Producent Lamp Ceramicznych Z Abażurem"
+                description="Na temat ELCO - lampyceramiczne.pl | Polski producent lamp ceramicznych z abażurem - ponad 20 lat doświadczenia | Ceramiczne lampy z abażurem. Podłogowe lampy & stołowe lampy ceramiczne."
+            />
             <H1 className="uppercase">Na temat ELCO</H1>
             <Paragraph className="mt-6 max-w-[500px]">
                 Poznaj naszą wizję i dowiedz się więcej na temat tego czym się
