@@ -4,6 +4,7 @@ import { AnchorOrLink } from '../utils/general'
 
 interface ButtonProps {
     styleType?: 'primary' | 'secondary' | 'outline' | 'bs-outline'
+    color?: 'dark' | 'bright'
     children: React.ReactNode
     className?: string
 }
@@ -37,7 +38,7 @@ const ButtonLink = React.forwardRef<
         ButtonProps &
         ButtonLinkProps
 >(function ButtonLink(
-    { children, href, type = 'primary', className, ...rest },
+    { children, href, type = 'primary', color = 'dark', className, ...rest },
     ref,
 ) {
     return (
@@ -46,11 +47,17 @@ const ButtonLink = React.forwardRef<
             href={href}
             className={clsx(
                 className,
-                'cursor-pointer rounded-sm bg-black py-4 px-12 text-xs font-medium uppercase tracking-[1px] text-white hover:bg-neutral-800',
+                'cursor-pointer rounded-sm  py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
                 {
+                    'bg-black text-white hover:bg-neutral-800':
+                        type === 'primary',
                     'border-2 border-black bg-transparent': type === 'outline',
-                    'border border-stone-200 bg-transparent !text-black hover:border-stone-400 hover:bg-transparent':
+                    'border border-stone-200 bg-transparent hover:border-stone-400':
                         type === 'bs-outline',
+                    'text-white  hover:text-neutral-300':
+                        type === 'bs-outline' && color === 'bright',
+                    'text-black hover:border-stone-400 hover:bg-transparent':
+                        type === 'bs-outline' && color === 'dark',
                 },
             )}
             {...rest}

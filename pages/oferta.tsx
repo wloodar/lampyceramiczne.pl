@@ -43,8 +43,8 @@ const Offer: NextPage = () => {
                                     </div>
                                     <ButtonLink
                                         href={`/na-temat-elco`}
-                                        type="outline"
-                                        className="inline-block !border-white"
+                                        type="bs-outline"
+                                        color="bright"
                                     >
                                         Dowiedz się więcej
                                     </ButtonLink>

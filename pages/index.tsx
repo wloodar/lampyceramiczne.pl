@@ -41,8 +41,8 @@ const Home: NextPage = () => {
                         className="opacity-90"
                     />
                     <div className="absolute left-0 bottom-0 box-border max-w-3xl bg-[#141414] pt-32 pb-10 pl-28">
-                        <H1 className="text-7xl text-white">
-                            <span className="block uppercase">
+                        <H1 className="!text-7xl">
+                            <span className="block text-7xl uppercase text-white">
                                 ELCO Lampy Ceramiczne
                             </span>
                             <span className="mt-4 block max-w-lg text-base font-light leading-9 text-neutral-300">
@@ -60,7 +60,8 @@ const Home: NextPage = () => {
                         <ButtonLink
                             href={`/na-temat-elco`}
                             type="bs-outline"
-                            className="mt-6 ml-6 inline-block !text-white hover:!text-stone-200"
+                            color="bright"
+                            className="mt-6 ml-6 inline-block"
                         >
                             Skontaktuj się
                         </ButtonLink>
