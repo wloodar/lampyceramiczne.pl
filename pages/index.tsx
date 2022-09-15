@@ -28,25 +28,28 @@ const instagramPosts: Array<{ author: string; url: string; imgPath: string }> =
 
 const Home: NextPage = () => {
     return (
-        <div className="-mt-[200px]">
+        <div className="lg:-mt-[200px]">
             <SEO />
-            <div className="aspect-w-4 aspect-h-2 relative -mr-[64px]">
-                <div className="h-full w-full bg-black">
-                    <ExportedImage
-                        src="/img/instagram-creators/elco-lampy-ceramiczne-szyszka-homewithbluedoor.jpg"
-                        alt="Lampa Ceramiczne ELCO Szyszka we wnętrzu Homewithbluedoor"
-                        layout={'fill'}
-                        objectFit="cover"
-                        objectPosition="center"
-                        className="opacity-90"
-                        priority={true}
-                    />
-                    <div className="absolute left-0 bottom-0 box-border max-w-3xl bg-[#141414] pt-32 pb-10 pl-28">
-                        <H1 className="!text-7xl">
-                            <span className="block text-7xl uppercase text-white">
+            <div className="relative lg:-mr-[64px] 2xl:aspect-w-4 2xl:aspect-h-2">
+                <div className="h-full w-full 2xl:bg-black">
+                    <div className="absolute inset-0 -z-10 h-full w-full 2xl:z-0">
+                        <ExportedImage
+                            // src="/img/instagram-creators/elco-lampy-ceramiczne-szyszka-homewithbluedoor.jpg"
+                            src="/img/content/lampa-stolowa-ceramiczna-elco-3003.jpg"
+                            alt="Lampa Ceramiczne ELCO Szyszka we wnętrzu Homewithbluedoor"
+                            layout={'fill'}
+                            objectFit="cover"
+                            objectPosition="center"
+                            className="opacity-90"
+                            priority={true}
+                        />
+                    </div>
+                    <div className="container-padding inset-0 box-border bg-[#141414] bg-opacity-80 pt-32 pb-10 2xl:absolute 2xl:top-auto 2xl:max-w-3xl 2xl:bg-opacity-100 2xl:pl-28 2xl:pr-0">
+                        <H1 className="2xl:!text-7xl">
+                            <span className="block uppercase text-white 2xl:text-7xl">
                                 ELCO Lampy Ceramiczne
                             </span>
-                            <span className="mt-4 block max-w-lg text-base font-light leading-9 text-neutral-300">
+                            <span className="mt-4 block max-w-lg text-sm font-light leading-7 text-neutral-300 sm:leading-9 2xl:text-base">
                                 Ponad 20 lat doświadczenia. Lampy ceramiczne
                                 wykonane w Polsce. Indywidualne podejście do
                                 każdego zamówienia.
@@ -54,24 +57,24 @@ const Home: NextPage = () => {
                         </H1>
                         <ButtonLink
                             href={`/oferta`}
-                            className="border border-black hover:border-neutral-800"
+                            className="mt-7 block border border-white bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200 sm:mt-0 sm:inline-block sm:text-left"
                         >
                             Zobacz ofertę
                         </ButtonLink>
                         <ButtonLink
-                            href={`/na-temat-elco`}
+                            href={`/kontakt`}
                             type="bs-outline"
                             color="bright"
-                            className="mt-6 ml-6 inline-block"
+                            className="mt-6 block text-center sm:ml-6 sm:inline-block sm:text-left"
                         >
                             Skontaktuj się
                         </ButtonLink>
                     </div>
                 </div>
             </div>
-            <div className="-mr-[64px] h-[100px] bg-[#141414]"></div>
+            <div className="-mr-[64px] hidden h-[100px] bg-[#141414] 2xl:block"></div>
 
-            <div className="m-auto mt-16 mt-32 max-w-[1500px]">
+            <div className="wl-container m-auto mt-14 md:mt-32">
                 <div className="text-center">
                     <H3 className="uppercase">ELCO na instagramie</H3>
                     <a
@@ -83,9 +86,12 @@ const Home: NextPage = () => {
                         @elco_lampy_ceramiczne
                     </a>
                 </div>
-                <div className="mt-20 grid grid-cols-12 gap-x-10">
+                <div className="mt-12 md:mt-20 md:grid md:grid-cols-12 md:gap-x-10">
                     {instagramPosts.map(post => (
-                        <div key={post.url} className="col-span-4">
+                        <div
+                            key={post.url}
+                            className="mb-12 md:col-span-4 md:mb-0"
+                        >
                             <div className="aspect-w-2 aspect-h-2 relative">
                                 <a
                                     href={post.url}
@@ -115,7 +121,7 @@ const Home: NextPage = () => {
                 </div>
             </div>
 
-            <div className="m-auto mt-24 mb-16 max-w-[1500px]">
+            <div className="wl-container m-auto mt-24 mb-16">
                 <H3 className="text-base uppercase">Pare słów o nas</H3>
                 <Paragraph className="mt-8 !text-sm !leading-6">
                     ELCO jest{' '}

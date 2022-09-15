@@ -34,15 +34,6 @@ const MENU_LINKS = [
         label: (
             <>
                 <span className="mr-2 text-[10px] text-[#717171]">IV</span>{' '}
-                Współpraca
-            </>
-        ),
-        href: '/wspolpraca',
-    },
-    {
-        label: (
-            <>
-                <span className="mr-2 text-[10px] text-[#717171]">V</span>{' '}
                 Kontakt
             </>
         ),

@@ -25,10 +25,14 @@ a {
 
 @layer components {
     .wl-container {
-        @apply max-w-[1450px] m-auto px-[25px] md:px-[50px];
+        @apply m-auto max-w-[1500px] px-[25px] md:px-[50px];
+    }
+
+    .container-padding {
+        @apply px-[25px] md:px-[50px];
     }
 
     .border-hover {
-        @apply border-b-2 border-b-transparent relative pb-2 before:absolute before:h-[2px] before:bg-white before:bottom-[-2px] before:left-0 before:right-0 before:w-0 before:transition-[width] before:duration-300 before:ease-in-out hover:before:w-full;
+        @apply relative border-b-2 border-b-transparent pb-2 before:absolute before:bottom-[-2px] before:left-0 before:right-0 before:h-[2px] before:w-0 before:bg-white before:transition-[width] before:duration-300 before:ease-in-out hover:before:w-full;
     }
 }
