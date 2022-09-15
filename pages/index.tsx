@@ -57,7 +57,8 @@ const Home: NextPage = () => {
                         </H1>
                         <ButtonLink
                             href={`/oferta`}
-                            className="mt-7 block border border-white bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200 sm:mt-0 sm:inline-block sm:text-left"
+                            color={'bright'}
+                            className="mt-7 block border sm:mt-0 sm:inline-block sm:text-left"
                         >
                             Zobacz ofertę
                         </ButtonLink>

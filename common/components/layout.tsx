@@ -130,10 +130,10 @@ const Layout = ({ children }: LayoutProps) => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-[82px] lg:mt-0 lg:w-[80%] lg:flex-1">
+                    <div className="mt-[79px] lg:mt-0 lg:w-[80%] lg:flex-1">
                         {/* <main className="max-w-full w-[82%] pl-12"> */}
                         <main className="w-full lg:pl-12">{children}</main>
-                        <footer className="relative mt-24 pt-10 lg:ml-12 lg:-mr-[64px] lg:-mb-[54px] 2xl:h-[400px]">
+                        <footer className="relative mt-16 pt-10 lg:mt-24 lg:ml-12 lg:-mr-[64px] lg:-mb-[54px] 2xl:h-[400px]">
                             <div className="container-padding bg-[#101010] pt-16 2xl:flex 2xl:h-full 2xl:items-center 2xl:justify-between 2xl:p-0">
                                 <div className="m-auto -mt-[100px] w-full max-w-[550px] 2xl:m-0">
                                     <div className="flex w-full max-w-xl items-end 2xl:absolute 2xl:top-0 2xl:left-16">

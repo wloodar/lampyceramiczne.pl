@@ -15,7 +15,7 @@ const inputClassName =
     'bg-neutral-100 py-4 px-6 outline-none mb-6 text-black text-sm border-2 border-transparent transition-[border] duration-300 ease-in-out focus:border-black active:border-black'
 
 const contactItemClassName =
-    'mr-8 flex items-center group border border-neutral-100 flex items-center py-4 px-5 hover:border-neutral-200 text-sm font-normal mb-6 w-full'
+    'mr-8 flex items-center group border border-neutral-100 flex items-center py-4 px-5 hover:border-neutral-200 text-sm font-medium mb-6 w-full'
 
 const formAnimationVariants = {
     initial: {
@@ -102,14 +102,14 @@ const Kontakt = () => {
     }
 
     return (
-        <div className="m-auto flex max-w-5xl justify-between">
+        <div className="container-padding m-auto max-w-5xl justify-between pt-16 lg:flex lg:p-0">
             <SEO
                 title="Kontakt ELCO | Polski Producent Lamp Ceramicznych Z Abażurem"
                 description="Kontakt z ELCO - lampyceramiczne.pl | Polski producent lamp ceramicznych z abażurem - ponad 20 lat doświadczenia | Ceramiczne lampy z abażurem. Podłogowe lampy & stołowe lampy ceramiczne."
             />
             <div className="flex-1">
-                <div className="sticky top-16">
-                    <div className="max-w-sm">
+                <div className="top-16 lg:sticky">
+                    <div className="m-auto max-w-md lg:m-0 lg:max-w-xs xl:max-w-sm">
                         <H3 className="uppercase" tag={'h2'}>
                             Służymy pomocą
                         </H3>
@@ -141,13 +141,13 @@ const Kontakt = () => {
                             Instagram
                         </a>
                     </div>
-                    <div className="max-w-xs">
+                    <div className="m-auto max-w-md lg:m-0 lg:max-w-xs">
                         <H3 className="mt-10 mb-8 uppercase">Twoje lampy</H3>
                         <WishlistProductsList showButton={false} />
                     </div>
                 </div>
             </div>
-            <div className="relative w-[450px]">
+            <div className="relative m-auto mt-12 w-full max-w-md lg:m-0 lg:w-[370px] xl:w-[450px]">
                 {isSubmitting && (
                     <div className="absolute top-1/2 left-0 right-0 text-center font-medium">
                         Wysyłamy Twoją wiadomość
@@ -155,7 +155,7 @@ const Kontakt = () => {
                 )}
                 <div
                     className={clsx(
-                        'border border-stone-100 p-10 transition-[height] duration-500 ease-in-out',
+                        'border border-stone-100 py-8 px-4 transition-[height] duration-500 ease-in-out sm:p-10 lg:p-4 xl:p-10',
                         {
                             'border-red-200': submitError !== null,
                         },

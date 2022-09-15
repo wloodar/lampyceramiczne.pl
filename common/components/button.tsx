@@ -47,10 +47,12 @@ const ButtonLink = React.forwardRef<
             href={href}
             className={clsx(
                 className,
-                'cursor-pointer rounded-sm  py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
+                'cursor-pointer rounded-sm py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
                 {
                     'bg-black text-white hover:bg-neutral-800':
-                        type === 'primary',
+                        type === 'primary' && color === 'dark',
+                    'bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200':
+                        type === 'primary' && color === 'bright',
                     'border-2 border-black bg-transparent': type === 'outline',
                     'border border-stone-200 bg-transparent hover:border-stone-400':
                         type === 'bs-outline',
