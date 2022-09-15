@@ -83,9 +83,9 @@ const WishlistProductsList = ({
                                 },
                             }}
                         >
-                            <Paragraph>
+                            <Paragraph className="text-sm">
                                 Na ten moment nie posiadasz na swojej liście
-                                jakiejkolwiek lampy.
+                                żadnej lampy.
                             </Paragraph>
                         </motion.div>
                     ) : (

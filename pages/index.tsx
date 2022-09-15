@@ -39,6 +39,7 @@ const Home: NextPage = () => {
                         objectFit="cover"
                         objectPosition="center"
                         className="opacity-90"
+                        priority={true}
                     />
                     <div className="absolute left-0 bottom-0 box-border max-w-3xl bg-[#141414] pt-32 pb-10 pl-28">
                         <H1 className="!text-7xl">
