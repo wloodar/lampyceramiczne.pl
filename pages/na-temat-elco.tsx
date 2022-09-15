@@ -117,7 +117,7 @@ const SectionsMenu = ({
                         )}
                         onClick={() => handleMenuClick(section.href)}
                     >
-                        . {section.title}
+                        - {section.title}
                     </button>
                 </li>
             ))}
