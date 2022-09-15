@@ -37,10 +37,10 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
         <div
             className={clsx(
                 className,
-                'flex border-y border-r border-stone-200',
+                'border-y border-r border-stone-200 2xl:flex',
             )}
         >
-            <div className="w-[30%] border-l border-stone-200">
+            <div className="border-l border-stone-200 p-8 2xl:w-[30%] 2xl:p-0">
                 <div className="box-border flex h-full flex-col items-center justify-center px-14 text-center">
                     <span className="text-lg font-normal">
                         Ostatnio widzane
@@ -53,7 +53,7 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
             </div>
             {/* <div className="!grid grid-cols-12"> */}
             <Slider
-                className="w-[70%]"
+                className="2xl:w-[70%]"
                 dots={true}
                 infinite={true}
                 speed={500}
@@ -61,6 +61,16 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                 slidesToScroll={2}
                 adaptiveHeight={true}
                 arrows={true}
+                responsive={[
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false,
+                        },
+                    },
+                ]}
                 nextArrow={<div className="text-red">{'>'}</div>}
             >
                 {recentlyViewedLamps.map(lamp => (
@@ -70,24 +80,28 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                         scroll={false}
                         passHref
                     >
-                        <div className="group relative cursor-pointer border-l border-stone-200 pt-10">
-                            <ExportedImage
-                                src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
-                                layout="fill"
-                                objectFit="cover"
-                                className="transition-[transform] duration-500 group-hover:scale-125"
-                            />
-                            <div className="absolute inset-0 bg-black/70 backdrop-blur-lg transition-[background] duration-500 group-hover:bg-black/90"></div>
-                            <div className="relative mb-10 block h-[300px]">
+                        <div className="group relative cursor-pointer border-l border-stone-200">
+                            <div className="relative h-full pt-10 pb-10">
                                 <ExportedImage
                                     src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                     layout="fill"
-                                    objectFit="contain"
-                                    className="transition-[transform] duration-500 group-hover:scale-110"
+                                    objectFit="cover"
+                                    className="transition-[transform] duration-500 lg:group-hover:scale-125"
                                 />
+                                <div className="absolute inset-0 bg-black/70 backdrop-blur-lg lg:transition-[background] lg:duration-500 lg:group-hover:bg-black/90"></div>
+                                <div>
+                                    <div className="relative z-10 block h-[300px]">
+                                        <ExportedImage
+                                            src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
+                                            layout="fill"
+                                            objectFit="contain"
+                                            className="transition-[transform] duration-500 lg:group-hover:scale-110"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div className="relative flex items-center justify-between bg-white py-4 px-5 text-sm font-light">
-                                <span className="text-sm font-normal leading-6 text-black group-hover:underline">
+                                <span className="text-sm font-normal leading-6 text-black lg:group-hover:underline">
                                     {lamp.title}
                                 </span>
                                 <Button className="m-auto ml-5 mr-0 block text-xs">

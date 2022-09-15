@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ExporteImage from 'next-image-export-optimizer'
+import ExportedImage from 'next-image-export-optimizer'
 import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import Icon from './icon'
 
@@ -39,9 +39,9 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
         <div className="group relative">
             <Link href={`/oferta/${lamp.slug}`} scroll={false} passHref>
                 <a className="">
-                    <div className="peer border-2 border-transparent transition-[border] duration-500 ease-in-out hover:border-black">
-                        <div className="aspect-h-5 aspect-w-3 relative block scale-x-[0.97] scale-y-[0.98] transition-transform duration-500 ease-in-out group-hover:scale-100">
-                            <ExporteImage
+                    <div className="peer lg:border-2 lg:border-transparent lg:transition-[border] lg:duration-500 lg:ease-in-out lg:hover:border-black">
+                        <div className="aspect-h-5 aspect-w-3 relative block lg:scale-x-[0.97] lg:scale-y-[0.98] lg:transition-transform lg:duration-500 lg:ease-in-out lg:group-hover:scale-100">
+                            <ExportedImage
                                 src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
                                 alt={`Okładka lampy ${lamp.title}`}
                                 placeholder="blur"
@@ -51,7 +51,7 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                             />
                         </div>
                     </div>
-                    <div className="mt-6 box-border bg-neutral-100 py-5 px-8">
+                    <div className="box-border bg-neutral-100 py-5 px-8 lg:mt-6">
                         <div className="2xl:flex 2xl:items-center">
                             <H4 tag={'h2'}>{lamp.title}</H4>
                             <div className="block flex-nowrap">

@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                 </div>
             </div>
 
-            <div className="wl-container m-auto mt-24 mb-16">
+            <div className="wl-container m-auto mt-16 mb-16 sm:mt-24">
                 <H3 className="text-base uppercase">Pare słów o nas</H3>
                 <Paragraph className="mt-8 !text-sm !leading-6">
                     ELCO jest{' '}

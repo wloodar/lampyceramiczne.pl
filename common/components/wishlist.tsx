@@ -55,15 +55,17 @@ const WishlistItem = ({
 
 const WishlistProductsList = ({
     showButton = true,
+    className,
 }: {
     showButton?: boolean
+    className?: string
 }) => {
     const { slugs, removeProduct } = useWishlistStore()
     const lamps = allLamps.filter(lamp => slugs.includes(lamp.slug))
 
     return (
         <>
-            <div>
+            <div className={clsx(className, 'overflow-y-auto')}>
                 <AnimatePresence initial={false} mode="popLayout">
                     {lamps.length === 0 ? (
                         <motion.div
@@ -83,7 +85,7 @@ const WishlistProductsList = ({
                                 },
                             }}
                         >
-                            <Paragraph className="text-sm">
+                            <Paragraph className="text-xs leading-6">
                                 Na ten moment nie posiadasz na swojej liście
                                 żadnej lampy.
                             </Paragraph>
@@ -126,7 +128,9 @@ const WishlistProductsList = ({
                         '!block': slugs.length > 0,
                     })}
                 >
-                    <ButtonLink href={`/kontakt`}>Zapytaj o lampy</ButtonLink>
+                    <ButtonLink href={`/kontakt`} className="block text-center">
+                        Zapytaj o lampy
+                    </ButtonLink>
                 </div>
             ) : null}
         </>

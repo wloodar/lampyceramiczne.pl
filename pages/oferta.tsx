@@ -56,7 +56,7 @@ const Offer: NextPage = () => {
                 {allLamps.map(lamp => (
                     <div
                         key={lamp.slug}
-                        className="col-span-12 mb-20 xl:col-span-6"
+                        className="col-span-12 mb-12 lg:mb-20 xl:col-span-6"
                     >
                         <LampCard lamp={lamp} />
                     </div>
