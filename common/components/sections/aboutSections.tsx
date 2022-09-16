@@ -61,6 +61,7 @@ const IntroContent = () => {
                     objectFit="cover"
                     objectPosition="center"
                     className="!relative !h-[unset] !w-full object-contain"
+                    priority
                 />
             </BasicImage>
             <BasicParagraph>

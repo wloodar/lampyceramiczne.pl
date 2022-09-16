@@ -34,8 +34,8 @@ const Home: NextPage = () => {
                 <div className="h-full w-full 2xl:bg-black">
                     <div className="absolute inset-0 -z-10 h-full w-full 2xl:z-0">
                         <ExportedImage
-                            // src="/img/instagram-creators/elco-lampy-ceramiczne-szyszka-homewithbluedoor.jpg"
-                            src="/img/content/lampa-stolowa-ceramiczna-elco-3003.jpg"
+                            src="/img/instagram-creators/elco-lampy-ceramiczne-szyszka-homewithbluedoor.jpg"
+                            // src="/img/content/lampa-stolowa-ceramiczna-elco-3003.jpg"
                             alt="Lampa Ceramiczne ELCO Szyszka we wnętrzu Homewithbluedoor"
                             layout={'fill'}
                             objectFit="cover"

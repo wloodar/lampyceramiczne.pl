@@ -210,7 +210,7 @@ const NaTematElco = () => {
                         </ButtonLink>
                     </div>
                 </div>
-                <div className="ml-auto hidden w-[250px]">
+                <div className="ml-auto hidden w-[250px] lg:block">
                     <div className="sticky top-20">
                         <div className="pb-6 text-xs font-medium uppercase">
                             Navigation
