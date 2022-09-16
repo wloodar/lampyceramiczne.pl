@@ -147,7 +147,8 @@ const Kontakt = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative m-auto mt-12 w-full max-w-md lg:m-0 lg:w-[370px] xl:w-[450px]">
+            <div className="relative m-auto mt-6 w-full max-w-md lg:m-0 lg:mt-12 lg:w-[370px] xl:w-[450px]">
+                <H3 className="mb-6 uppercase">Wyślij wiadomość</H3>
                 {isSubmitting && (
                     <div className="absolute top-1/2 left-0 right-0 text-center font-medium">
                         Wysyłamy Twoją wiadomość

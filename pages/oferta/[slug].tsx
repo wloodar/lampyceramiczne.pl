@@ -1,11 +1,5 @@
 import * as React from 'react'
-import {
-    motion,
-    MotionConfig,
-    motionValue,
-    useMotionValue,
-    useScroll,
-} from 'framer-motion'
+import { motion } from 'framer-motion'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import { useRecentStore } from 'common/hooks/useRecentStore'
@@ -19,7 +13,6 @@ import SEO from 'common/components/seo'
 import Icon from 'common/components/icon'
 
 import { RecentlyViewed } from 'common/components/recentlyViewed'
-import { useMediaQuery } from 'common/hooks/useMediaQuery'
 
 type PathParams = {
     params: {
@@ -57,17 +50,6 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
     const { slugs, addProduct, removeProduct } = useWishlistStore()
     const { toggleRecentProduct } = useRecentStore()
 
-    const isWindowSm = useMediaQuery('sm')
-
-    const mainTileInfoRef = React.useRef<HTMLDivElement>(null)
-    const mainTileScrollProgress = useMotionValue(1)
-    const { scrollYProgress } = useScroll({
-        target: mainTileInfoRef,
-        // offset: ['end end', 'start start'],
-        offset: ['start center', 'end start'],
-        // offset: ['end start', 'start end'],
-    })
-
     const TechnicalDetails = () => {
         const { technical } = lamp
 
@@ -95,7 +77,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     return (
                         <div
                             key={tech}
-                            className="mt-3 text-sm font-light text-stone-500 sm:mt-6 sm:text-base"
+                            className="mt-3 text-sm font-normal text-stone-500 sm:mt-6"
                         >
                             {tech}
                         </div>
@@ -108,21 +90,6 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
     React.useLayoutEffect(() => {
         toggleRecentProduct(lamp.slug)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    React.useEffect(() => {
-        const updateScaleValue = () => {
-            const currentProgress = scrollYProgress.get()
-            console.log(currentProgress)
-            if (currentProgress > 0) {
-                mainTileScrollProgress.set(currentProgress / 3 + 1)
-            }
-        }
-
-        const unsubscribeTilePosition =
-            scrollYProgress.onChange(updateScaleValue)
-
-        return () => unsubscribeTilePosition()
     }, [])
 
     return (
@@ -156,59 +123,22 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
             <div className="mt-12 2xl:grid 2xl:grid-cols-2 2xl:gap-x-10">
                 <div className="col-span-1">
                     <Zoom zoomMargin={100}>
-                        <motion.div
-                            className="fixed left-0 right-0 -z-10 w-full sm:static sm:top-auto sm:left-auto sm:right-auto sm:z-0"
-                            style={{
-                                scale: isWindowSm ? 1 : mainTileScrollProgress,
-                            }}
-                            initial={false}
-                        >
-                            <div className="relative w-full [&>span]:!relative">
-                                {/* <div className="aspect-h-5 aspect-w-3 relative"> */}
-                                <ExportedImage
-                                    src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
-                                    alt={`Lampa Ceramiczna ELCO - ${lamp.title}`}
-                                    layout="fill"
-                                    objectFit="contain"
-                                    objectPosition="top"
-                                    placeholder="blur"
-                                    className="!relative !h-[unset] !w-full object-contain"
-                                    priority
-                                />
-                            </div>
-                        </motion.div>
+                        <div className="relative w-full [&>span]:!relative">
+                            <ExportedImage
+                                src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
+                                alt={`Lampa Ceramiczna ELCO - ${lamp.title}`}
+                                layout="fill"
+                                objectFit="contain"
+                                objectPosition="top"
+                                placeholder="blur"
+                                className="!relative !h-[unset] !w-full object-contain"
+                                priority
+                            />
+                        </div>
                     </Zoom>
                 </div>
                 <div className="col-span-1">
-                    <div
-                        className="invisible overflow-hidden opacity-0 sm:hidden"
-                        ref={mainTileInfoRef}
-                    >
-                        {/* <Zoom zoomMargin={100}> */}
-                        <motion.div
-                            className="w-full sm:static sm:top-auto sm:left-auto sm:right-auto sm:z-0"
-                            style={{
-                                scale: isWindowSm ? 1 : mainTileScrollProgress,
-                            }}
-                            initial={false}
-                        >
-                            <div className="relative w-full [&>span]:!relative">
-                                {/* <div className="aspect-h-5 aspect-w-3 relative"> */}
-                                <ExportedImage
-                                    src={`/img/lamps/${lamp.slug}/${lamp.cover}`}
-                                    alt={`Lampa Ceramiczna ELCO - ${lamp.title}`}
-                                    layout="fill"
-                                    objectFit="contain"
-                                    objectPosition="top"
-                                    placeholder="blur"
-                                    className="!relative !h-[unset] !w-full object-contain"
-                                    priority
-                                />
-                            </div>
-                        </motion.div>
-                        {/* </Zoom> */}
-                    </div>
-                    <div className="container-padding mt-14 box-border rounded-t-2xl bg-stone-100 py-10 sm:sticky sm:top-10 sm:mt-0 sm:rounded-none sm:px-20 sm:py-16">
+                    <div className="container-padding -mt-4 box-border rounded-t-2xl bg-white py-10 sm:sticky sm:top-10 sm:mt-0 sm:rounded-none sm:px-20 sm:py-16 lg:bg-stone-100">
                         <motion.div
                             initial={{ opacity: 0, y: -70 }}
                             animate={{
@@ -232,17 +162,17 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                                 <TechnicalDetails />
                             </div>
 
-                            <div className="mt-10 border-y border-stone-400 py-8">
-                                <Paragraph>
+                            <div className="mt-6 border-y border-stone-200 py-4 sm:mt-10 sm:py-8 lg:border-stone-300">
+                                <p className="text-sm leading-8 text-stone-500">
                                     Zainteresowała Ciebie prezentowana lampa
                                     ceramiczna? Skontaktuj się z nami już teraz
                                     w celu poznania szczegółów lub złożenia
                                     zamówienia.
-                                </Paragraph>
+                                </p>
                             </div>
 
                             {/* Actions */}
-                            <div className="mt-16 text-center sm:w-[400px]">
+                            <div className="mt-10 text-center sm:w-[400px] lg:mt-16">
                                 {slugs.includes(lamp.slug) ? (
                                     <Button
                                         onClick={() => removeProduct(lamp.slug)}
@@ -279,72 +209,70 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                 </div>
             </div>
 
-            <div className="bg-white pt-10">
-                <div className="xl:grid xl:grid-cols-2 xl:gap-x-10">
-                    <div className="group relative col-span-1 h-[600px] w-full bg-stone-900">
-                        <ExportedImage
-                            src="/img/instagram-creators/bohodom-personalized.jpg"
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="top"
-                            className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/70"></div>
-                        <div className="absolute left-12 bottom-10 right-12">
-                            <H3 className="!text-white">
-                                Indywidualne
-                                <span className="block">realizacje w ELCO</span>
-                            </H3>
-                            <p className="mt-4 max-w-[390px] text-sm font-light leading-7 !text-white">
-                                Firma ELCO oferuje wykonanie lampy ceramicznej
-                                na indywidualne zamówienie. Lampa do salonu w
-                                Twojej wymarzonej kolorystyce, albo lampa
-                                ceramiczna z abażurem pod kolor Twojej sypialni?
-                                Stworzyć swoją własną ceramiczną lampę, np.
-                                połączenie szyszki z kolumną?
-                            </p>
-                            <ButtonLink
-                                href={`/na-temat-elco`}
-                                type="bs-outline"
-                                className="mt-6 inline-block !text-white hover:!text-stone-200"
-                            >
-                                Więcej o personalizacji
-                            </ButtonLink>
-                        </div>
-                    </div>
-                    <div className="group relative col-span-1 mt-10 h-[600px] w-full bg-stone-100 xl:mt-0">
-                        <ExportedImage
-                            src="/img/instagram-creators/homewithbluedoor-corridor.jpg"
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="bottom"
-                            className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/70"></div>
-                        <div className="absolute left-12 bottom-10 right-12">
-                            <H3 className="!text-white">
-                                Poznaj ELCO{' '}
-                                <span className="block">Lampy Ceramiczne</span>
-                            </H3>
-                            <p className="mt-4 max-w-[350px] text-sm font-light leading-7 !text-white">
-                                Od ponad 20 lat tworzymy lampy ceramiczne z
-                                abażurem. Cały proces produkcyjny od początku do
-                                końca odbywa się na terenie Polski. Lampy
-                                ceramiczne naszego wykonania, oferują zarówno
-                                solidną jakość wykonania jak i elegancki design.
-                            </p>
-                            <ButtonLink
-                                href={`/na-temat-elco`}
-                                type="bs-outline"
-                                className="mt-6 inline-block !text-white hover:!text-stone-200"
-                            >
-                                Dowiedz się więcej
-                            </ButtonLink>
-                        </div>
+            <div className="mt-2 lg:mt-10 xl:grid xl:grid-cols-2 xl:gap-x-10">
+                <div className="group relative col-span-1 h-[500px] w-full bg-stone-100 lg:h-[600px]">
+                    <ExportedImage
+                        src="/img/instagram-creators/homewithbluedoor-corridor.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="bottom"
+                        className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/70"></div>
+                    <div className="absolute left-12 bottom-10 right-12">
+                        <H3 className="!text-white">
+                            Poznaj ELCO{' '}
+                            <span className="block">Lampy Ceramiczne</span>
+                        </H3>
+                        <p className="mt-4 max-w-[350px] text-sm font-light leading-7 !text-white">
+                            Od ponad 20 lat tworzymy lampy ceramiczne z
+                            abażurem. Cały proces produkcyjny od początku do
+                            końca odbywa się na terenie Polski. Lampy ceramiczne
+                            naszego wykonania, oferują zarówno solidną jakość
+                            wykonania jak i elegancki design.
+                        </p>
+                        <ButtonLink
+                            href={`/na-temat-elco`}
+                            type="bs-outline"
+                            className="mt-6 inline-block !text-white hover:!text-stone-200"
+                        >
+                            Dowiedz się więcej
+                        </ButtonLink>
                     </div>
                 </div>
-                <RecentlyViewed className="mt-10" />
+                <div className="group relative col-span-1 mt-10 h-[500px] w-full bg-stone-900 lg:h-[600px] xl:mt-0">
+                    <ExportedImage
+                        src="/img/instagram-creators/bohodom-personalized.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="top"
+                        className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/70"></div>
+                    <div className="absolute left-12 bottom-10 right-12">
+                        <H3 className="!text-white">
+                            Indywidualne
+                            <span className="block">realizacje w ELCO</span>
+                        </H3>
+                        <p className="mt-4 max-w-[390px] text-sm font-light leading-7 !text-white">
+                            Firma ELCO oferuje wykonanie lampy ceramicznej na
+                            indywidualne zamówienie. Lampa do salonu w Twojej
+                            wymarzonej kolorystyce, albo lampa ceramiczna z
+                            abażurem pod kolor Twojej sypialni? Stworzyć swoją
+                            własną ceramiczną lampę, np. połączenie szyszki z
+                            kolumną?
+                        </p>
+                        <ButtonLink
+                            href={`/na-temat-elco`}
+                            type="bs-outline"
+                            className="mt-6 inline-block !text-white hover:!text-stone-200"
+                        >
+                            Więcej o personalizacji
+                        </ButtonLink>
+                    </div>
+                </div>
             </div>
+            <RecentlyViewed className="mt-10" />
         </div>
     )
 }

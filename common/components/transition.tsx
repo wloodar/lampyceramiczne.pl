@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 const variants = {
     inactive: {
         opacity: 1,
-        // y: 0,
+        y: 0,
         transition: {
             duration: 1.5,
             ease: 'easeInOut',
@@ -12,7 +12,7 @@ const variants = {
     },
     out: {
         opacity: 0,
-        // y: -40,
+        y: -40,
         transition: {
             duration: 0.5,
             ease: 'easeInOut',
@@ -20,7 +20,7 @@ const variants = {
     },
     in: {
         y: 40,
-        // opacity: 0,
+        opacity: 0,
         transition: {
             duration: 0.5,
             ease: 'easeInOut',
@@ -43,8 +43,6 @@ const Transition = ({ children }: { children: React.ReactNode }) => {
                     initial="in"
                     animate="inactive"
                     exit="out"
-                    // layout
-                    // layoutScroll
                 >
                     {children}
                 </motion.div>

@@ -150,123 +150,115 @@ const Layout = ({ children }: LayoutProps) => {
                         </div>
                     </div>
                     <div className="mt-[79px] lg:mt-0 lg:w-[80%] lg:flex-1">
-                        {/* <main className="max-w-full w-[82%] pl-12"> */}
                         <main className="w-full lg:pl-12">{children}</main>
-                        <div className="bg-white pt-16">
-                            <footer className="relative pt-10 lg:mt-24 lg:ml-12 lg:-mr-[64px] lg:-mb-[54px] 2xl:h-[400px]">
-                                <div className="container-padding bg-[#101010] pt-16 2xl:flex 2xl:h-full 2xl:items-center 2xl:justify-between 2xl:p-0">
-                                    <div className="m-auto -mt-[100px] w-full max-w-[550px] 2xl:m-0">
-                                        <div className="flex w-full max-w-xl items-end 2xl:absolute 2xl:top-0 2xl:left-16">
-                                            <ExportedImage
-                                                src="/img/instagram-creators/w_moim_malutkim_domu-bedroom.jpg"
-                                                width={1080}
-                                                height={892}
-                                                layout="intrinsic"
-                                                objectFit={'cover'}
-                                                objectPosition={'top'}
-                                            />
-                                            <div className="ml-14 hidden sm:block">
-                                                {MENU_LINKS.map(linkItem => (
-                                                    <Link
-                                                        key={linkItem.href}
-                                                        href={linkItem.href}
-                                                        scroll={false}
-                                                    >
-                                                        <a className="mt-6 flex items-center whitespace-nowrap text-sm font-light text-white hover:text-stone-200">
-                                                            {linkItem.label}
-                                                        </a>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="m-auto mt-10 w-full max-w-[550px] pb-10 2xl:m-0 2xl:max-w-[450px] 2xl:pb-0">
-                                        <div className="flex flex-col-reverse 2xl:block">
-                                            <div className="mt-7 mb-2 flex items-center justify-center 2xl:mt-0 2xl:mb-0 2xl:justify-start">
+                        <footer className="relative mt-16 pt-10 lg:mt-24 lg:ml-12 lg:-mr-[64px] lg:-mb-[54px] 2xl:h-[400px]">
+                            <div className="container-padding bg-[#101010] pt-16 2xl:flex 2xl:h-full 2xl:items-center 2xl:justify-between 2xl:p-0">
+                                <div className="m-auto -mt-[100px] w-full max-w-[550px] 2xl:m-0">
+                                    <div className="flex w-full max-w-xl items-end 2xl:absolute 2xl:top-0 2xl:left-16">
+                                        <ExportedImage
+                                            src="/img/instagram-creators/w_moim_malutkim_domu-bedroom.jpg"
+                                            width={1080}
+                                            height={892}
+                                            layout="intrinsic"
+                                            objectFit={'cover'}
+                                            objectPosition={'top'}
+                                        />
+                                        <div className="ml-14 hidden sm:block">
+                                            {MENU_LINKS.map(linkItem => (
                                                 <Link
-                                                    href={`/`}
-                                                    title="Wstęp ELCO"
+                                                    key={linkItem.href}
+                                                    href={linkItem.href}
+                                                    scroll={false}
                                                 >
-                                                    <a className="text-3xl font-medium tracking-[5px] text-white sm:text-5xl">
-                                                        ELCO
+                                                    <a className="mt-6 flex items-center whitespace-nowrap text-sm font-light text-white hover:text-stone-200">
+                                                        {linkItem.label}
                                                     </a>
                                                 </Link>
-                                                <span className="ml-5 text-xs font-light text-stone-300 sm:text-sm sm:leading-5">
-                                                    <span className="block">
-                                                        Klasyczne
-                                                    </span>
-                                                    <span>
-                                                        Lampy Ceramiczne
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div className="mt-6 flex items-center justify-center 2xl:justify-start">
-                                                <a
-                                                    href="https://www.instagram.com/elco_lampy_ceramiczne/"
-                                                    title="Instagram ELCO Lampy Ceramiczne"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="group mr-8 flex items-center"
-                                                >
-                                                    <Icon
-                                                        name="instagram"
-                                                        className="w-[28px] fill-white group-hover:fill-stone-300"
-                                                    />
-                                                    <span className="pl-2 text-xs text-white group-hover:text-stone-300">
-                                                        Instagram
-                                                    </span>
-                                                </a>
-                                                <a
-                                                    href="https://www.facebook.com/elco.lampy"
-                                                    title="Facebok ELCO Lampy Ceramiczne"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="group flex items-center"
-                                                >
-                                                    <Icon
-                                                        name="facebook"
-                                                        className="fill-white group-hover:fill-stone-300"
-                                                    />
-                                                    <span className="pl-2 text-xs text-white group-hover:text-stone-300">
-                                                        Facebook
-                                                    </span>
-                                                </a>
-                                            </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="container-padding bg-[#101010] pb-14 text-center 2xl:flex 2xl:justify-between 2xl:pt-4 2xl:pl-16 2xl:pr-0 2xl:text-left">
-                                    <div className="border-t border-stone-700 pt-10 text-sm text-stone-200 2xl:border-0">
-                                        <span className="block sm:inline-block">
-                                            tel:{' '}
+                                <div className="m-auto mt-10 w-full max-w-[550px] pb-10 2xl:m-0 2xl:max-w-[450px] 2xl:pb-0">
+                                    <div className="flex flex-col-reverse 2xl:block">
+                                        <div className="mt-7 mb-2 flex items-center justify-center 2xl:mt-0 2xl:mb-0 2xl:justify-start">
+                                            <Link href={`/`} title="Wstęp ELCO">
+                                                <a className="text-3xl font-medium tracking-[5px] text-white sm:text-5xl">
+                                                    ELCO
+                                                </a>
+                                            </Link>
+                                            <span className="ml-5 text-xs font-light text-stone-300 sm:text-sm sm:leading-5">
+                                                <span className="block">
+                                                    Klasyczne
+                                                </span>
+                                                <span>Lampy Ceramiczne</span>
+                                            </span>
+                                        </div>
+                                        <div className="mt-6 flex items-center justify-center 2xl:justify-start">
                                             <a
-                                                href="tel:+48 572 906 548"
-                                                className="hover:text-stone-300"
+                                                href="https://www.instagram.com/elco_lampy_ceramiczne/"
+                                                title="Instagram ELCO Lampy Ceramiczne"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group mr-8 flex items-center"
                                             >
-                                                <span className="text-[.8rem]">
-                                                    +48 572 906 548
+                                                <Icon
+                                                    name="instagram"
+                                                    className="w-[28px] fill-white group-hover:fill-stone-300"
+                                                />
+                                                <span className="pl-2 text-xs text-white group-hover:text-stone-300">
+                                                    Instagram
                                                 </span>
                                             </a>
-                                        </span>
-                                        <span className="inline-block pt-6 sm:pt-0 sm:pl-10">
-                                            mail:{' '}
                                             <a
-                                                href="mailto:elco.kontakt@gmail.com"
-                                                className="hover:text-stone-300"
+                                                href="https://www.facebook.com/elco.lampy"
+                                                title="Facebok ELCO Lampy Ceramiczne"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group flex items-center"
                                             >
-                                                elco.kontakt@gmail.com
+                                                <Icon
+                                                    name="facebook"
+                                                    className="fill-white group-hover:fill-stone-300"
+                                                />
+                                                <span className="pl-2 text-xs text-white group-hover:text-stone-300">
+                                                    Facebook
+                                                </span>
                                             </a>
-                                        </span>
-                                    </div>
-                                    <div className="mt-10 text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:mt-0 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
-                                        <span>
-                                            Copyright © 2022 ELCO. All Rights
-                                            Reserved.
-                                        </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </footer>
-                        </div>
+                            </div>
+                            <div className="container-padding bg-[#101010] pb-14 text-center 2xl:flex 2xl:justify-between 2xl:pt-4 2xl:pl-16 2xl:pr-0 2xl:text-left">
+                                <div className="border-t border-stone-700 pt-10 text-sm text-stone-200 2xl:border-0">
+                                    <span className="block sm:inline-block">
+                                        tel:{' '}
+                                        <a
+                                            href="tel:+48 572 906 548"
+                                            className="hover:text-stone-300"
+                                        >
+                                            <span className="text-[.8rem]">
+                                                +48 572 906 548
+                                            </span>
+                                        </a>
+                                    </span>
+                                    <span className="inline-block pt-6 sm:pt-0 sm:pl-10">
+                                        mail:{' '}
+                                        <a
+                                            href="mailto:elco.kontakt@gmail.com"
+                                            className="hover:text-stone-300"
+                                        >
+                                            elco.kontakt@gmail.com
+                                        </a>
+                                    </span>
+                                </div>
+                                <div className="mt-10 text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:mt-0 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
+                                    <span>
+                                        Copyright © 2022 ELCO. All Rights
+                                        Reserved.
+                                    </span>
+                                </div>
+                            </div>
+                        </footer>
                     </div>
                 </div>
             </div>
