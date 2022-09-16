@@ -108,7 +108,7 @@ const RecentlyViewed = ({
                                     </div>
                                 </div>
                             </div>
-                            <div className="relative flex items-center justify-between bg-white py-4 px-5 text-sm font-light">
+                            <div className="relative bg-white py-4 px-5 text-sm font-light sm:flex sm:items-center sm:justify-between">
                                 {lamp.slug === disableSlug ? (
                                     <div className="flex min-h-[50px] w-full items-center justify-center">
                                         Aktualnie oglądana
@@ -118,7 +118,7 @@ const RecentlyViewed = ({
                                         <span className="text-sm font-normal leading-6 text-black lg:group-hover:underline">
                                             {lamp.title}
                                         </span>
-                                        <Button className="m-auto ml-5 mr-0 block text-xs">
+                                        <Button className="m-auto mt-4 block w-full text-xs sm:mt-0 sm:mr-0 sm:ml-5 sm:w-auto">
                                             Zobacz
                                         </Button>
                                     </>

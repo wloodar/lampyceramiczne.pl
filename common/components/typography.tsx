@@ -73,7 +73,7 @@ type ParagraphProps = {
 )
 
 function Paragraph({
-    size = 'text-base',
+    size = 'text-sm md:text-base',
     className,
     colorClassName = 'text-slate-700',
     ...rest

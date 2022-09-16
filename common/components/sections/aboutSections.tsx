@@ -24,7 +24,7 @@ const aspectRatioHeight = {
 }
 
 const BasicParagraph = ({ children }: { children: React.ReactNode }) => (
-    <Paragraph className="mt-10">{children}</Paragraph>
+    <Paragraph className="mt-7 lg:mt-10">{children}</Paragraph>
 )
 
 const BasicImage = ({
@@ -42,7 +42,10 @@ const BasicImage = ({
 
     return (
         <Zoom zoomMargin={100}>
-            <div className={imageContainerClassName}>{children}</div>
+            <div className="mt-6 w-full lg:mt-10 [&>span]:!relative">
+                {children}
+            </div>
+            {/* <div className={imageContainerClassName}>{children}</div> */}
         </Zoom>
     )
 }
@@ -57,6 +60,7 @@ const IntroContent = () => {
                     layout={'fill'}
                     objectFit="cover"
                     objectPosition="center"
+                    className="!relative !h-[unset] !w-full object-contain"
                 />
             </BasicImage>
             <BasicParagraph>
@@ -83,6 +87,7 @@ const IntroContent = () => {
                     layout={'fill'}
                     objectFit="cover"
                     objectPosition="center"
+                    className="!relative !h-[unset] !w-full object-contain"
                 />
             </BasicImage>
         </div>
@@ -120,10 +125,11 @@ const ProductionContent = () => {
                     layout={'fill'}
                     objectFit="cover"
                     objectPosition="center"
+                    className="!relative !h-[unset] !w-full object-contain"
                 />
             </BasicImage>
             <div className="flex">
-                <div className="w-50% mr-5 flex-1">
+                <div className="w-50% mr-3 flex-1 lg:mr-5">
                     <BasicImage aspectW={2} aspectH={3}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-formy-zblizenie.jpg"
@@ -131,10 +137,11 @@ const ProductionContent = () => {
                             layout={'fill'}
                             objectFit="cover"
                             objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
                         />
                     </BasicImage>
                 </div>
-                <div className="w-50% ml-5 flex-1">
+                <div className="w-50% ml-3 flex-1 lg:ml-5">
                     <BasicImage aspectW={2} aspectH={3}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-formy-poziomo-pionowa.jpg"
@@ -142,6 +149,7 @@ const ProductionContent = () => {
                             layout={'fill'}
                             objectFit="cover"
                             objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
                         />
                     </BasicImage>
                 </div>
@@ -184,10 +192,11 @@ const ProductionContent = () => {
                     layout={'fill'}
                     objectFit="cover"
                     objectPosition="center"
+                    className="!relative !h-[unset] !w-full object-contain"
                 />
             </BasicImage>
-            <div className="flex items-center">
-                <div className="mr-20 flex-1">
+            <div className="2xl:flex 2xl:items-center">
+                <div className="flex-1 2xl:mr-20">
                     <BasicParagraph>
                         Gotowe szkliwo zostaje następnie nanoszone na model
                         lampy ceramicznej. W przypadku większych elementów,
@@ -206,7 +215,7 @@ const ProductionContent = () => {
                         ceramiczną.
                     </BasicParagraph>
                 </div>
-                <div className="w-80">
+                <div className="2xl:w-80">
                     <BasicImage aspectW={2} aspectH={2}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-piec-wypal-ostry.jpg"
@@ -214,6 +223,7 @@ const ProductionContent = () => {
                             layout={'fill'}
                             objectFit="cover"
                             objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
                         />
                     </BasicImage>
                 </div>
@@ -224,7 +234,7 @@ const ProductionContent = () => {
 
 const RealizationsContent = () => {
     return (
-        <div className="mt-28">
+        <div className="mt-10 lg:mt-28">
             <H2 className="uppercase">
                 Lampy ceramiczne pod indywidualne zamówienie
             </H2>
@@ -242,13 +252,15 @@ const RealizationsContent = () => {
                 ceramiczną, która w pełni go usatysfakcjonuje.
             </BasicParagraph>
             <BasicImage aspectW={2} aspectH={2}>
-                <ExportedImage
-                    src="/img/instagram-creators/bohodom-personalized.jpg"
-                    alt="Spersonalizowana Lampa Ceramiczna ELCO"
-                    layout={'fill'}
-                    objectFit="cover"
-                    objectPosition="center"
-                />
+                <div className="aspect-w-2 aspect-h-2 relative">
+                    <ExportedImage
+                        src="/img/instagram-creators/bohodom-personalized.jpg"
+                        alt="Spersonalizowana Lampa Ceramiczna ELCO"
+                        layout={'fill'}
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                </div>
             </BasicImage>
         </div>
     )
@@ -256,10 +268,10 @@ const RealizationsContent = () => {
 
 const ProductionTime = () => {
     return (
-        <div className="mt-28">
+        <div className="mt-10 lg:mt-28">
             <H2 className="uppercase">Czas produkcji</H2>
-            <div className="flex items-center">
-                <div className="mr-20 flex-1">
+            <div className="2xl:flex 2xl:items-center">
+                <div className="flex-1 2xl:mr-20">
                     <BasicParagraph>
                         Lampy ceramiczne ELCO produkowane są z największa
                         precyzją i dbałością o szczegóły tak, aby dostarczyć
@@ -278,7 +290,7 @@ const ProductionTime = () => {
                         zrealizowanie zamówienia już w kilka dni roboczych.
                     </BasicParagraph>
                 </div>
-                <div className="w-80">
+                <div className="2xl:w-80">
                     <BasicImage aspectW={2} aspectH={2}>
                         <ExportedImage
                             src="/img/content/elco-hala-produkcyjna-formy-gotowe-modele-polka.jpg"
@@ -286,6 +298,7 @@ const ProductionTime = () => {
                             layout={'fill'}
                             objectFit="cover"
                             objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
                         />
                     </BasicImage>
                 </div>

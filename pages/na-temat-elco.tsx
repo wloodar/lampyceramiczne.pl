@@ -11,6 +11,7 @@ import {
 } from 'common/components/sections/aboutSections'
 import { RecentlyViewed } from 'common/components/recentlyViewed'
 import SEO from 'common/components/seo'
+import { ButtonLink } from 'common/components/button'
 
 const aboutSections: Array<AboutSectionItem> = [
     { title: 'Wstęp', href: 'intro', content: <IntroContent /> },
@@ -168,7 +169,7 @@ const NaTematElco = () => {
     }
 
     return (
-        <div className="m-auto max-w-[1500px]">
+        <div className="container-padding m-auto max-w-[1500px] pt-14 lg:px-0 lg:pt-0">
             <SEO
                 title="Na Temat ELCO | Polski Producent Lamp Ceramicznych Z Abażurem"
                 description="Na temat ELCO - lampyceramiczne.pl | Polski producent lamp ceramicznych z abażurem - ponad 20 lat doświadczenia | Ceramiczne lampy z abażurem. Podłogowe lampy & stołowe lampy ceramiczne."
@@ -179,7 +180,7 @@ const NaTematElco = () => {
                 zajmujemy i naszej pracy przy produkcji lamp ceramicznych ELCO.
             </Paragraph>
             <div className="flex">
-                <div className="max-w-[1000px] flex-1">
+                <div className="max-w-[1000px] flex-1 lg:mr-12">
                     {pageHeight > 0
                         ? aboutSections.map(section => (
                               <AboutSection
@@ -193,8 +194,23 @@ const NaTematElco = () => {
                               />
                           ))
                         : null}
+                    <div className="m-auto mt-12 mb-6 max-w-sm md:mx-0">
+                        <ButtonLink
+                            href={`/oferta`}
+                            className="block text-center"
+                        >
+                            Nasza oferta
+                        </ButtonLink>
+                        <ButtonLink
+                            href={`/kontakt`}
+                            type="bs-outline"
+                            className="mt-5 block text-center"
+                        >
+                            Skontaktuj się
+                        </ButtonLink>
+                    </div>
                 </div>
-                <div className="ml-auto w-[250px]">
+                <div className="ml-auto hidden w-[250px]">
                     <div className="sticky top-20">
                         <div className="pb-6 text-xs font-medium uppercase">
                             Navigation
@@ -207,7 +223,7 @@ const NaTematElco = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-24">
+            <div className="mt-12 lg:mt-24">
                 <RecentlyViewed />
             </div>
         </div>

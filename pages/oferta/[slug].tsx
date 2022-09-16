@@ -219,7 +219,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/70"></div>
-                    <div className="absolute left-12 bottom-10 right-12">
+                    <div className="container-padding absolute bottom-10 lg:left-12 lg:right-12 lg:px-0">
                         <H3 className="!text-white">
                             Poznaj ELCO{' '}
                             <span className="block">Lampy Ceramiczne</span>
@@ -249,7 +249,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                         className="transition-[transform] duration-500 ease-in-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/70"></div>
-                    <div className="absolute left-12 bottom-10 right-12">
+                    <div className="container-padding absolute bottom-10 lg:left-12 lg:right-12 lg:px-0">
                         <H3 className="!text-white">
                             Indywidualne
                             <span className="block">realizacje w ELCO</span>
