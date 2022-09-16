@@ -11,7 +11,13 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Button } from './button'
 
-const RecentlyViewed = ({ className }: { className?: string }) => {
+const RecentlyViewed = ({
+    disableSlug,
+    className,
+}: {
+    disableSlug?: string
+    className?: string
+}) => {
     const { recentSlugs, removeRecentProduct } = useRecentStore()
     const { toggleProduct, slugs: wishlistSlugs } = useWishlistStore()
 
@@ -27,7 +33,9 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
 
             return lamp
         })
-        .filter(lamp => lamp !== null) as Array<Lamp>
+        .filter(
+            lamp => lamp !== null && lamp.slug !== disableSlug,
+        ) as Array<Lamp>
 
     if (recentSlugs.length === 0) {
         return <></>
@@ -101,12 +109,20 @@ const RecentlyViewed = ({ className }: { className?: string }) => {
                                 </div>
                             </div>
                             <div className="relative flex items-center justify-between bg-white py-4 px-5 text-sm font-light">
-                                <span className="text-sm font-normal leading-6 text-black lg:group-hover:underline">
-                                    {lamp.title}
-                                </span>
-                                <Button className="m-auto ml-5 mr-0 block text-xs">
-                                    Zobacz
-                                </Button>
+                                {lamp.slug === disableSlug ? (
+                                    <div className="flex min-h-[50px] w-full items-center justify-center">
+                                        Aktualnie oglądana
+                                    </div>
+                                ) : (
+                                    <>
+                                        <span className="text-sm font-normal leading-6 text-black lg:group-hover:underline">
+                                            {lamp.title}
+                                        </span>
+                                        <Button className="m-auto ml-5 mr-0 block text-xs">
+                                            Zobacz
+                                        </Button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </Link>

@@ -72,7 +72,7 @@ const LampCard = ({ lamp }: { lamp: Lamp }) => {
                 <button onClick={() => toggleProduct(lamp.slug)}>
                     <Icon
                         name="heart"
-                        className={clsx('stroke-white hover:fill-red-500', {
+                        className={clsx('stroke-white lg:hover:fill-red-500', {
                             'fill-red-500': wishlistSlugs.includes(lamp.slug),
                         })}
                     />

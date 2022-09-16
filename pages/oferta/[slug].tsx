@@ -272,7 +272,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     </div>
                 </div>
             </div>
-            <RecentlyViewed className="mt-10" />
+            <RecentlyViewed className="mt-10" disableSlug={lamp.slug} />
         </div>
     )
 }
