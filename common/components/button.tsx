@@ -9,6 +9,30 @@ interface ButtonProps {
     className?: string
 }
 
+const buttonStyleClassname = (
+    className: string | undefined,
+    styleType: string,
+    color: string,
+) =>
+    clsx(
+        className,
+        // 'cursor-pointer rounded-sm bg-black py-4 px-12 text-xs font-medium uppercase tracking-[1px] text-white hover:bg-neutral-800',
+        'cursor-pointer rounded-sm py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
+        {
+            'bg-black text-white hover:bg-neutral-800':
+                styleType === 'primary' && color === 'dark',
+            'bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200':
+                styleType === 'primary' && color === 'bright',
+            'border-2 border-black bg-transparent': styleType === 'outline',
+            'border border-stone-200 bg-transparent hover:border-stone-400':
+                styleType === 'bs-outline',
+            'text-white  hover:text-neutral-300':
+                styleType === 'bs-outline' && color === 'bright',
+            'text-black hover:border-stone-400 hover:bg-transparent':
+                styleType === 'bs-outline' && color === 'dark',
+        },
+    )
+
 const Button = ({
     children,
     styleType = 'primary',
@@ -18,25 +42,7 @@ const Button = ({
 }: ButtonProps & JSX.IntrinsicElements['button']) => {
     return (
         <button
-            className={clsx(
-                className,
-                // 'cursor-pointer rounded-sm bg-black py-4 px-12 text-xs font-medium uppercase tracking-[1px] text-white hover:bg-neutral-800',
-                'cursor-pointer rounded-sm py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
-                {
-                    'bg-black text-white hover:bg-neutral-800':
-                        styleType === 'primary' && color === 'dark',
-                    'bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200':
-                        styleType === 'primary' && color === 'bright',
-                    'border-2 border-black bg-transparent':
-                        styleType === 'outline',
-                    'border border-stone-200 bg-transparent hover:border-stone-400':
-                        styleType === 'bs-outline',
-                    'text-white  hover:text-neutral-300':
-                        styleType === 'bs-outline' && color === 'bright',
-                    'text-black hover:border-stone-400 hover:bg-transparent':
-                        styleType === 'bs-outline' && color === 'dark',
-                },
-            )}
+            className={buttonStyleClassname(className, styleType, color)}
             {...rest}
         >
             {children}
@@ -61,23 +67,7 @@ const ButtonLink = React.forwardRef<
         <AnchorOrLink
             ref={ref}
             href={href}
-            className={clsx(
-                className,
-                'cursor-pointer rounded-sm py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
-                {
-                    'bg-black text-white hover:bg-neutral-800':
-                        type === 'primary' && color === 'dark',
-                    'bg-white text-center text-black hover:border-neutral-200 hover:bg-neutral-200':
-                        type === 'primary' && color === 'bright',
-                    'border-2 border-black bg-transparent': type === 'outline',
-                    'border border-stone-200 bg-transparent hover:border-stone-400':
-                        type === 'bs-outline',
-                    'text-white  hover:text-neutral-300':
-                        type === 'bs-outline' && color === 'bright',
-                    'text-black hover:border-stone-400 hover:bg-transparent':
-                        type === 'bs-outline' && color === 'dark',
-                },
-            )}
+            className={buttonStyleClassname(className, type, color)}
             {...rest}
         >
             {children}
