@@ -11,6 +11,8 @@ import Icon from './icon'
 import { MENU_LINKS } from './nav'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
+import { Button, ButtonLink } from './button'
+import { H3 } from 'common/components/typography'
 
 const WishlistProductsList = dynamic(
     () => import('common/components/wishlist'),
@@ -25,6 +27,9 @@ type LayoutProps = {
 
 const menuIconBaseClassname =
     'h-[2px] w-full bg-black transition ease transform duration-700'
+
+const responsiveModalClassname =
+    'ease-[cubic-bezier(0.46, 0.5, 0, 0.94)] fixed top-0 bottom-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-lg transition-transform duration-1000 lg:relative lg:top-auto lg:bottom-auto lg:left-auto lg:right-auto lg:hidden'
 
 const DesignedByContainer = () => (
     <>
@@ -44,36 +49,46 @@ const DesignedByContainer = () => (
     </>
 )
 
-const Copyright = () => (
-    <div className="text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:mt-0 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
-        <span>Copyright © 2022 ELCO. All Rights Reserved.</span>
-    </div>
-)
-
 const Layout = ({ children }: LayoutProps) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
+    const [isWishlistOpen, setIsWishlistOpen] = React.useState<boolean>(false)
 
     const { slugs: wishlistSlugs } = useWishlistStore()
 
     return (
         <NoSSRWrapper>
             <div className="flex flex-col justify-start lg:p-[54px_64px]">
-                <header className="container-padding fixed left-0 top-0 right-0 z-10 box-border flex flex-[0_0_80px] items-center justify-between bg-white py-4 lg:relative lg:left-auto lg:top-auto lg:right-auto lg:mb-14 lg:block lg:bg-transparent lg:py-0 lg:px-0">
+                <header className="container-padding fixed left-0 top-0 right-0 z-20 box-border flex flex-[0_0_80px] items-center justify-between bg-white py-4 lg:relative lg:left-auto lg:top-auto lg:right-auto lg:mb-14 lg:block lg:bg-transparent lg:py-0 lg:px-0">
                     <div className="w-full lg:fixed">
                         <Link href="/" scroll={false}>
                             <a
                                 className="text-3xl font-semibold tracking-[10px] lg:text-5xl"
-                                onClick={() =>
+                                onClick={() => {
                                     isMenuOpen && setIsMenuOpen(false)
-                                }
+                                    isWishlistOpen && setIsWishlistOpen(false)
+                                }}
                             >
                                 ELCO
                             </a>
                         </Link>
                     </div>
                     <div className="-mr-3 flex items-center lg:hidden">
-                        <button className="relative p-3">
-                            <Icon name="heart" />
+                        <button
+                            className="relative p-3"
+                            onClick={() =>
+                                !isMenuOpen &&
+                                setIsWishlistOpen(!isWishlistOpen)
+                            }
+                        >
+                            <Icon
+                                name="heart"
+                                className={clsx(
+                                    'fill-transparent transition-all duration-500',
+                                    {
+                                        '!fill-black': isWishlistOpen,
+                                    },
+                                )}
+                            />
                             {wishlistSlugs.length > 0 ? (
                                 <div className="absolute right-1 top-1 flex h-[20px] w-[20px] items-center justify-center overflow-hidden rounded-full bg-red-500">
                                     <AnimatePresence mode="popLayout">
@@ -106,7 +121,9 @@ const Layout = ({ children }: LayoutProps) => {
                         </button>
                         <button
                             className="p-3"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            onClick={() =>
+                                !isWishlistOpen && setIsMenuOpen(!isMenuOpen)
+                            }
                         >
                             <div className="w-[30px] ">
                                 <div
@@ -144,16 +161,74 @@ const Layout = ({ children }: LayoutProps) => {
                     </div>
                 </header>
                 <div
-                    className={clsx(
-                        'ease-[cubic-bezier(0.46, 0.5, 0, 0.94)] fixed top-[79px] bottom-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-lg transition-transform duration-1000 lg:relative lg:top-auto lg:bottom-auto lg:left-auto lg:right-auto lg:hidden',
-                        { 'translate-x-full': !isMenuOpen },
-                    )}
+                    className={clsx(responsiveModalClassname, {
+                        '-translate-y-full overflow-hidden': !isWishlistOpen,
+                    })}
                 >
                     <div
                         className={clsx(
-                            'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` h-full opacity-0 transition-all duration-1000',
+                            'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` relative h-full translate-y-1/3 pt-[80px] opacity-0 transition-all duration-1000',
                             {
-                                'translate-x-[10%] opacity-100': isMenuOpen,
+                                '!translate-y-0 opacity-100': isWishlistOpen,
+                            },
+                        )}
+                    >
+                        <div className="relative h-full w-full">
+                            <div className="mt-6">
+                                <H3 className="!font-medium uppercase">
+                                    Twoje lampy
+                                </H3>
+                            </div>
+                            <div className="mt-6 max-h-[calc(100vh-310px)] overflow-scroll">
+                                <WishlistProductsList
+                                    showButton={false}
+                                    onLampClick={() => setIsWishlistOpen(false)}
+                                />
+                            </div>
+                            <div className="absolute bottom-12 right-0 left-0">
+                                <div
+                                    className="mt-4"
+                                    onClick={() => setIsWishlistOpen(false)}
+                                >
+                                    {wishlistSlugs.length > 0 ? (
+                                        <ButtonLink
+                                            href={`/kontakt`}
+                                            className="block text-center"
+                                        >
+                                            Zapytaj o lampy
+                                        </ButtonLink>
+                                    ) : (
+                                        <ButtonLink
+                                            href={'/oferta'}
+                                            className="block text-center"
+                                        >
+                                            Zobacz naszą ofertę
+                                        </ButtonLink>
+                                    )}
+                                </div>
+                                <div className="mt-4">
+                                    <Button
+                                        styleType="bs-outline"
+                                        className="block w-full text-center"
+                                        onClick={() => setIsWishlistOpen(false)}
+                                    >
+                                        Zamknij
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    className={clsx(responsiveModalClassname, {
+                        'translate-x-full': !isMenuOpen,
+                    })}
+                >
+                    <div
+                        className={clsx(
+                            'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` h-full translate-x-1/2 opacity-0 transition-all duration-1000',
+                            {
+                                '!translate-x-[10%] opacity-100': isMenuOpen,
                             },
                         )}
                         onClick={() => setIsMenuOpen(false)}
@@ -319,6 +394,17 @@ const Layout = ({ children }: LayoutProps) => {
                                                 </span>
                                             </a>
                                         </div>
+                                        <div className="mt-2 text-center text-sm font-normal text-neutral-300 2xl:text-left">
+                                            <a
+                                                href="https://www.google.com/maps/place/Elco+Lampy+Ceramiczne/@52.4903859,19.2351962,17.47z/data=!4m13!1m7!3m6!1s0x471b7e0896c99759:0xa5159b0d77dc48b3!2s87-820+Baruchowo!3b1!8m2!3d52.4899146!4d19.2401933!3m4!1s0x471b7de39be169c7:0x88e894a41fd28914!8m2!3d52.4905672!4d19.2364434"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                title="Lokalizacja firmy ELCO Lampy Ceramiczne"
+                                                className="hover:text-neutral-200"
+                                            >
+                                                87-821 Baruchowo, Polska
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -345,8 +431,11 @@ const Layout = ({ children }: LayoutProps) => {
                                         </a>
                                     </span>
                                 </div>
-                                <div className="mt-10">
-                                    <Copyright />
+                                <div className="mt-10 text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
+                                    <span>
+                                        Copyright © 2022 ELCO. All Rights
+                                        Reserved.
+                                    </span>
                                 </div>
                             </div>
                         </footer>
