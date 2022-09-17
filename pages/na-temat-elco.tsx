@@ -23,7 +23,7 @@ const aboutSections: Array<AboutSectionItem> = [
     },
     {
         title: 'Realizacje indywidudalne',
-        href: 'realizacje-indywidudalne',
+        href: 'realizacjeindywidudalne',
         content: <RealizationsContent />,
     },
     {
@@ -65,8 +65,6 @@ const AboutSection = ({
                 if (targetID !== activeCharacter && entry.isIntersecting) {
                     setActiveCharacter(targetID)
                 }
-
-                console.log(targetID)
             })
         }
 

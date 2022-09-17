@@ -220,7 +220,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     />
                     <div className="absolute inset-0 bg-black/70"></div>
                     <div className="container-padding absolute bottom-10 lg:left-12 lg:right-12 lg:px-0">
-                        <H3 className="!text-white">
+                        <H3 className="uppercase !text-white">
                             Poznaj ELCO{' '}
                             <span className="block">Lampy Ceramiczne</span>
                         </H3>
@@ -250,7 +250,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                     />
                     <div className="absolute inset-0 bg-black/70"></div>
                     <div className="container-padding absolute bottom-10 lg:left-12 lg:right-12 lg:px-0">
-                        <H3 className="!text-white">
+                        <H3 className="uppercase !text-white">
                             Indywidualne
                             <span className="block">realizacje w ELCO</span>
                         </H3>

@@ -38,14 +38,11 @@ const BasicImage = ({
 }) => {
     const imageContainerClassName = `${aspectRatioWidth[aspectW]} ${aspectRatioHeight[aspectH]} relative mt-10`
 
-    console.log(imageContainerClassName)
-
     return (
         <Zoom zoomMargin={100}>
             <div className="mt-6 w-full lg:mt-10 [&>span]:!relative">
                 {children}
             </div>
-            {/* <div className={imageContainerClassName}>{children}</div> */}
         </Zoom>
     )
 }
