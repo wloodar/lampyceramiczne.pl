@@ -7,6 +7,7 @@ import Instagram from './icons/instagram'
 import ArrowUpRight from './icons/arrowUpRight'
 import Mail from './icons/mail'
 import Smartphone from './icons/smartphone'
+import HandwrittenRightUpArrow from './icons/handwrittenRightUpArrow'
 
 interface Icon {
     name: string
@@ -37,6 +38,8 @@ const Icon = ({
             return <Mail className={className} />
         case 'smartphone':
             return <Smartphone className={className} />
+        case 'handwrittenRightUpArrow':
+            return <HandwrittenRightUpArrow className={className} />
         default:
             return <></>
     }

@@ -10,6 +10,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Button } from './button'
+import { H3 } from './typography'
 
 const RecentlyViewed = ({
     disableSlug,
@@ -50,16 +51,13 @@ const RecentlyViewed = ({
         >
             <div className="border-l border-stone-200 p-8 2xl:w-[30%] 2xl:p-0">
                 <div className="box-border flex h-full flex-col items-center justify-center px-14 text-center">
-                    <span className="text-lg font-normal">
-                        Ostatnio widzane
-                    </span>
+                    <H3 className="!text-lg uppercase">Ostatnio widziane</H3>
                     <span className="my-2 h-[1px] w-14 bg-stone-300"></span>
                     <span className="max-w-[200px] text-xs font-light text-neutral-400">
                         Lampy, które niedawno były przez Ciebie oglądane
                     </span>
                 </div>
             </div>
-            {/* <div className="!grid grid-cols-12"> */}
             <Slider
                 className="2xl:w-[70%]"
                 dots={true}
@@ -128,7 +126,6 @@ const RecentlyViewed = ({
                     </Link>
                 ))}
             </Slider>
-            {/* </div> */}
         </div>
     )
 }

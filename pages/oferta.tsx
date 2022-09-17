@@ -5,17 +5,47 @@ import { Grid } from 'common/components/grid'
 import { LampCard } from 'common/components/lampCard'
 
 import SEO from 'common/components/seo'
-import { H2, Paragraph } from 'common/components/typography'
+import { H1, H2, Paragraph, H5, H4 } from 'common/components/typography'
 import { Button, ButtonLink } from 'common/components/button'
+import Icon from 'common/components/icon'
 
 const Offer: NextPage = () => {
     return (
         <div>
             <SEO title="Oferta Lamp Ceramicznych ELCO | Ceramiczne Lampy Z Abażurem" />
             <Grid>
-                <div className="col-span-12 mb-20 flex flex-col xl:col-span-6">
-                    <div className="box-border bg-stone-100 p-12 2xl:p-16">
-                        <H2 className="mb-8 !text-xl !font-medium uppercase tracking-[3px] 2xl:!text-2xl">
+                <div className="col-span-12 flex flex-col pb-8 lg:mb-10 xl:col-span-6">
+                    <div className="relative block min-h-[10rem] lg:hidden">
+                        <div className="absolute right-20 -z-10">
+                            <Icon
+                                name="handwrittenRightUpArrow"
+                                className="h-auto w-20"
+                            />
+                        </div>
+                        <div className="absolute -left-20 -bottom-32 -z-10 opacity-10">
+                            <Icon
+                                name="heart"
+                                className="h-auto w-64 stroke-[0.5px]"
+                            />
+                        </div>
+                        <div className="wl-container mt-8">
+                            <div>
+                                <H2 className="uppercase">
+                                    Zapisz swoje lampy
+                                </H2>
+                                <Paragraph className="mt-2 max-w-[90%]">
+                                    Wybierz swoje ulubione modele lamp
+                                    ceramicznych i wygodnie wyślij zapytanie lub
+                                    zapisz je na przyszłe wizyty w ELCO.
+                                </Paragraph>
+                                <H1 className="mt-5 border-t border-stone-200 pt-6 uppercase">
+                                    Oferta Lamp Ceramicznych
+                                </H1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box-border hidden bg-stone-100 p-12 lg:block 2xl:p-16">
+                        <H2 className="mb-8 !text-3xl !font-medium uppercase tracking-[3px]">
                             Oferta Lamp Ceramicznych ELCO
                         </H2>
                         <Paragraph>
@@ -26,6 +56,24 @@ const Offer: NextPage = () => {
                             wzbogacenia go o nutkę klasycznego, a zarazem
                             eleganckiego elementu wystroju.
                         </Paragraph>
+                    </div>
+                    <div className="relative mt-8 hidden bg-black py-10 lg:block">
+                        <div className="absolute -left-24 -bottom-24 opacity-100">
+                            <Icon
+                                name="heart"
+                                className="h-auto w-72 stroke-white stroke-[0.5px]"
+                            />
+                        </div>
+                        <div className="m-auto max-w-[22rem] text-center">
+                            <H4 tag="h3" className="uppercase !text-white">
+                                Zapisz swoje lampy
+                            </H4>
+                            <Paragraph className="mt-2 max-w-[90%] !text-neutral-300 mix-blend-difference">
+                                Wybierz swoje ulubione modele lamp ceramicznych
+                                i wygodnie wyślij zapytanie lub zapisz je na
+                                przyszłe wizyty w ELCO.
+                            </Paragraph>
+                        </div>
                     </div>
                     <div className="mt-8 hidden h-full bg-neutral-100 xl:block">
                         <div className="relative h-full">
