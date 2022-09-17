@@ -13,32 +13,37 @@ const WishlistItem = ({
     title,
     cover,
     removeProduct,
+    onLampClick,
 }: Pick<Lamp, 'slug' | 'title' | 'cover'> & {
     removeProduct: (slug: string) => void
+    onLampClick: () => void
 }) => {
     return (
         <div className="mb-4 flex items-center">
-            <div className="cursor-pointer">
+            <div className="relative h-[70px] w-[70px] cursor-pointer lg:h-[50px] lg:w-[50px]">
                 <Link href={`/oferta/${slug}`} scroll={false} passHref>
                     <ExportedImage
                         src={`/img/lamps/${slug}/${cover}`}
-                        width={50}
-                        height={50}
+                        layout="fill"
                         objectFit="cover"
                         objectPosition="center"
                         className="rounded-lg"
+                        onClick={onLampClick}
                     />
                 </Link>
             </div>
             <div className="flex-1 pl-4">
-                <h5 className="cursor-pointer text-xs hover:underline">
+                <h5
+                    className="cursor-pointer text-sm hover:underline lg:text-xs"
+                    onClick={onLampClick}
+                >
                     <Link href={`/oferta/${slug}`} scroll={false}>
                         {title}
                     </Link>
                 </h5>
                 <button
                     onClick={() => removeProduct(slug)}
-                    className="group mt-1 flex items-center text-[0.65rem]"
+                    className="group mt-1 flex items-center text-[0.75rem] lg:text-[0.65rem]"
                 >
                     <Icon
                         name="x"
@@ -56,9 +61,11 @@ const WishlistItem = ({
 const WishlistProductsList = ({
     showButton = true,
     className,
+    onLampClick,
 }: {
     showButton?: boolean
     className?: string
+    onLampClick?: (slug: string) => void
 }) => {
     const { slugs, removeProduct } = useWishlistStore()
     const lamps = allLamps.filter(lamp => slugs.includes(lamp.slug))
@@ -116,6 +123,9 @@ const WishlistProductsList = ({
                                     title={lamp.title}
                                     cover={lamp.cover}
                                     removeProduct={removeProduct}
+                                    onLampClick={() =>
+                                        onLampClick && onLampClick(lamp.slug)
+                                    }
                                 />
                             </motion.div>
                         ))
