@@ -52,7 +52,7 @@ const NavLink = ({
     const router = useRouter()
 
     return (
-        <li className="mb-4 text-black">
+        <li className="my-5 text-black lg:my-4">
             <ActiveLink
                 href={href}
                 activeClassName="before:w-full"
@@ -60,7 +60,7 @@ const NavLink = ({
             >
                 <a
                     className={clsx(
-                        'base border-hover text-[.95rem] font-normal text-black transition-[color] duration-300 ease-in-out before:bg-neutral-800',
+                        'base border-hover text-2xl font-medium text-black transition-[color] duration-300 ease-in-out before:bg-neutral-800 lg:text-[.95rem] lg:font-normal',
                         {
                             'before:w-full': router.pathname === href,
                         },

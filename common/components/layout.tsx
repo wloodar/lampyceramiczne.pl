@@ -1,3 +1,4 @@
+import * as React from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import ExportedImage from 'next-image-export-optimizer'
@@ -9,6 +10,7 @@ import Icon from './icon'
 
 import { MENU_LINKS } from './nav'
 import { AnimatePresence, motion } from 'framer-motion'
+import clsx from 'clsx'
 
 const WishlistProductsList = dynamic(
     () => import('common/components/wishlist'),
@@ -21,7 +23,36 @@ type LayoutProps = {
     children: React.ReactNode
 }
 
+const menuIconBaseClassname =
+    'h-[2px] w-full bg-black transition ease transform duration-700'
+
+const DesignedByContainer = () => (
+    <>
+        {' '}
+        <div className="text-xs font-medium text-neutral-500">
+            Design & Realization{' '}
+        </div>
+        <a
+            href="https://www.linkedin.com/in/wloodar/"
+            title="wlodev.com portfolio"
+            target="_blank"
+            rel="noreferrer"
+            className="text-lg font-semibold hover:text-neutral-700"
+        >
+            wlodev.com
+        </a>
+    </>
+)
+
+const Copyright = () => (
+    <div className="text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:mt-0 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
+        <span>Copyright © 2022 ELCO. All Rights Reserved.</span>
+    </div>
+)
+
 const Layout = ({ children }: LayoutProps) => {
+    const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
+
     const { slugs: wishlistSlugs } = useWishlistStore()
 
     return (
@@ -30,7 +61,12 @@ const Layout = ({ children }: LayoutProps) => {
                 <header className="container-padding fixed left-0 top-0 right-0 z-10 box-border flex flex-[0_0_80px] items-center justify-between bg-white py-4 lg:relative lg:left-auto lg:top-auto lg:right-auto lg:mb-14 lg:block lg:bg-transparent lg:py-0 lg:px-0">
                     <div className="w-full lg:fixed">
                         <Link href="/" scroll={false}>
-                            <a className="text-3xl font-semibold tracking-[10px] lg:text-5xl">
+                            <a
+                                className="text-3xl font-semibold tracking-[10px] lg:text-5xl"
+                                onClick={() =>
+                                    isMenuOpen && setIsMenuOpen(false)
+                                }
+                            >
                                 ELCO
                             </a>
                         </Link>
@@ -68,15 +104,84 @@ const Layout = ({ children }: LayoutProps) => {
                                 </div>
                             ) : null}
                         </button>
-                        <button className="p-3">
-                            <div className="w-[30px] [&>span]:block [&>span]:h-[2px] [&>span]:w-full [&>span]:bg-black">
-                                <span className="mb-[6px]"></span>
-                                <span className="mt-[3px] mb-[3px]"></span>
-                                <span className="mt-[6px]"></span>
+                        <button
+                            className="p-3"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            <div className="w-[30px] ">
+                                <div
+                                    className={clsx(
+                                        'mb-[6px]',
+                                        menuIconBaseClassname,
+                                        {
+                                            'translate-y-[8px] rotate-45':
+                                                isMenuOpen,
+                                            '': !isMenuOpen,
+                                        },
+                                    )}
+                                ></div>
+                                <div
+                                    className={clsx(
+                                        'mt-[3px] mb-[3px]',
+                                        menuIconBaseClassname,
+                                        {
+                                            'opacity-0': isMenuOpen,
+                                        },
+                                    )}
+                                ></div>
+                                <div
+                                    className={clsx(
+                                        'mt-[6px]',
+                                        menuIconBaseClassname,
+                                        {
+                                            '-translate-y-[8px] -rotate-45':
+                                                isMenuOpen,
+                                        },
+                                    )}
+                                ></div>
                             </div>
                         </button>
                     </div>
                 </header>
+                <div
+                    className={clsx(
+                        'ease-[cubic-bezier(0.46, 0.5, 0, 0.94)] fixed top-[79px] bottom-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-lg transition-transform duration-1000 lg:relative lg:top-auto lg:bottom-auto lg:left-auto lg:right-auto lg:hidden',
+                        { 'translate-x-full': !isMenuOpen },
+                    )}
+                >
+                    <div
+                        className={clsx(
+                            'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` h-full opacity-0 transition-all duration-1000',
+                            {
+                                'translate-x-[10%] opacity-100': isMenuOpen,
+                            },
+                        )}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        <div className="relative flex h-full items-center">
+                            <div className="pb-[100px]">
+                                <div className="text-[.85rem] font-normal text-stone-500">
+                                    Menu
+                                </div>
+                                <Nav />
+                                <div className="mt-10 mb-2 text-[.85rem] font-normal text-stone-500">
+                                    Skontakuj się z nami
+                                </div>
+                                <div>
+                                    <a
+                                        href="mailto:elco.kontakt@gmail.com"
+                                        className="border-b border-black pb-2 font-medium"
+                                    >
+                                        elco.kontakt@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="absolute left-0 bottom-8">
+                                <DesignedByContainer />
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="w-full content-start items-start justify-start lg:flex lg:flex-[1_1_100%]">
                     <div className="hidden min-h-[calc(100vh-250px)] min-w-[230px] max-w-[300px]  flex-[0_0_20%] lg:block">
                         <div className="fixed">
@@ -131,18 +236,7 @@ const Layout = ({ children }: LayoutProps) => {
                         </div>
                         <div className="fixed bottom-16">
                             <div className="mb-5">
-                                <div className="text-xs font-medium text-neutral-500">
-                                    Design & Realization{' '}
-                                </div>
-                                <a
-                                    href="https://www.linkedin.com/in/wloodar/"
-                                    title="wlodev.com portfolio"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-lg font-semibold hover:text-neutral-700"
-                                >
-                                    wlodev.com
-                                </a>
+                                <DesignedByContainer />
                             </div>
                             <div className="text-xs font-medium text-neutral-500">
                                 Copyright © 2022 ELCO
@@ -251,11 +345,8 @@ const Layout = ({ children }: LayoutProps) => {
                                         </a>
                                     </span>
                                 </div>
-                                <div className="mt-10 text-[.65rem] font-light text-stone-400 sm:text-xs 2xl:mt-0 2xl:w-full 2xl:max-w-[450px] 2xl:text-left">
-                                    <span>
-                                        Copyright © 2022 ELCO. All Rights
-                                        Reserved.
-                                    </span>
+                                <div className="mt-10">
+                                    <Copyright />
                                 </div>
                             </div>
                         </footer>
