@@ -263,6 +263,43 @@ const RealizationsContent = () => {
                     />
                 </div>
             </BasicImage>
+            <div className="sm:flex">
+                <div className="sm:w-50% flex-1 sm:mr-3 lg:mr-5">
+                    <BasicImage aspectW={2} aspectH={3}>
+                        <ExportedImage
+                            src="/img/instagram-creators/bohodom-warszawa-personalized-lampa-cermiczna-elco.jpg"
+                            alt="Hala produkcyjna ELCO lampy ceramiczne formy"
+                            layout={'fill'}
+                            objectFit="cover"
+                            objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
+                        />
+                    </BasicImage>
+                </div>
+                <div className="sm:w-50% flex-1 sm:ml-3 lg:ml-5">
+                    <BasicImage aspectW={2} aspectH={3}>
+                        <ExportedImage
+                            src="/img/instagram-creators/bohodom-warszawa-personalized-lampa-cermiczna-elco-szyszka.jpg"
+                            alt="Hala produkcyjna lamp ceramicznych formy"
+                            layout={'fill'}
+                            objectFit="cover"
+                            objectPosition="center"
+                            className="!relative !h-[unset] !w-full object-contain"
+                        />
+                    </BasicImage>
+                </div>
+            </div>
+            <BasicImage aspectW={2} aspectH={2}>
+                <div className="aspect-w-2 aspect-h-2 relative">
+                    <ExportedImage
+                        src="/img/instagram-creators/bohodom-warszawa-lampa-ceramiczna-personalized-dark.jpg"
+                        alt="Spersonalizowana Lampa Ceramiczna ELCO"
+                        layout={'fill'}
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                </div>
+            </BasicImage>
         </div>
     )
 }
@@ -270,9 +307,9 @@ const RealizationsContent = () => {
 const ProductionTime = () => {
     return (
         <div className="mt-10 lg:mt-28">
-            <H2 className="uppercase">Czas produkcji</H2>
             <div className="2xl:flex 2xl:items-center">
                 <div className="flex-1 2xl:mr-20">
+                    <H2 className="uppercase">Czas produkcji</H2>
                     <BasicParagraph>
                         Lampy ceramiczne ELCO produkowane są z największa
                         precyzją i dbałością o szczegóły tak, aby dostarczyć

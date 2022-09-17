@@ -52,7 +52,7 @@ const NavLink = ({
     const router = useRouter()
 
     return (
-        <li className="my-5 text-black lg:my-4">
+        <li className="my-5 text-black lg:my-2">
             <ActiveLink
                 href={href}
                 activeClassName="before:w-full"

@@ -34,7 +34,7 @@ const responsiveModalClassname =
 const DesignedByContainer = () => (
     <>
         {' '}
-        <div className="text-xs font-medium text-neutral-500">
+        <div className="text-[.65rem] font-medium text-neutral-500">
             Design & Realization{' '}
         </div>
         <a
@@ -42,7 +42,7 @@ const DesignedByContainer = () => (
             title="wlodev.com portfolio"
             target="_blank"
             rel="noreferrer"
-            className="text-lg font-semibold hover:text-neutral-700"
+            className="text-base font-semibold hover:text-neutral-700"
         >
             wlodev.com
         </a>
@@ -350,7 +350,11 @@ const Layout = ({ children }: LayoutProps) => {
                                 <div className="m-auto mt-10 w-full max-w-[550px] pb-10 2xl:m-0 2xl:max-w-[450px] 2xl:pb-0">
                                     <div className="flex flex-col-reverse 2xl:block">
                                         <div className="mt-7 mb-2 flex items-center justify-center 2xl:mt-0 2xl:mb-0 2xl:justify-start">
-                                            <Link href={`/`} title="Wstęp ELCO">
+                                            <Link
+                                                href={`/`}
+                                                title="Wstęp ELCO"
+                                                scroll={false}
+                                            >
                                                 <a className="text-3xl font-medium tracking-[5px] text-white sm:text-5xl">
                                                     ELCO
                                                 </a>

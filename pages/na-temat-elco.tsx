@@ -12,6 +12,7 @@ import {
 import { RecentlyViewed } from 'common/components/recentlyViewed'
 import SEO from 'common/components/seo'
 import { ButtonLink } from 'common/components/button'
+import InstagramPosts from 'common/components/sections/instagramPosts'
 
 const aboutSections: Array<AboutSectionItem> = [
     { title: 'Wstęp', href: 'intro', content: <IntroContent /> },
@@ -222,6 +223,9 @@ const NaTematElco = () => {
                         />
                     </div>
                 </div>
+            </div>
+            <div className="mt-7 lg:mt-16">
+                <InstagramPosts />
             </div>
             <div className="mt-12 lg:mt-24">
                 <RecentlyViewed />

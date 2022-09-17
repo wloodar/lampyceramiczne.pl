@@ -16,7 +16,6 @@ const buttonStyleClassname = (
 ) =>
     clsx(
         className,
-        // 'cursor-pointer rounded-sm bg-black py-4 px-12 text-xs font-medium uppercase tracking-[1px] text-white hover:bg-neutral-800',
         'cursor-pointer rounded-sm py-4 px-12 text-xs font-medium uppercase tracking-[1px]',
         {
             'bg-black text-white hover:bg-neutral-800':
