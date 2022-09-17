@@ -38,14 +38,20 @@ const Offer: NextPage = () => {
                                     ceramicznych i wygodnie wyślij zapytanie lub
                                     zapisz je na przyszłe wizyty w ELCO.
                                 </Paragraph>
-                                <H1 className="mt-5 border-t border-stone-200 pt-6 uppercase">
-                                    Oferta Lamp Ceramicznych
-                                </H1>
+                                <H2
+                                    tag="h1"
+                                    className="mt-5 border-t border-stone-200 pt-6 uppercase"
+                                >
+                                    Oferta Lamp Ceramicznych ELCO
+                                </H2>
                             </div>
                         </div>
                     </div>
                     <div className="box-border hidden bg-stone-100 p-12 lg:block 2xl:p-16">
-                        <H2 className="mb-8 !text-3xl !font-medium uppercase tracking-[3px]">
+                        <H2
+                            tag="h1"
+                            className="mb-8 !text-3xl !font-medium uppercase tracking-[3px]"
+                        >
                             Oferta Lamp Ceramicznych ELCO
                         </H2>
                         <Paragraph>
