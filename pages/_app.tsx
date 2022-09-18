@@ -1,3 +1,5 @@
+// @ts-nocheck
+import * as React from 'react'
 import '../styles/globals.css'
 import Script from 'next/script'
 import type { AppProps } from 'next/app'
@@ -5,6 +7,15 @@ import Layout from 'common/components/layout'
 import Transition from 'common/components/transition'
 
 function MyApp({ Component, pageProps }: AppProps) {
+    React.useEffect(() => {
+        if (process.env.NODE_ENV === 'development') {
+            window.dataLayer = window.dataLayer || []
+            window.dataLayer.push({
+                debug_mode: true,
+            })
+        }
+    }, [])
+
     return (
         <Layout>
             <Script id="google-tag-manager" strategy="afterInteractive">

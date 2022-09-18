@@ -3,11 +3,13 @@ import { persist } from 'zustand/middleware'
 import { produce } from 'immer'
 import type { Draft } from 'immer'
 import { allLamps } from 'contentlayer/generated'
+import { sendWishlistGTMEvent } from 'common/utils/googleTagManager'
 
 type ProductSlug = string
+type Slugs = Array<ProductSlug>
 
 type WishlistStore = {
-    slugs: Array<ProductSlug>
+    slugs: Slugs
     getWishlistSlugs: () => Array<ProductSlug>
     addProduct: (slug: ProductSlug) => void
     removeProduct: (slug: ProductSlug) => void
@@ -37,19 +39,43 @@ const useWishlistStore = create<WishlistStore>()(
                         if (!draft.slugs.includes(slug)) {
                             draft.slugs.push(slug)
                         }
+
+                        sendWishlistGTMEvent({
+                            slugs: draft.slugs,
+                            addSlug: slug as string,
+                        })
                     }),
                 ),
             removeProduct: slug =>
-                set(state => ({
-                    slugs: state.slugs.filter(prodSlug => prodSlug !== slug),
-                })),
+                set(state => {
+                    const filteredSlugs = state.slugs.filter(
+                        prodSlug => prodSlug !== slug,
+                    )
+
+                    sendWishlistGTMEvent({
+                        slugs: filteredSlugs,
+                        removeSlug: slug as string,
+                    })
+
+                    return {
+                        slugs: filteredSlugs,
+                    }
+                }),
             toggleProduct: slug =>
                 set(
                     produce((draft: Draft<Pick<WishlistStore, 'slugs'>>) => {
                         if (!draft.slugs.includes(slug)) {
                             draft.slugs.push(slug)
+                            sendWishlistGTMEvent({
+                                slugs: draft.slugs,
+                                addSlug: slug as string,
+                            })
                         } else {
                             draft.slugs.splice(draft.slugs.indexOf(slug), 1)
+                            sendWishlistGTMEvent({
+                                slugs: draft.slugs,
+                                removeSlug: slug as string,
+                            })
                         }
                     }),
                 ),

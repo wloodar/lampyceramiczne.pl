@@ -10,7 +10,7 @@ import InstagramPosts from 'common/components/sections/instagramPosts'
 const Home: NextPage = () => {
     return (
         <div className="lg:-mt-[200px]">
-            <SEO />
+            <SEO title="Lampy Ceramiczne Z Abażurem & Ceramiczne Lampy Stołowe | ELCO" />
             <div className="relative lg:-mr-[64px] 2xl:aspect-w-4 2xl:aspect-h-2">
                 <div className="h-full w-full 2xl:bg-black">
                     <div className="absolute inset-0 -z-10 h-full w-full 2xl:z-0">

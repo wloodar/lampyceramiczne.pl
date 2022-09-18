@@ -4,4 +4,11 @@ type AboutSectionItem = {
     content: JSX.Element
 }
 
-export { AboutSectionItem }
+type GTMWishlist = {
+    slugs: Array<string>
+    addProduct: undefined | string
+    removeProduct: undefined | string
+    contact: undefined | boolean
+}
+
+export { AboutSectionItem, GTMWishlist }

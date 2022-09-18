@@ -7,6 +7,8 @@ import { ButtonLink } from './button'
 import { H5, Paragraph } from './typography'
 import Icon from './icon'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
+import { sendWishlistGTMEvent } from 'common/utils/googleTagManager'
 
 const WishlistItem = ({
     slug,
@@ -67,8 +69,20 @@ const WishlistProductsList = ({
     className?: string
     onLampClick?: (slug: string) => void
 }) => {
-    const { slugs, removeProduct } = useWishlistStore()
+    const { getWishlistSlugs, removeProduct } = useWishlistStore()
+    const slugs = getWishlistSlugs()
     const lamps = allLamps.filter(lamp => slugs.includes(lamp.slug))
+
+    const { asPath } = useRouter()
+
+    const sendContactGTMEvent = () => {
+        if (!asPath.includes('kontakt')) {
+            sendWishlistGTMEvent({
+                slugs: slugs,
+                contact: true,
+            })
+        }
+    }
 
     return (
         <>
@@ -137,6 +151,7 @@ const WishlistProductsList = ({
                     className={clsx('mt-8 hidden w-full', {
                         '!block': slugs.length > 0,
                     })}
+                    onClick={() => sendContactGTMEvent()}
                 >
                     <ButtonLink href={`/kontakt`} className="block text-center">
                         Zapytaj o lampy
