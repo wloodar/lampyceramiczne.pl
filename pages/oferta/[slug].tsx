@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { useWishlistStore } from 'common/hooks/useWishlistStore'
 import { useRecentStore } from 'common/hooks/useRecentStore'
@@ -13,6 +13,7 @@ import SEO from 'common/components/seo'
 import Icon from 'common/components/icon'
 
 import { RecentlyViewed } from 'common/components/recentlyViewed'
+import clsx from 'clsx'
 
 type PathParams = {
     params: {
@@ -47,8 +48,19 @@ export const getStaticProps = async ({ params }: Props) => {
 }
 
 const LampPage = ({ lamp }: { lamp: Lamp }) => {
-    const { slugs, addProduct, removeProduct } = useWishlistStore()
+    const { addProduct, removeProduct, toggleProduct, getWishlistSlugs } =
+        useWishlistStore()
+    const slugs = getWishlistSlugs()
     const { toggleRecentProduct } = useRecentStore()
+
+    const [pageYScroll, setPageYScroll] = React.useState<number>(0)
+    const { scrollY } = useScroll()
+
+    React.useEffect(() => {
+        return scrollY.onChange(latest => {
+            setPageYScroll(latest)
+        })
+    }, [])
 
     const TechnicalDetails = () => {
         const { technical } = lamp
@@ -273,6 +285,37 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
                 </div>
             </div>
             <RecentlyViewed className="mt-10" disableSlug={lamp.slug} />
+            <div
+                className={clsx(
+                    'fixed left-0 right-0 bottom-0 translate-y-full bg-white transition duration-300 ease-in-out lg:hidden',
+                    { '!translate-y-0': pageYScroll > 50 },
+                )}
+            >
+                <div className="wl-container flex justify-between py-5">
+                    <ButtonLink
+                        href={`/oferta`}
+                        type="bs-outline"
+                        className="!py-3"
+                    >
+                        Cała oferta
+                    </ButtonLink>
+                    <Button
+                        className="!py-3"
+                        onClick={() => toggleProduct(lamp.slug)}
+                    >
+                        <Icon
+                            name="heart"
+                            className={clsx(
+                                'h-auto w-5 stroke-white lg:hover:fill-red-500',
+                                {
+                                    'fill-red-500 stroke-red-500':
+                                        slugs.includes(lamp.slug),
+                                },
+                            )}
+                        />
+                    </Button>
+                </div>
+            </div>
         </div>
     )
 }

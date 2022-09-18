@@ -119,6 +119,14 @@ const Offer: NextPage = () => {
             </Grid>
             <div className="wl-container">
                 <InstagramPosts />
+                <div className="text-center">
+                    <ButtonLink
+                        href={`/kontakt`}
+                        className="mt-12 inline-block"
+                    >
+                        Skontaktuj się z nami
+                    </ButtonLink>
+                </div>
             </div>
         </div>
     )
