@@ -92,7 +92,7 @@ const WishlistProductsList = ({
                                 },
                             }}
                         >
-                            <Paragraph className="text-xs leading-6">
+                            <Paragraph className="!text-xs leading-6">
                                 Na ten moment nie posiadasz na swojej liście
                                 żadnej lampy.
                             </Paragraph>

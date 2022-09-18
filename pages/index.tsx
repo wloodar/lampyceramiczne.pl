@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Zoom from 'react-medium-image-zoom'
 import SEO from '../common/components/seo'
 
 import ExportedImage from 'next-image-export-optimizer'
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
                             priority={true}
                         />
                     </div>
-                    <div className="container-padding inset-0 box-border bg-[#141414] bg-opacity-80 pt-32 pb-10 2xl:absolute 2xl:top-auto 2xl:max-w-3xl 2xl:bg-opacity-100 2xl:pl-28 2xl:pr-0">
+                    <div className="container-padding inset-0 box-border bg-[#141414] bg-opacity-80 pt-32 pb-10 2xl:absolute 2xl:top-auto 2xl:max-w-3xl 2xl:bg-opacity-100 2xl:pl-24 2xl:pr-0">
                         <H1 className="2xl:!text-7xl">
                             <span className="block uppercase text-white 2xl:text-7xl">
                                 ELCO Lampy Ceramiczne
@@ -55,11 +56,63 @@ const Home: NextPage = () => {
             </div>
             <div className="-mr-[64px] hidden h-[100px] bg-[#141414] 2xl:block"></div>
 
-            <div className="wl-container m-auto mt-14 md:mt-32">
+            <div className="container-padding lg:p-0">
+                <div className="mt-7 sm:mt-10">
+                    <div className="sm:grid sm:grid-cols-2 sm:gap-x-10">
+                        <div className="aspect-w-3 aspect-h-2 relative">
+                            <ExportedImage
+                                src="/img/content/hotel-lampy-ceramiczne-elco-kobalt-czarne.jpg"
+                                alt="Lampy ceramiczne ELCO aranżacja"
+                                layout={'fill'}
+                                objectFit="cover"
+                                objectPosition="center"
+                                placeholder="blur"
+                            />
+                        </div>
+                        <div className="aspect-w-3 aspect-h-2 relative mt-7 sm:mt-0">
+                            <ExportedImage
+                                src="/img/content/palac-lampa-ceramiczna-elco-szyszka.jpg"
+                                alt="Lampy ceramiczne ELCO aranżacja"
+                                layout={'fill'}
+                                objectFit="cover"
+                                objectPosition="center"
+                                placeholder="blur"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-7 border-b border-stone-200 pb-10 sm:mt-10">
+                    <div className="sm:grid sm:grid-cols-2 sm:gap-x-10">
+                        <div className="aspect-w-3 aspect-h-2 relative">
+                            <ExportedImage
+                                src="/img/content/hotel-bonerowski-lampa-ceramiczna-elco-maly-andrzej.jpg"
+                                alt="Lampy ceramiczne ELCO aranżacja"
+                                layout={'fill'}
+                                objectFit="cover"
+                                objectPosition="center"
+                                placeholder="blur"
+                            />
+                        </div>
+                        <div className="aspect-w-3 aspect-h-2 relative mt-7 sm:mt-0">
+                            <ExportedImage
+                                src="/img/content/hotel-bonerowski-lampy-ceramiczne-4000-elco.jpg"
+                                alt="Lampy ceramiczne ELCO aranżacja"
+                                layout={'fill'}
+                                objectFit="cover"
+                                objectPosition="center"
+                                placeholder="blur"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="wl-container m-auto mt-10 sm:mt-14 md:mt-16">
                 <InstagramPosts />
             </div>
 
-            <div className="wl-container m-auto mt-16 mb-16 sm:mt-24">
+            <div className="wl-container m-auto mt-8 mb-16 sm:mt-24">
                 <H3 className="text-base uppercase">Pare słów o nas</H3>
                 <Paragraph className="mt-8 !text-sm !leading-6">
                     ELCO jest{' '}
@@ -122,6 +175,30 @@ const Home: NextPage = () => {
                     zapewnić klientowi, <strong>lampę ceramiczną</strong>, która
                     w pełni go usatysfakcjonuje.
                 </Paragraph>
+                <div className="aspect-w-2 aspect-h-1 relative mt-10">
+                    <ExportedImage
+                        src="/img/content/elco-hala-produkcyjna-wyschniete-lampy.jpg"
+                        alt="Hala produkcyjna lamp ceramicznych ELCO"
+                        layout={'fill'}
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                </div>
+                <div className="mt-12 text-center">
+                    <ButtonLink
+                        href={`/na-temat-elco`}
+                        className="block sm:inline-block"
+                    >
+                        Dowiedz się więcej
+                    </ButtonLink>
+                    <ButtonLink
+                        href={`/oferta`}
+                        type="bs-outline"
+                        className="mt-5 block sm:ml-6 sm:mt-0 sm:inline-block"
+                    >
+                        Nasza oferta
+                    </ButtonLink>
+                </div>
             </div>
         </div>
         // <div className="flex h-screen w-full items-center justify-center">
