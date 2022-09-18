@@ -8,6 +8,7 @@ import SEO from 'common/components/seo'
 import { H1, H2, Paragraph, H5, H4 } from 'common/components/typography'
 import { Button, ButtonLink } from 'common/components/button'
 import Icon from 'common/components/icon'
+import InstagramPosts from 'common/components/sections/instagramPosts'
 
 const Offer: NextPage = () => {
     return (
@@ -116,6 +117,9 @@ const Offer: NextPage = () => {
                     </div>
                 ))}
             </Grid>
+            <div>
+                <InstagramPosts />
+            </div>
         </div>
     )
 }
