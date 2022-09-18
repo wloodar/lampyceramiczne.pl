@@ -117,7 +117,7 @@ const Offer: NextPage = () => {
                     </div>
                 ))}
             </Grid>
-            <div>
+            <div className="wl-container">
                 <InstagramPosts />
             </div>
         </div>

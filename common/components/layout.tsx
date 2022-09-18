@@ -53,7 +53,8 @@ const Layout = ({ children }: LayoutProps) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
     const [isWishlistOpen, setIsWishlistOpen] = React.useState<boolean>(false)
 
-    const { slugs: wishlistSlugs } = useWishlistStore()
+    const { getWishlistSlugs } = useWishlistStore()
+    const wishlistSlugs = getWishlistSlugs()
 
     return (
         <NoSSRWrapper>
@@ -169,7 +170,7 @@ const Layout = ({ children }: LayoutProps) => {
                         className={clsx(
                             'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` relative h-full translate-y-1/3 pt-[80px] opacity-0 transition-all duration-1000',
                             {
-                                '!translate-y-0 opacity-100': isWishlistOpen,
+                                '!translate-y-0 !opacity-100': isWishlistOpen,
                             },
                         )}
                     >
@@ -228,7 +229,7 @@ const Layout = ({ children }: LayoutProps) => {
                         className={clsx(
                             'container-padding ease-[cubic-bezier(0.46, 0.5, 0, 0.94)]` h-full translate-x-1/2 opacity-0 transition-all duration-1000',
                             {
-                                '!translate-x-[10%] opacity-100': isMenuOpen,
+                                '!translate-x-[10%] !opacity-100': isMenuOpen,
                             },
                         )}
                         onClick={() => setIsMenuOpen(false)}

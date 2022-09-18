@@ -2,11 +2,13 @@ import create from 'zustand'
 import { persist } from 'zustand/middleware'
 import { produce } from 'immer'
 import type { Draft } from 'immer'
+import { allLamps } from 'contentlayer/generated'
 
 type ProductSlug = string
 
 type WishlistStore = {
     slugs: Array<ProductSlug>
+    getWishlistSlugs: () => Array<ProductSlug>
     addProduct: (slug: ProductSlug) => void
     removeProduct: (slug: ProductSlug) => void
     toggleProduct: (slug: ProductSlug) => void
@@ -14,8 +16,21 @@ type WishlistStore = {
 
 const useWishlistStore = create<WishlistStore>()(
     persist(
-        set => ({
+        (set, get) => ({
             slugs: [],
+            getWishlistSlugs: () => {
+                let filteredSlugs = []
+                for (const slug of get().slugs) {
+                    if (!allLamps.find(lamp => lamp.slug === slug)) {
+                        get().removeProduct(slug)
+                        continue
+                    }
+
+                    filteredSlugs.push(slug)
+                }
+
+                return filteredSlugs
+            },
             addProduct: slug =>
                 set(
                     produce((draft: Draft<Pick<WishlistStore, 'slugs'>>) => {
