@@ -23,7 +23,8 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "./contentlayer/generated"
+        "./contentlayer/generated",
+        "next-sitemap.config.js"
     ],
     "exclude": ["node_modules"]
 }
