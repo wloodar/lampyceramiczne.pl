@@ -76,6 +76,7 @@ const Layout = ({ children }: LayoutProps) => {
                     <div className="-mr-3 flex items-center lg:hidden">
                         <button
                             className="relative p-3"
+                            aria-label="List Twoich lamp"
                             onClick={() =>
                                 !isMenuOpen &&
                                 setIsWishlistOpen(!isWishlistOpen)
@@ -122,6 +123,7 @@ const Layout = ({ children }: LayoutProps) => {
                         </button>
                         <button
                             className="p-3"
+                            aria-label="Ikonka nawigacji"
                             onClick={() =>
                                 !isWishlistOpen && setIsMenuOpen(!isMenuOpen)
                             }
@@ -327,6 +329,7 @@ const Layout = ({ children }: LayoutProps) => {
                                     <div className="flex w-full max-w-xl items-end 2xl:absolute 2xl:top-0 2xl:left-16">
                                         <ExportedImage
                                             src="/img/instagram-creators/w_moim_malutkim_domu-bedroom.jpg"
+                                            alt="Biały Marciniak Instagram w_moim_malutkim_domu"
                                             width={1080}
                                             height={892}
                                             layout="intrinsic"

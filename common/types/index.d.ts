@@ -4,6 +4,8 @@ type AboutSectionItem = {
     content: JSX.Element
 }
 
+type GTMTrackingEvents = 'wishlist' | 'contact'
+
 type GTMWishlist = {
     slugs: Array<string>
     addProduct: undefined | string
@@ -11,4 +13,4 @@ type GTMWishlist = {
     contact: undefined | boolean
 }
 
-export { AboutSectionItem, GTMWishlist }
+export { AboutSectionItem, GTMTrackingEvents, GTMWishlist }

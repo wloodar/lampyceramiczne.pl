@@ -10,6 +10,7 @@ import WishlistProductsList from 'common/components/wishlist'
 import { allLamps, Lamp } from 'contentlayer/generated'
 import { AnimatePresence, motion } from 'framer-motion'
 import { RecentlyViewed } from 'common/components/recentlyViewed'
+import { sendMetaPixelEvent } from 'common/utils/metaPixel'
 
 const inputClassName =
     'bg-neutral-100 py-4 px-6 outline-none mb-6 text-black text-sm border-2 border-transparent transition-[border] duration-300 ease-in-out focus:border-black active:border-black'
@@ -36,6 +37,15 @@ const Kontakt = () => {
     const [submitSuccess, setSubmitSuccess] = React.useState<boolean>(false)
 
     const { slugs: wishlistSlugs } = useWishlistStore()
+
+    React.useEffect(() => {
+        sendMetaPixelEvent({
+            eventName: 'contact',
+            data: {
+                place: 'page',
+            },
+        })
+    }, [])
 
     const submitContactForm = async (e: React.FormEvent) => {
         e.preventDefault()

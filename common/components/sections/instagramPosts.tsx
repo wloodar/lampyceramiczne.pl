@@ -32,7 +32,7 @@ const InstagramPosts = () => {
                     href="https://instagram.com/elco_lampy_ceramiczne"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block font-light text-neutral-400 hover:text-black"
+                    className="mt-2 inline-block font-light text-neutral-500 hover:text-black"
                 >
                     @elco_lampy_ceramiczne
                 </a>
@@ -60,7 +60,7 @@ const InstagramPosts = () => {
                             href={post.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-4 inline-block text-sm font-light italic text-neutral-400 hover:text-black"
+                            className="mt-4 inline-block text-sm font-light italic text-neutral-500 hover:text-black"
                         >
                             @{post.author}
                         </a>

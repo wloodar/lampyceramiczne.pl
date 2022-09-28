@@ -1,7 +1,8 @@
-import { GTMWishlist } from 'common/types'
+import { sendMetaPixelEvent } from './metaPixel'
+import { GTMTrackingEvents } from 'common/types'
 
 type GTMEvent = {
-    eventName: string
+    eventName: GTMTrackingEvents
     data: { [key: string]: any }
 }
 
@@ -28,7 +29,7 @@ const sendWishlistGTMEvent = ({
     removeSlug?: undefined | string
     contact?: undefined | boolean
 }) => {
-    emitGTMEvent({
+    const payload: GTMEvent = {
         eventName: 'wishlist',
         data: {
             wishlist: {
@@ -36,9 +37,12 @@ const sendWishlistGTMEvent = ({
                 addProduct: addSlug,
                 removeProduct: removeSlug,
                 contact: contact,
-            } as GTMWishlist,
+            },
         },
-    })
+    }
+
+    sendMetaPixelEvent(payload)
+    emitGTMEvent(payload)
 }
 
 export { emitGTMEvent, sendWishlistGTMEvent }
