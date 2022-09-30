@@ -5,6 +5,7 @@ import Heart from './icons/heart'
 import Facebook from './icons/facebook'
 import Instagram from './icons/instagram'
 import ArrowUpRight from './icons/arrowUpRight'
+import ArrowRight from './icons/arrowRight'
 import Mail from './icons/mail'
 import Smartphone from './icons/smartphone'
 import HandwrittenRightUpArrow from './icons/handwrittenRightUpArrow'
@@ -34,6 +35,8 @@ const Icon = ({
             return <Instagram className={className} />
         case 'arrowUpRight':
             return <ArrowUpRight className={className} />
+        case 'arrowRight':
+            return <ArrowRight className={className} />
         case 'mail':
             return <Mail className={className} />
         case 'smartphone':
