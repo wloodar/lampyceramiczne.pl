@@ -2,6 +2,7 @@ import React from 'react'
 import { H1, Paragraph } from 'common/components/typography'
 import { AboutSectionItem } from 'common/types'
 import clsx from 'clsx'
+import SEO from 'common/components/seo'
 
 import {
     IntroContent,
@@ -9,9 +10,8 @@ import {
     RealizationsContent,
     ProductionTime,
 } from 'common/components/sections/aboutSections'
+import { PageBanner } from 'common/components/pageBanner'
 import { RecentlyViewed } from 'common/components/recentlyViewed'
-import SEO from 'common/components/seo'
-import { ButtonLink } from 'common/components/button'
 import InstagramPosts from 'common/components/sections/instagramPosts'
 
 const aboutSections: Array<AboutSectionItem> = [
@@ -193,21 +193,6 @@ const NaTematElco = () => {
                               />
                           ))
                         : null}
-                    <div className="m-auto mt-12 mb-6 max-w-sm md:mx-0">
-                        <ButtonLink
-                            href={`/oferta`}
-                            className="block text-center"
-                        >
-                            Nasza oferta
-                        </ButtonLink>
-                        <ButtonLink
-                            href={`/kontakt`}
-                            type="bs-outline"
-                            className="mt-5 block text-center"
-                        >
-                            Skontaktuj się
-                        </ButtonLink>
-                    </div>
                 </div>
                 <div className="ml-auto hidden w-[250px] lg:block">
                     <div className="sticky top-20">
@@ -222,7 +207,17 @@ const NaTematElco = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-7 lg:mt-16">
+            <div className="mt-20">
+                <PageBanner
+                    title="Kolekcja"
+                    heading="Zobacz kolekcję naszych lamp"
+                    description="Wyjątkowe & eleganckie lampy ceramiczne wykonane
+                            ręcznie według wieloletnich tradycji"
+                    linkText="Zobacz wszystkie lampy"
+                    href="/oferta"
+                />
+            </div>
+            <div className="mt-16">
                 <InstagramPosts />
             </div>
             <div className="mt-12 lg:mt-24">

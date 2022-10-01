@@ -5,9 +5,10 @@ import { Grid } from 'common/components/grid'
 import { LampCard } from 'common/components/lampCard'
 
 import SEO from 'common/components/seo'
-import { H1, H2, Paragraph, H5, H4 } from 'common/components/typography'
-import { Button, ButtonLink } from 'common/components/button'
+import { H2, Paragraph, H4 } from 'common/components/typography'
+import { ButtonLink } from 'common/components/button'
 import Icon from 'common/components/icon'
+import { PageBanner } from 'common/components/pageBanner'
 import InstagramPosts from 'common/components/sections/instagramPosts'
 
 const Offer: NextPage = () => {
@@ -117,15 +118,18 @@ const Offer: NextPage = () => {
                     </div>
                 ))}
             </Grid>
-            <div className="wl-container">
-                <InstagramPosts />
-                <div className="text-center">
-                    <ButtonLink
-                        href={`/kontakt`}
-                        className="mt-12 inline-block"
-                    >
-                        Skontaktuj się z nami
-                    </ButtonLink>
+            <div className="sm:wl-container -mt-10 sm:mt-0">
+                <PageBanner
+                    title="Zamówienie"
+                    heading="Skontaktuj się z nami juz teraż"
+                    description="Chciałbyś zamówić swoją wymarzoną lampę ceramiczną? Chętnie odpowiemy na Twoje pytania & rozjaśnimy wszystkie wątpliwości."
+                    linkText="Złóż zamówienie / Skontaktuj się"
+                    href="/kontakt"
+                    imagePath="/img/content/elco-hala-produkcyjna-wyschniete-lampy.jpg"
+                    imageAlt="Hala produkcyjna ELCO wyschnięte lampy"
+                />
+                <div className="mt-12 sm:mt-20">
+                    <InstagramPosts />
                 </div>
             </div>
         </div>

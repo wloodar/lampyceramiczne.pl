@@ -7,16 +7,52 @@ import { H1, H3, Paragraph, H2 } from 'common/components/typography'
 import { ButtonLink } from 'common/components/button'
 import InstagramPosts from 'common/components/sections/instagramPosts'
 import Link from 'next/link'
+import Icon from 'common/components/icon'
+import { PageBanner } from 'common/components/pageBanner'
 
 const Home: NextPage = () => {
     return (
         <div className="lg:-mt-[200px]">
             <SEO title="Lampy Ceramiczne Z Abażurem & Ceramiczne Lampy Stołowe | ELCO" />
+            {/* <div className="wl-container lg:hidden">
+                <div className="mt-24 border-y border-stone-500 py-3 text-center">
+                    <H2 className="leading-[0.7]">
+                        <span className="block text-3xl">ELCO</span>
+                        <span className="text-sm font-normal uppercase text-neutral-500">
+                            Lampy Ceramiczne
+                        </span>
+                    </H2>
+                </div>
+                <div className="flex items-center justify-between py-3 text-xs uppercase text-neutral-500">
+                    <span>Poland</span>
+                    <span>For over 20 years</span>
+                </div>
+            </div>
+            <div className="aspect-w-3 aspect-h-2 relative lg:hidden">
+                <ExportedImage
+                    src="/img/content/lampa-stolowa-ceramiczna-elco-3003.jpg"
+                    alt="Lampa Ceramiczne ELCO Szyszka we wnętrzu Homewithbluedoor"
+                    layout={'fill'}
+                    objectFit="cover"
+                    objectPosition="center"
+                    className="opacity-90"
+                    priority={true}
+                />
+                <div className="wl-container absolute left-0 right-0 bottom-6 top-auto h-auto">
+                    <ButtonLink
+                        href={`/oferta`}
+                        color={'bright'}
+                        type="bs-outline"
+                        className="block bg-black/50 text-center"
+                    >
+                        Zobacz ofertę
+                    </ButtonLink>
+                </div>
+            </div> */}
             <div className="relative overflow-hidden lg:-mr-[64px] 2xl:aspect-w-4 2xl:aspect-h-2">
                 <div className="h-full w-full 2xl:bg-black">
-                    <div className="absolute inset-0 left-1/3 -z-10 h-full w-full 2xl:z-0">
+                    <div className="absolute inset-0 -z-10 h-full w-full 2xl:left-1/3 2xl:z-0">
                         <ExportedImage
-                            // src="/img/instagram-creators/elco-lampy-ceramiczne-szyszka-homewithbluedoor.jpg"
                             src="/img/content/lampa-stolowa-ceramiczna-elco-3003.jpg"
                             alt="Lampa Ceramiczne ELCO Szyszka we wnętrzu Homewithbluedoor"
                             layout={'fill'}
@@ -26,7 +62,7 @@ const Home: NextPage = () => {
                             priority={true}
                         />
                     </div>
-                    <div className="container-padding inset-0 box-border bg-[#141414] bg-opacity-80 pt-32 pb-24 2xl:absolute 2xl:top-auto 2xl:max-w-3xl 2xl:bg-opacity-0 2xl:pl-24 2xl:pr-0">
+                    <div className="container-padding inset-0 box-border bg-[#141414] bg-opacity-80 pt-24 pb-10 lg:pt-32 lg:pb-24 lg:pl-24 2xl:absolute 2xl:top-auto 2xl:max-w-3xl 2xl:bg-opacity-0 2xl:pr-0">
                         <H1 className="mb-4 2xl:!text-7xl">
                             <span className="2xl:text-7xl!leading-5 block font-medium uppercase leading-[1.2] text-white">
                                 ELCO Lampy Ceramiczne
@@ -55,11 +91,11 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-12 bg-[#fffcee]">
-                <div className="wl-container m-auto max-w-2xl pt-24 pb-20 text-center">
+            <div className="bg-[#fffcee] lg:mt-12">
+                <div className="wl-container m-auto max-w-2xl pt-12 pb-10 text-center sm:pt-24 sm:pb-20">
                     <div className="mb-4 text-sm font-medium">/ Wstęp</div>
                     <Paragraph
-                        size="text-3xl"
+                        size="text-xl sm:text-3xl"
                         className="font-normal leading-[1.4]"
                     >
                         ELCO jest producentem klasycznych lamp ceramicznych w
@@ -68,26 +104,20 @@ const Home: NextPage = () => {
                         specjalizuje się w tworzeniu wysokiej jakości
                         ceramicznych opraw oświetleniowych.
                     </Paragraph>
-                    <div className="mt-10 inline-block border-t border-stone-500 px-10 py-4">
+                    <div className="mt-10 inline-block border-t border-stone-500 px-10 py-4 text-sm sm:text-base">
                         Based in Poland
                     </div>
                 </div>
             </div>
             <div>
-                <div className="wl-container m-auto mt-10 max-w-6xl pt-24 pb-20">
-                    <div className="relative flex items-center">
-                        <div className="absolute left-0 top-0 text-sm font-medium">
+                <div className="wl-container m-auto mt-2 pt-10 pb-0 sm:pt-16 sm:pb-4 xl:max-w-6xl xl:pt-24 xl:pb-20">
+                    <div className="relative flex flex-col-reverse items-center pt-12 xl:flex-row xl:pt-0">
+                        <div className="absolute left-0 top-0 right-0 text-center text-sm font-medium xl:right-auto xl:text-left">
                             / Historia
                         </div>
-                        <div className="mr-24 w-[390px]">
+                        <div className="max-w-[390px] xl:mr-24 xl:w-[390px] xl:max-w-full">
                             <H2>Tworzone ręcznie z pasją od ponad 20 lat</H2>
-                            <Paragraph className="mt-10 !leading-[2]">
-                                {/* ELCO jest producentem klasycznych lamp
-                                ceramicznych w pełni wykonanych na terenie
-                                Polski. Marka powstała ponad 20 lat temu z
-                                zamiłowaniem do ceramiki i tradycji. ELCO
-                                specjalizuje się w tworzeniu wysokiej jakości
-                                ceramicznych opraw oświetleniowych. */}
+                            <Paragraph className="mt-6 !leading-[2] sm:mt-10">
                                 W ELCO od samego początku znacząca uwagę
                                 przywiązywaliśmy do tradycji oraz jakości
                                 naszych wyrobów. Od momentu powstania nie
@@ -101,7 +131,7 @@ const Home: NextPage = () => {
                                 </a>
                             </Link>
                         </div>
-                        <div className="aspect-w-4 aspect-h-3 relative flex-1">
+                        <div className="aspect-w-4 aspect-h-3 relative mb-8 w-full max-w-[420px] flex-1 xl:mb-0 xl:w-auto xl:max-w-full">
                             <ExportedImage
                                 src="/img/content/elco-hala-produkcyjna-formy-zblizenie.jpg"
                                 alt="Hala produkcyjna lamp ceramicznych formy"
@@ -114,15 +144,90 @@ const Home: NextPage = () => {
                 </div>
             </div>
 
-            <div className="mt-20">
-                <div className="wl-container bg-[#fffcee] pt-24 pb-20"></div>
+            <div className="mt-20 bg-[#fffcee]">
+                <div className="wl-container pt-12 pb-10 text-center sm:pt-24 sm:pb-20">
+                    <div className="mb-4 text-sm font-medium">/ Klienci</div>
+                    <div className="m-auto max-w-3xl">
+                        <H2>
+                            Nasze lampy ceramiczne znajdują miejsce w stylowych
+                            pałacach, hotelach, restauracjach.
+                        </H2>
+                    </div>
+                    <div className="m-auto mt-6 max-w-xl">
+                        <Paragraph>
+                            Nasze lampy ceramiczne powstały z myślą zarówno
+                            wzbogacenia wnętrz pewnym elementem klasyki, jak i
+                            wprowadzenia lekkiej nutki elegancji. Idealnie
+                            wkomponywują się we wnętrza pałaców, hoteli,
+                            restauracji, jak i wystrój domowych progów.
+                        </Paragraph>
+                    </div>
+                    <div>
+                        <div className="mt-7 sm:mt-10">
+                            <div className="sm:grid sm:grid-cols-2 sm:gap-x-10">
+                                <div className="aspect-w-3 aspect-h-2 relative">
+                                    <ExportedImage
+                                        src="/img/content/hotel-lampy-ceramiczne-elco-kobalt-czarne.jpg"
+                                        alt="Lampy ceramiczne ELCO aranżacja"
+                                        layout={'fill'}
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                        placeholder="blur"
+                                    />
+                                </div>
+                                <div className="aspect-w-3 aspect-h-2 relative mt-7 sm:mt-0">
+                                    <ExportedImage
+                                        src="/img/content/palac-lampa-ceramiczna-elco-szyszka.jpg"
+                                        alt="Lampy ceramiczne ELCO aranżacja"
+                                        layout={'fill'}
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                        placeholder="blur"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-7 sm:mt-10">
+                            <div className="sm:grid sm:grid-cols-2 sm:gap-x-10">
+                                <div className="aspect-w-3 aspect-h-2 relative">
+                                    <ExportedImage
+                                        src="/img/content/hotel-bonerowski-lampa-ceramiczna-elco-maly-andrzej.jpg"
+                                        alt="Lampy ceramiczne ELCO aranżacja"
+                                        layout={'fill'}
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                        placeholder="blur"
+                                    />
+                                </div>
+                                <div className="aspect-w-3 aspect-h-2 relative mt-7 sm:mt-0">
+                                    <ExportedImage
+                                        src="/img/content/hotel-bonerowski-lampy-ceramiczne-4000-elco.jpg"
+                                        alt="Lampy ceramiczne ELCO aranżacja"
+                                        layout={'fill'}
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                        placeholder="blur"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="wl-container m-auto mt-10 sm:mt-14 md:mt-16">
-                <InstagramPosts />
+            <div className="sm:wl-container mb-10 sm:mb-0 sm:mt-20">
+                <PageBanner
+                    title="Kolekcja"
+                    heading="Zobacz kolekcję naszych lamp"
+                    description="Wyjątkowe & eleganckie lampy ceramiczne wykonane
+                            ręcznie według wieloletnich tradycji"
+                    linkText="Zobacz wszystkie lampy"
+                    href="/oferta"
+                />
             </div>
 
-            <div className="wl-container m-auto mt-8 mb-16 sm:mt-24">
+            <div className="wl-container m-auto mt-8 mb-16 sm:mt-20">
                 <H3 className="text-base uppercase">Pare słów o nas</H3>
                 <Paragraph className="mt-8 !text-sm !leading-6">
                     ELCO jest{' '}
@@ -185,30 +290,9 @@ const Home: NextPage = () => {
                     zapewnić klientowi, <strong>lampę ceramiczną</strong>, która
                     w pełni go usatysfakcjonuje.
                 </Paragraph>
-                <div className="aspect-w-2 aspect-h-1 relative mt-10">
-                    <ExportedImage
-                        src="/img/content/elco-hala-produkcyjna-wyschniete-lampy.jpg"
-                        alt="Hala produkcyjna lamp ceramicznych ELCO"
-                        layout={'fill'}
-                        objectFit="cover"
-                        objectPosition="center"
-                    />
-                </div>
-                <div className="mt-12 text-center">
-                    <ButtonLink
-                        href={`/na-temat-elco`}
-                        className="block sm:inline-block"
-                    >
-                        Dowiedz się więcej
-                    </ButtonLink>
-                    <ButtonLink
-                        href={`/oferta`}
-                        type="bs-outline"
-                        className="mt-5 block sm:ml-6 sm:mt-0 sm:inline-block"
-                    >
-                        Nasza oferta
-                    </ButtonLink>
-                </div>
+            </div>
+            <div className="wl-container m-auto mt-14 sm:mt-14 md:mt-16">
+                <InstagramPosts />
             </div>
         </div>
     )
