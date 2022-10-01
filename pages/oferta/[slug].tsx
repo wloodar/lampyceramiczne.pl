@@ -287,8 +287,8 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
             </div>
             <PageBanner
                 title="Zamówienie"
-                heading="Skontaktuj się z nami juz teraż"
-                description="Chciałbyś zamówić swoją wymarzoną lampę ceramiczną? Chętnie odpowiemy na Twoje pytania & rozjaśnimy wszystkie wątpliwości."
+                heading="Skontaktuj się z nami już teraz"
+                description="Chętnie odpowiemy na Twoje pytania & rozjaśnimy wszystkie wątpliwości. Chciałbyś zamówić swoją wymarzoną lampę ceramiczną?"
                 linkText="Złóż zamówienie / Skontaktuj się"
                 href="/kontakt"
                 imagePath="/img/content/elco-hala-produkcyjna-wyschniete-lampy.jpg"
@@ -298,7 +298,7 @@ const LampPage = ({ lamp }: { lamp: Lamp }) => {
             <div
                 className={clsx(
                     'fixed left-0 right-0 bottom-0 translate-y-full bg-white transition duration-300 ease-in-out lg:hidden',
-                    { '!translate-y-0': pageYScroll > 50 },
+                    { '!translate-y-0': pageYScroll > 150 },
                 )}
             >
                 <div className="wl-container flex justify-between py-5">

@@ -121,8 +121,8 @@ const Offer: NextPage = () => {
             <div className="sm:wl-container -mt-10 sm:mt-0">
                 <PageBanner
                     title="Zamówienie"
-                    heading="Skontaktuj się z nami juz teraż"
-                    description="Chciałbyś zamówić swoją wymarzoną lampę ceramiczną? Chętnie odpowiemy na Twoje pytania & rozjaśnimy wszystkie wątpliwości."
+                    heading="Skontaktuj się z nami już teraz"
+                    description="Chętnie odpowiemy na Twoje pytania & rozjaśnimy wszystkie wątpliwości. Chciałbyś zamówić swoją wymarzoną lampę ceramiczną?"
                     linkText="Złóż zamówienie / Skontaktuj się"
                     href="/kontakt"
                     imagePath="/img/content/elco-hala-produkcyjna-wyschniete-lampy.jpg"
